@@ -27,6 +27,7 @@ from strategies.registry import CORE_STRATEGIES, STRATEGY_WEIGHTS
 from utils.logger import log
 
 from portfolio.execution import fill_entry, fill_exit, compute_trade_pnl
+from utils.costs import transaction_cost
 from portfolio.risk import (
     compute_sector_exposure,
     filter_candidates_by_sector,
@@ -374,6 +375,7 @@ def simulate(
             notional = current_equity * position_size_pct
             quantity = int(notional / entry_price)
             if quantity <= 0:
+                log.debug(f"Skipping {sym} — zero or negative quantity: {quantity}")
                 continue
 
             # Apply slippage on entry

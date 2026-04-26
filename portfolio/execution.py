@@ -14,6 +14,7 @@ from typing import Optional
 import pandas as pd
 
 from strategies.base import BaseStrategy
+from utils.costs import transaction_cost
 
 
 # ──────────────────────────────────────────
@@ -57,9 +58,9 @@ def fill_entry(
     else:
         exec_price = close_price * (1 - slippage_pct)
 
-    transaction_cost = BaseStrategy.transaction_cost(exec_price, quantity, "entry")
+    txn_cost = transaction_cost(exec_price, quantity, "entry")
     slippage_cost = abs(exec_price - close_price) * quantity
-    return exec_price, transaction_cost, slippage_cost
+    return exec_price, txn_cost, slippage_cost
 
 
 def fill_exit(
@@ -67,7 +68,7 @@ def fill_exit(
     quantity: int,
     slippage_pct: float,
     direction: str,
-) -> tuple[float, float, float, float, float]:
+) -> tuple[float, float, float]:
     """
     Compute the executed exit price, costs, and P&L after slippage.
 
@@ -89,12 +90,12 @@ def fill_exit(
     else:
         exec_price = close_price * (1 + slippage_pct)
 
-    transaction_cost = BaseStrategy.transaction_cost(exec_price, quantity, "exit")
+    txn_cost = transaction_cost(exec_price, quantity, "exit")
     slippage_cost = abs(close_price - exec_price) * quantity
 
     # P&L is computed against the entry price stored on the position
     # (caller must pass the correct entry_price)
-    return exec_price, transaction_cost, slippage_cost
+    return exec_price, txn_cost, slippage_cost
 
 
 def compute_trade_pnl(

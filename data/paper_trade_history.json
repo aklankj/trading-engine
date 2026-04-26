@@ -1,1 +1,21 @@
-[]
+[
+  {
+    "symbol": "TEST",
+    "direction": "BUY",
+    "quantity": 10,
+    "entry_price": 100.0,
+    "entry_date": "2026-04-26T23:53:55.847533+05:30",
+    "exit_price": 110.0,
+    "exit_date": "2026-04-26T23:53:55.848353+05:30",
+    "exit_reason": "manual",
+    "pnl": 97.9,
+    "pnl_pct": 10.0,
+    "transaction_cost": 2.1,
+    "days_held": 0,
+    "regime_at_entry": "bull",
+    "signal_strength": 0.8,
+    "strategy": "TestStrategy",
+    "max_favorable_pct": 0,
+    "max_adverse_pct": 0
+  }
+]

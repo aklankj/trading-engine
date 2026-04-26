@@ -13,6 +13,7 @@ from pathlib import Path
 from config.settings import cfg
 from utils.logger import log
 from utils import load_json, save_json, now_ist
+from utils.costs import transaction_cost, round_trip_cost
 
 def _safe_float(val, default=0.0):
     """Safely convert any value to float."""
@@ -83,6 +84,11 @@ def open_position(
     Returns the position dict.
     """
     portfolio = _load_portfolio()
+
+    # Zero quantity guard
+    if quantity <= 0:
+        log.debug(f"Skipping {symbol} open — zero or negative quantity: {quantity}")
+        return {}
 
     # Check if already have position in this symbol
     if symbol in portfolio["positions"]:
@@ -219,7 +225,7 @@ def close_position(symbol: str, exit_price: float, reason: str = "manual") -> di
         pnl_pct = (entry_price - exit_price_f) / entry_price * 100 if entry_price > 0 else 0
 
     # Deduct transaction costs (entry + exit) using the canonical cost model
-    cost = entry_price * quantity * 0.001 + exit_price_f * quantity * 0.001
+    cost = transaction_cost(entry_price, quantity, "entry") + transaction_cost(exit_price_f, quantity, "exit")
     net_pnl = pnl - cost
 
     # Record trade

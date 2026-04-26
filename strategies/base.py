@@ -16,6 +16,7 @@ import pandas as pd
 from dataclasses import dataclass, field
 from abc import ABC, abstractmethod
 from typing import Optional
+from utils.costs import transaction_cost
 
 
 @dataclass
@@ -226,8 +227,11 @@ class BaseStrategy(ABC):
 
         For swing trades (delivery), total ~0.15% per round trip.
         We use 0.1% per trade (entry + exit) as conservative estimate.
+        
+        DEPRECATED: Use utils.costs.transaction_cost instead.
         """
-        return price * quantity * 0.001  # 0.1% per trade
+        from utils.costs import transaction_cost as unified_cost
+        return unified_cost(price, quantity, direction)
 
     # ── Backtest (loops should_enter/exit over history) ──
 
@@ -276,8 +280,8 @@ class BaseStrategy(ABC):
                     pnl = pos_size * ret_pct / 100
                     # Deduct transaction costs (entry + exit)
                     quantity = max(1, int(pos_size / position.entry_price))
-                    cost = self.transaction_cost(position.entry_price, quantity, "entry") + \
-                           self.transaction_cost(price, quantity, "exit")
+                    cost = transaction_cost(position.entry_price, quantity, "entry") + \
+                           transaction_cost(price, quantity, "exit")
                     equity += pnl - cost
                     peak_equity = max(peak_equity, equity)
                     curve.append(equity)
@@ -348,12 +352,24 @@ class BaseStrategy(ABC):
         result.total_return_pct = round((equity / 100000 - 1) * 100, 2)
 
         # ── CAGR (always valid, even with few trades) ──
-        trading_days = len(df) - start
-        result.years_tested = round(trading_days / 252, 1)
-        if result.years_tested > 0 and equity > 0:
-            result.cagr = round(
-                ((equity / 100000) ** (1 / result.years_tested) - 1) * 100, 2
-            )
+        # Use calendar-time years instead of trading-day approximation
+        if len(df) > start:
+            first_date = df.index[start]
+            last_date = df.index[-1]
+            # Calculate time difference in trading days
+            trading_days = last_date - first_date
+            # Convert to years using 252 trading days per year
+            # Handle both integer and datetime indices
+            if isinstance(trading_days, (int, float)):
+                years_tested = trading_days / 252
+            else:
+                # It's a timedelta, convert to days and then to years
+                years_tested = trading_days.days / 365.25
+            result.years_tested = round(years_tested, 1)
+            if result.years_tested > 0 and equity > 0:
+                result.cagr = round(
+                    ((equity / 100000) ** (1 / result.years_tested) - 1) * 100, 2
+                )
 
         # ── Expectancy (always valid — expected % return per trade) ──
         # E = (win_rate * avg_win) + (loss_rate * avg_loss)
