@@ -124,7 +124,10 @@ def run():
             equity += float(pos.get("current_price", pos["entry_price"])) * int(pos["quantity"])
 
         alloc = min(0.10, 0.05 + (abs(sig.signal) - 0.5) * 0.10)
-        quantity = max(1, int(equity * alloc / price))
+        quantity = int(equity * alloc / price)
+        if quantity <= 0:
+            log.debug(f"  {symbol}: skipped — zero quantity from sizing")
+            continue
 
         # Finding #9: Reject SELL for cash equities (not shortable in India)
         if sig.direction == "SELL":

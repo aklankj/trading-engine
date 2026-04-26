@@ -47,6 +47,29 @@ class _Config:
     ACTIVE_ALLOC: float = float(os.getenv("ACTIVE_ALLOCATION_PCT", "0.30"))
     CASH_RESERVE: float = float(os.getenv("CASH_RESERVE_PCT", "0.10"))
 
+    # ── Strategy Weights ──────────────────────────────────────
+    STRATEGY_WEIGHTS: dict[str, float] = {
+        "AnnualMomentum": os.getenv("WEIGHT_ANNUAL_MOMENTUM", "0.30"),
+        "AllWeather": os.getenv("WEIGHT_ALL_WEATHER", "0.20"),
+        "WeeklyDaily": os.getenv("WEIGHT_WEEKLY_DAILY", "0.15"),
+        "DonchianMonthly": os.getenv("WEIGHT_DONCHIAN_MONTHLY", "0.15"),
+        "WeeklyTrend": os.getenv("WEIGHT_WEEKLY_TREND", "0.10"),
+        "QualityDipBuy": os.getenv("WEIGHT_QUALITY_DIP_BUY", "0.10"),
+    }
+    def _normalize_weights(self) -> dict[str, float]:
+        """Ensure all weights are float and normalize to sum = 1.0."""
+        weights = {}
+        for k, v in self.STRATEGY_WEIGHTS.items():
+            try:
+                weights[k] = float(v)
+            except (ValueError, TypeError):
+                weights[k] = 0.05  # fallback default
+        total = sum(weights.values())
+        if total > 0:
+            for k in weights:
+                weights[k] = round(weights[k] / total, 4)
+        return weights
+
     # ── Paths ─────────────────────────────────────────────────
     DATA_DIR: Path = BASE_DIR / os.getenv("DATA_DIR", "data")
     LOG_DIR: Path = BASE_DIR / os.getenv("LOG_DIR", "logs")

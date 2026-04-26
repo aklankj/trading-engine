@@ -23,6 +23,8 @@ from pathlib import Path
 from datetime import datetime
 from dataclasses import asdict
 
+from config.settings import cfg
+from utils.logger import log
 from strategies.base import BaseStrategy, SwingSignal, BacktestResult
 from strategies.quality_dip_buy import QualityDipBuy
 from strategies.annual_momentum import AnnualMomentum
@@ -43,15 +45,8 @@ CORE_STRATEGIES: dict[str, BaseStrategy] = {
     "WeeklyDaily": WeeklyDaily(),
 }
 
-# Weights based on backtested Sharpe ratios
-STRATEGY_WEIGHTS = {
-    "QualityDipBuy": 0.25,    # Sharpe 2.73
-    "AnnualMomentum": 0.25,   # Sharpe 2.69
-    "WeeklyTrend": 0.20,      # Sharpe 2.28
-    "DonchianMonthly": 0.15,  # Sharpe 1.35
-    "AllWeather": 0.10,       # Sharpe 0.84
-    "WeeklyDaily": 0.05,      # Sharpe 0.69
-}
+# Weights from config (configurable via env vars, normalized to sum=1.0)
+STRATEGY_WEIGHTS = cfg._normalize_weights()
 
 # Pipeline-promoted strategies (loaded dynamically)
 _pipeline_strategies: dict[str, BaseStrategy] = {}
@@ -81,8 +76,8 @@ def get_all_signals(df) -> list[SwingSignal]:
             sig = strategy.signal(df)
             if abs(sig.signal) > 0.1:
                 signals.append(sig)
-        except Exception:
-            pass
+        except Exception as e:
+            log.warning(f"Strategy '{name}' failed in get_all_signals: {e}")
     return signals
 
 
@@ -155,6 +150,7 @@ def backtest_all(df, label: str = "") -> dict[str, BacktestResult]:
             result = strategy.backtest(df)
             results[name] = result
         except Exception as e:
+            log.warning(f"Strategy '{name}' failed in backtest_all: {e}")
             results[name] = BacktestResult(strategy=name)
     return results
 

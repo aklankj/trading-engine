@@ -205,27 +205,37 @@ def close_position(symbol: str, exit_price: float, reason: str = "manual") -> di
 
     pos = portfolio["positions"][symbol]
 
+    # Safe numeric conversion for all arithmetic inputs
+    entry_price = _safe_float(pos.get("entry_price", 0))
+    quantity = _safe_int(pos.get("quantity", 0))
+    exit_price_f = _safe_float(exit_price)
+
     # Calculate realized P&L
     if pos["direction"] == "BUY":
-        pnl = (exit_price - pos["entry_price"]) * pos["quantity"]
-        pnl_pct = (exit_price - pos["entry_price"]) / pos["entry_price"] * 100
+        pnl = (exit_price_f - entry_price) * quantity
+        pnl_pct = (exit_price_f - entry_price) / entry_price * 100 if entry_price > 0 else 0
     else:
-        pnl = (pos["entry_price"] - exit_price) * pos["quantity"]
-        pnl_pct = (pos["entry_price"] - exit_price) / pos["entry_price"] * 100
+        pnl = (entry_price - exit_price_f) * quantity
+        pnl_pct = (entry_price - exit_price_f) / entry_price * 100 if entry_price > 0 else 0
+
+    # Deduct transaction costs (entry + exit) using the canonical cost model
+    cost = entry_price * quantity * 0.001 + exit_price_f * quantity * 0.001
+    net_pnl = pnl - cost
 
     # Record trade
     trade_record = {
         "symbol": symbol,
         "direction": pos["direction"],
-        "quantity": pos["quantity"],
-        "entry_price": pos["entry_price"],
+        "quantity": quantity,
+        "entry_price": round(entry_price, 2),
         "entry_date": pos["entry_date"],
-        "exit_price": round(exit_price, 2),
+        "exit_price": round(exit_price_f, 2),
         "exit_date": now_ist().isoformat(),
         "exit_reason": reason,
-        "pnl": round(pnl, 2),
+        "pnl": round(net_pnl, 2),
         "pnl_pct": round(pnl_pct, 2),
-        "days_held": pos.get("days_held", 0),
+        "transaction_cost": round(cost, 2),
+        "days_held": _safe_int(pos.get("days_held", 0)),
         "regime_at_entry": pos.get("regime_at_entry", "Unknown"),
         "signal_strength": pos.get("signal_strength", 0),
         "strategy": pos.get("strategy", "unknown"),
@@ -237,13 +247,13 @@ def close_position(symbol: str, exit_price: float, reason: str = "manual") -> di
     history.append(trade_record)
     _save_history(history)
 
-    # Update portfolio stats
-    value = int(pos["quantity"]) * float(exit_price)
+    # Update portfolio stats using net P&L (after transaction costs)
+    value = quantity * exit_price_f
     portfolio["cash"] += value
-    portfolio["total_realized_pnl"] += pnl
+    portfolio["total_realized_pnl"] += net_pnl
     portfolio["total_trades"] += 1
 
-    if pnl > 0:
+    if net_pnl > 0:
         portfolio["winning_trades"] += 1
     else:
         portfolio["losing_trades"] += 1
@@ -259,9 +269,9 @@ def close_position(symbol: str, exit_price: float, reason: str = "manual") -> di
     _save_portfolio(portfolio)
 
     log.info(
-        f"📝 PAPER CLOSE: {pos['direction']} {pos['quantity']} {symbol} "
-        f"@ ₹{exit_price:.2f} | P&L: ₹{pnl:+.0f} ({pnl_pct:+.1f}%) | "
-        f"Reason: {reason}"
+        f"📝 PAPER CLOSE: {pos['direction']} {quantity} {symbol} "
+        f"@ ₹{exit_price_f:.2f} | P&L: ₹{net_pnl:+.0f} ({pnl_pct:+.1f}%) | "
+        f"Cost: ₹{cost:.2f} | Reason: {reason}"
     )
 
     return trade_record

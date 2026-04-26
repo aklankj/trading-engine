@@ -248,6 +248,7 @@ class BaseStrategy(ABC):
         trades = []
         hold_days_list = []
         peak_equity = equity
+        curve = [equity]
 
         start = self.min_bars()
 
@@ -279,11 +280,15 @@ class BaseStrategy(ABC):
                            self.transaction_cost(price, quantity, "exit")
                     equity += pnl - cost
                     peak_equity = max(peak_equity, equity)
+                    curve.append(equity)
                     position = None
 
-            # Check entry
+            # Check entry — reject SELL for cash-equity backtests
             if position is None:
                 direction, confidence, reason, sl, tgt = self.should_enter(df, i)
+
+                if direction == "SELL":
+                    continue
 
                 if direction and confidence > 0.3 and atr > 0:
                     # Use strategy's SL/TGT, or default ATR-based
@@ -303,7 +308,7 @@ class BaseStrategy(ABC):
                         lowest_since_entry=price,
                     )
 
-        # Close any remaining position at last price
+        # Close any remaining position at last price (with transaction costs)
         if position is not None:
             price = df["close"].iloc[-1]
             if position.direction == "BUY":
@@ -312,7 +317,14 @@ class BaseStrategy(ABC):
                 ret_pct = (position.entry_price - price) / position.entry_price * 100
             trades.append(ret_pct)
             hold_days_list.append(len(df) - 1 - position.entry_idx)
-            equity += equity * self.position_size_pct * ret_pct / 100
+            pos_size = equity * self.position_size_pct
+            pnl = pos_size * ret_pct / 100
+            quantity = max(1, int(pos_size / position.entry_price))
+            cost = self.transaction_cost(position.entry_price, quantity, "entry") + \
+                   self.transaction_cost(price, quantity, "exit")
+            equity += pnl - cost
+            peak_equity = max(peak_equity, equity)
+            curve.append(equity)
 
         # Calculate metrics
         if not trades:
@@ -373,21 +385,15 @@ class BaseStrategy(ABC):
         gross_loss = abs(sum(losses)) if losses else 1
         result.profit_factor = round(gross_profit / gross_loss, 2) if gross_loss > 0 else 0
 
-        # ── Max drawdown from equity curve ──
-        running = 100000.0
-        peak = 100000.0
-        max_dd = 0.0
-        curve = [100000.0]
-        for t in trades:
-            pnl = running * self.position_size_pct * t / 100
-            # Deduct approximate round-trip cost
-            cost = running * self.position_size_pct * 0.002  # 0.2% round trip
-            running += pnl - cost
-            curve.append(running)
-            peak = max(peak, running)
-            dd = (peak - running) / peak * 100 if peak > 0 else 0
-            max_dd = max(max_dd, dd)
-        result.max_drawdown = round(max_dd, 1)
-        result.equity_curve = curve
+        # ── Max drawdown from equity curve (uses the same cost model as main P&L) ──
+        if curve:
+            curve_peak = curve[0]
+            max_dd = 0.0
+            for val in curve:
+                curve_peak = max(curve_peak, val)
+                dd = (curve_peak - val) / curve_peak * 100 if curve_peak > 0 else 0
+                max_dd = max(max_dd, dd)
+            result.max_drawdown = round(max_dd, 1)
+            result.equity_curve = curve
 
         return result
