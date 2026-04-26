@@ -14,7 +14,6 @@ Usage:
 
 import sys
 import time
-import json
 import numpy as np
 import pandas as pd
 import yfinance as yf
@@ -67,6 +66,52 @@ NIFTY100_PLUS = NIFTY50 + [
 ]
 
 
+from backtest.walkforward import generate_walkforward_windows, summarize_walkforward
+
+
+def _run_window(
+    data: dict[str, pd.DataFrame],
+    window: dict,
+    test_capital: float = 100_000,
+) -> dict | None:
+    """
+    Run portfolio simulator on a single walk-forward test window.
+
+    Returns dict with window metrics or None on failure.
+    """
+    try:
+        from portfolio.simulator import simulate
+
+        result = simulate(
+            data=data,
+            start_date=window["test_start"],
+            end_date=window["test_end"],
+            initial_capital=test_capital,
+        )
+
+        if result.total_trades == 0:
+            return None
+
+        return {
+            "train_start": window["train_start"],
+            "train_end": window["train_end"],
+            "test_start": window["test_start"],
+            "test_end": window["test_end"],
+            "cagr": result.cagr,
+            "max_dd": result.max_drawdown,
+            "total_trades": result.total_trades,
+            "final_equity": result.final_equity,
+        }
+    except Exception as e:
+        log.warning(f"    Window failed: {e}")
+        return None
+
+
+# ──────────────────────────────────────────
+# Data fetching
+# ──────────────────────────────────────────
+
+
 def fetch_data(symbol: str, years: int = 10) -> pd.DataFrame:
     """Fetch historical data from yfinance."""
     try:
@@ -88,20 +133,43 @@ def fetch_data(symbol: str, years: int = 10) -> pd.DataFrame:
         return pd.DataFrame()
 
 
+# ──────────────────────────────────────────
+# Main backtest
+# ──────────────────────────────────────────
+
+
 def run_backtest(
     symbols: list[str] = None,
     years: int = 10,
     walk_forward: bool = False,
+    train_years: int = 5,
+    test_years: int = 1,
+    step_years: int = 1,
 ) -> dict:
     """
     Backtest all registered strategies across stocks.
     Uses the EXACT same strategy code as live trading.
+
+    When walk_forward=True, runs rolling out-of-sample windows using
+    the portfolio simulator (portfolio.simulator.simulate).
+    Each window: train_years reserved context, test_years OOS evaluation,
+    rolling forward by step_years.
+
+    NOTE: Train windows are currently reserved periods for future
+    parameter calibration / optimization. Since strategies are
+    rule-based and not fitted, no in-sample fitting occurs yet.
     """
     if symbols is None:
         symbols = TOP10
 
     log.info(f"═══ UNIFIED BACKTEST — {len(symbols)} stocks, {years}yr ═══")
 
+    if walk_forward:
+        return _run_walkforward_backtest(
+            symbols, years, train_years, test_years, step_years
+        )
+
+    # ── Standard backtest (non walk-forward) ──
     # Aggregate results per strategy
     agg: dict[str, list[BacktestResult]] = {name: [] for name in CORE_STRATEGIES}
 
@@ -113,17 +181,9 @@ def run_backtest(
             log.warning(f"    Insufficient data ({len(df)} rows)")
             continue
 
-        if walk_forward:
-            # Walk-forward: train on first 70%, test on last 30%
-            split = int(len(df) * 0.7)
-            test_df = df.iloc[split:]
-            log.info(f"    Walk-forward: testing on {len(test_df)} bars ({df.index[split].strftime('%Y-%m-%d')} onwards)")
-        else:
-            test_df = df
-
         for strat_name, strategy in CORE_STRATEGIES.items():
             try:
-                result = strategy.backtest(test_df)
+                result = strategy.backtest(df)
                 agg[strat_name].append(result)
 
                 if result.total_trades > 0:
@@ -138,6 +198,246 @@ def run_backtest(
         time.sleep(0.5)
 
     # Aggregate per strategy across all stocks
+    summary = _aggregate_results(agg)
+
+    # Print results
+    mode = "IN-SAMPLE"
+    print(f"\n{'='*105}")
+    print(f"  UNIFIED BACKTEST ({mode}) — {len(symbols)} stocks, {years} years")
+    print(f"  Strategy code: strategies.registry (SAME as live engine)")
+    print(f"{'='*105}")
+    print(f"  {'Strategy':18s} {'Trades':>6s} {'WR':>6s} {'CAGR':>7s} {'Expect':>7s} {'Sharpe':>10s} {'PF':>5s} {'MaxDD':>6s} {'AvgWin':>7s} {'AvgLoss':>8s} {'Hold':>5s}")
+    print(f"  {'-'*102}")
+
+    for name, r in sorted(summary.items(), key=lambda x: x[1].cagr, reverse=True):
+        if r.total_trades == 0:
+            print(f"  {name:18s}  — no trades —")
+            continue
+
+        if r.sharpe_valid:
+            sharpe_str = f"{r.sharpe:+6.2f}"
+        elif r.total_trades > 1:
+            sharpe_str = f"{r.sharpe:+5.2f}(n<30)"
+        else:
+            sharpe_str = "   N/A"
+
+        verdict = "🏆" if r.cagr > 10 and r.profit_factor > 1.5 else \
+                  "✅" if r.cagr > 5 and r.profit_factor > 1.2 else \
+                  "🟡" if r.cagr > 0 else "❌"
+
+        print(
+            f"  {verdict} {name:16s} {r.total_trades:6d} {r.win_rate:5.1f}% "
+            f"{r.cagr:+6.1f}% {r.expectancy:+6.2f}% {sharpe_str:>10s} "
+            f"{r.profit_factor:4.2f} {r.max_drawdown:5.1f}% "
+            f"{r.avg_win:+6.1f}% {r.avg_loss:+7.1f}% {r.avg_hold_days:4.0f}d"
+        )
+
+    print(f"{'='*105}")
+    print(f"  Note: Sharpe marked (n<30) has insufficient trades for statistical validity.")
+    print(f"  Primary metrics: CAGR (compound growth), Expectancy (avg return/trade), PF (profit/loss ratio)")
+
+    # Compact one-line summary per strategy
+    print()
+    for name, r in sorted(summary.items(), key=lambda x: x[1].cagr, reverse=True):
+        if r.total_trades == 0:
+            continue
+        sharpe_str = f"{r.sharpe:.2f}" if r.sharpe_valid else "N/A"
+        print(f"  {name}: CAGR={r.cagr:.1f}% | MaxDD={r.max_drawdown:.1f}% | Sharpe={sharpe_str}")
+
+    # Save results
+    output = {
+        "date": datetime.now().isoformat(),
+        "mode": mode,
+        "symbols": symbols,
+        "years": years,
+        "summary": {
+            name: {
+                "trades": r.total_trades, "win_rate": r.win_rate,
+                "cagr": r.cagr, "expectancy": r.expectancy,
+                "total_return_pct": r.total_return_pct,
+                "sharpe": r.sharpe, "sharpe_valid": r.sharpe_valid,
+                "profit_factor": r.profit_factor,
+                "max_drawdown": r.max_drawdown, "avg_win": r.avg_win,
+                "avg_loss": r.avg_loss, "avg_hold_days": r.avg_hold_days,
+                "years_tested": r.years_tested,
+            }
+            for name, r in summary.items()
+        },
+    }
+
+    output_path = cfg.DATA_DIR / "backtest_results.json"
+    save_json(output_path, output)
+    log.info(f"Results saved to {output_path}")
+
+    # Telegram report
+    _send_report(summary, mode, len(symbols), years)
+
+    return summary
+
+
+def _run_walkforward_backtest(
+    symbols: list[str],
+    years: int,
+    train_years: int,
+    test_years: int,
+    step_years: int,
+) -> dict:
+    """
+    Run walk-forward validation using the portfolio simulator.
+
+    Fetches data for all symbols, generates rolling train/test windows,
+    runs portfolio.simulator.simulate on each test window, and prints
+    a per-window table + summary metrics.
+    """
+    log.info(f"  Walk-Forward: {train_years}yr train / {test_years}yr test / {step_years}yr step")
+
+    # Fetch all data
+    data: dict[str, pd.DataFrame] = {}
+    for idx, symbol in enumerate(symbols):
+        log.info(f"  Fetching [{idx+1}/{len(symbols)}] {symbol}...")
+        df = fetch_data(symbol, years=years)
+        if not df.empty and len(df) >= 500:
+            data[symbol] = df
+        else:
+            log.warning(f"    Skipping {symbol} ({len(df)} rows)")
+        time.sleep(0.3)
+
+    if not data:
+        log.error("No valid data for any symbol")
+        return {}
+
+    # Build unified date index across all symbols
+    all_dates: set[pd.Timestamp] = set()
+    for sym in symbols:
+        if sym in data:
+            all_dates.update(data[sym].index)
+    unified_index = sorted(all_dates)
+    if len(unified_index) < 2:
+        log.error("Date union too short for walk-forward")
+        return {}
+
+    data_index = pd.DatetimeIndex(unified_index)
+
+    # Generate windows
+    windows = generate_walkforward_windows(
+        data_index, train_years=train_years, test_years=test_years, step_years=step_years
+    )
+
+    if not windows:
+        log.error(
+            f"Data span too short for {train_years}yr train + {test_years}yr test. "
+            f"Need at least {train_years + test_years} years."
+        )
+        return {}
+
+    log.info(f"  Generated {len(windows)} walk-forward windows")
+
+    # Run each window
+    window_results: list[dict] = []
+    is_results: list[dict] = []
+
+    for w_idx, window in enumerate(windows):
+        log.info(f"  Window [{w_idx+1}/{len(windows)}]: "
+                 f"train={window['train_start'].strftime('%Y-%m-%d')}→{window['train_end'].strftime('%Y-%m-%d')}, "
+                 f"test={window['test_start'].strftime('%Y-%m-%d')}→{window['test_end'].strftime('%Y-%m-%d')}")
+
+        # Run OOS window
+        result = _run_window(data, window)
+        if result:
+            window_results.append(result)
+            log.info(f"    → CAGR={result['cagr']:.1f}%  MaxDD={result['max_dd']:.1f}%  Trades={result['total_trades']}")
+
+        # Also run IS (train window) for WFE denominator
+        try:
+            from portfolio.simulator import simulate
+            is_result = simulate(
+                data=data,
+                start_date=window["train_start"],
+                end_date=window["train_end"],
+                initial_capital=100_000,
+            )
+            if is_result.total_trades > 0:
+                is_results.append({
+                    "cagr": is_result.cagr,
+                    "max_dd": is_result.max_drawdown,
+                    "total_trades": is_result.total_trades,
+                })
+        except Exception:
+            pass
+
+        time.sleep(0.2)
+
+    # Summarize
+    wf_summary = summarize_walkforward(window_results, is_results)
+
+    # Print walk-forward table
+    print(f"\n{'='*100}")
+    print(f"  WALK-FORWARD VALIDATION — {len(symbols)} stocks, {len(windows)} windows")
+    print(f"  {train_years}yr train / {test_years}yr test / {step_years}yr step")
+    print(f"{'='*100}")
+    header = f"  {'Window':>6s}  {'Train Start':>12s}  {'Train End':>12s}  {'Test Start':>12s}  {'Test End':>12s}  {'CAGR':>7s}  {'MaxDD':>7s}  {'Trades':>6s}"
+    print(header)
+    print(f"  {'-'*96}")
+
+    for w_idx, w in enumerate(window_results):
+        ts_str = w["test_start"].strftime("%Y-%m-%d")
+        te_str = w["test_end"].strftime("%Y-%m-%d")
+        trs_str = w["train_start"].strftime("%Y-%m-%d")
+        tre_str = w["train_end"].strftime("%Y-%m-%d")
+        print(
+            f"  {w_idx+1:6d}  {trs_str:>12s}  {tre_str:>12s}  {ts_str:>12s}  {te_str:>12s}  "
+            f"{w['cagr']:6.1f}%  {w['max_dd']:6.1f}%  {w['total_trades']:6d}"
+        )
+
+    print(f"  {'-'*96}")
+
+    # Print summary
+    wfe_str = str(wf_summary["wfe"]) if isinstance(wf_summary["wfe"], str) else f"{wf_summary['wfe']:.2f}"
+    print(f"  SUMMARY")
+    print(f"  {'─'*40}")
+    print(f"    Avg OOS CAGR:    {wf_summary['avg_oos_cagr']:.1f}%")
+    print(f"    Avg OOS MaxDD:   {wf_summary['avg_oos_maxdd']:.1f}%")
+    print(f"    Avg OOS Trades:  {wf_summary['avg_oos_trades']:.1f}")
+    print(f"    % Positive:      {wf_summary['pct_positive_windows']:.1f}%")
+    print(f"    WFE:             {wfe_str}")
+    print(f"{'='*100}")
+
+    # Save results
+    output = {
+        "date": datetime.now().isoformat(),
+        "mode": "WALK-FORWARD",
+        "symbols": symbols,
+        "years": years,
+        "train_years": train_years,
+        "test_years": test_years,
+        "step_years": step_years,
+        "windows": [
+            {
+                "window": i + 1,
+                "train_start": w["train_start"].isoformat(),
+                "train_end": w["train_end"].isoformat(),
+                "test_start": w["test_start"].isoformat(),
+                "test_end": w["test_end"].isoformat(),
+                "cagr": w["cagr"],
+                "max_dd": w["max_dd"],
+                "total_trades": w["total_trades"],
+            }
+            for i, w in enumerate(window_results)
+        ],
+        "summary": wf_summary,
+    }
+
+    output_path = cfg.DATA_DIR / "backtest_results.json"
+    save_json(output_path, output)
+    log.info(f"Results saved to {output_path}")
+
+    return wf_summary
+
+
+def _aggregate_results(
+    agg: dict[str, list[BacktestResult]],
+) -> dict[str, BacktestResult]:
+    """Aggregate per-strategy backtest results across symbols."""
     summary = {}
     for strat_name, results_list in agg.items():
         valid = [r for r in results_list if r.total_trades > 0]
@@ -195,70 +495,6 @@ def run_backtest(
             avg_hold_days=round(np.mean([r.avg_hold_days for r in valid]), 0),
         )
         summary[strat_name] = combined
-
-    # Print results
-    mode = "WALK-FORWARD" if walk_forward else "IN-SAMPLE"
-    print(f"\n{'='*105}")
-    print(f"  UNIFIED BACKTEST ({mode}) — {len(symbols)} stocks, {years} years")
-    print(f"  Strategy code: strategies.registry (SAME as live engine)")
-    print(f"{'='*105}")
-    print(f"  {'Strategy':18s} {'Trades':>6s} {'WR':>6s} {'CAGR':>7s} {'Expect':>7s} {'Sharpe':>10s} {'PF':>5s} {'MaxDD':>6s} {'AvgWin':>7s} {'AvgLoss':>8s} {'Hold':>5s}")
-    print(f"  {'-'*102}")
-
-    for name, r in sorted(summary.items(), key=lambda x: x[1].cagr, reverse=True):
-        if r.total_trades == 0:
-            print(f"  {name:18s}  — no trades —")
-            continue
-
-        if r.sharpe_valid:
-            sharpe_str = f"{r.sharpe:+6.2f}"
-        elif r.total_trades > 1:
-            sharpe_str = f"{r.sharpe:+5.2f}(n<30)"
-        else:
-            sharpe_str = "   N/A"
-
-        verdict = "🏆" if r.cagr > 10 and r.profit_factor > 1.5 else \
-                  "✅" if r.cagr > 5 and r.profit_factor > 1.2 else \
-                  "🟡" if r.cagr > 0 else "❌"
-
-        print(
-            f"  {verdict} {name:16s} {r.total_trades:6d} {r.win_rate:5.1f}% "
-            f"{r.cagr:+6.1f}% {r.expectancy:+6.2f}% {sharpe_str:>10s} "
-            f"{r.profit_factor:4.2f} {r.max_drawdown:5.1f}% "
-            f"{r.avg_win:+6.1f}% {r.avg_loss:+7.1f}% {r.avg_hold_days:4.0f}d"
-        )
-
-    print(f"{'='*105}")
-    print(f"  Note: Sharpe marked (n<30) has insufficient trades for statistical validity.")
-    print(f"  Primary metrics: CAGR (compound growth), Expectancy (avg return/trade), PF (profit/loss ratio)")
-
-    # Save results
-    output = {
-        "date": datetime.now().isoformat(),
-        "mode": mode,
-        "symbols": symbols,
-        "years": years,
-        "summary": {
-            name: {
-                "trades": r.total_trades, "win_rate": r.win_rate,
-                "cagr": r.cagr, "expectancy": r.expectancy,
-                "total_return_pct": r.total_return_pct,
-                "sharpe": r.sharpe, "sharpe_valid": r.sharpe_valid,
-                "profit_factor": r.profit_factor,
-                "max_drawdown": r.max_drawdown, "avg_win": r.avg_win,
-                "avg_loss": r.avg_loss, "avg_hold_days": r.avg_hold_days,
-                "years_tested": r.years_tested,
-            }
-            for name, r in summary.items()
-        },
-    }
-
-    output_path = cfg.DATA_DIR / "backtest_results.json"
-    save_json(output_path, output)
-    log.info(f"Results saved to {output_path}")
-
-    # Telegram report
-    _send_report(summary, mode, len(symbols), years)
 
     return summary
 
