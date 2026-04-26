@@ -693,8 +693,8 @@ def run_strategy_lab(symbols=None, years=10):
 
         print(
             f"  {strat_name:18s} {len(all_trades):6d} {win_rate:7.1f}% "
-            f"{avg_return:+7.1f}% {sharpe:+7.2f} {avg_win:+7.1f}% "
-            f"{avg_loss:+7.1f}% {pf:5.2f}  {verdict}"
+            f"{avg_return:7.1f}% {sharpe:7.2f} {avg_win:7.1f}% "
+            f"{avg_loss:7.1f}% {pf:5.2f}  {verdict}"
         )
 
     print("=" * 95)
@@ -703,7 +703,7 @@ def run_strategy_lab(symbols=None, years=10):
     ranked = sorted(results.items(), key=lambda x: x[1]["sharpe"], reverse=True)
     print("\n📊 RANKING (by Sharpe ratio):")
     for i, (name, data) in enumerate(ranked):
-        print(f"  {i+1}. {name:20s} Sharpe={data['sharpe']:+.2f} PF={data['profit_factor']:.2f} WR={data['win_rate']:.0f}% {data['verdict']}")
+        print(f"  {i+1}. {name:20s} Sharpe={data['sharpe']:.2f} PF={data['profit_factor']:.2f} WR={data['win_rate']:.0f}% {data['verdict']}")
 
     print("\n💡 RECOMMENDATION:")
     top3 = [name for name, data in ranked[:3] if data["sharpe"] > 0.5]

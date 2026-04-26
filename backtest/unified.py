@@ -22,7 +22,7 @@ from datetime import datetime, timedelta
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
-from strategies.registry import CORE_STRATEGIES, print_backtest_summary
+from strategies.registry import CORE_STRATEGIES
 from strategies.base import BacktestResult
 from config.settings import cfg
 from utils.logger import log
@@ -172,6 +172,7 @@ def run_backtest(
     # ── Standard backtest (non walk-forward) ──
     # Aggregate results per strategy
     agg: dict[str, list[BacktestResult]] = {name: [] for name in CORE_STRATEGIES}
+    data: dict[str, pd.DataFrame] = {}
 
     for idx, symbol in enumerate(symbols):
         log.info(f"  [{idx+1}/{len(symbols)}] {symbol}...")
@@ -180,6 +181,7 @@ def run_backtest(
         if df.empty or len(df) < 500:
             log.warning(f"    Insufficient data ({len(df)} rows)")
             continue
+        data[symbol] = df
 
         for strat_name, strategy in CORE_STRATEGIES.items():
             try:
@@ -189,13 +191,14 @@ def run_backtest(
                 if result.total_trades > 0:
                     log.info(
                         f"    {strat_name:18s}: {result.total_trades:3d} trades | "
-                        f"WR={result.win_rate:5.1f}% | Sharpe={result.sharpe:+5.2f} | "
+                        f"WR={result.win_rate:5.1f}% | Sharpe={result.sharpe:5.2f} | "
                         f"PF={result.profit_factor:.2f}"
                     )
             except Exception as e:
                 log.warning(f"    {strat_name} failed: {e}")
 
-        time.sleep(0.5)
+        if cfg.DEBUG_SLEEP:
+            time.sleep(0.5)
 
     # Aggregate per strategy across all stocks
     summary = _aggregate_results(agg)
@@ -215,9 +218,9 @@ def run_backtest(
             continue
 
         if r.sharpe_valid:
-            sharpe_str = f"{r.sharpe:+6.2f}"
+            sharpe_str = f"{r.sharpe:6.2f}"
         elif r.total_trades > 1:
-            sharpe_str = f"{r.sharpe:+5.2f}(n<30)"
+            sharpe_str = f"{r.sharpe:5.2f}(n<30)"
         else:
             sharpe_str = "   N/A"
 
@@ -227,9 +230,9 @@ def run_backtest(
 
         print(
             f"  {verdict} {name:16s} {r.total_trades:6d} {r.win_rate:5.1f}% "
-            f"{r.cagr:+6.1f}% {r.expectancy:+6.2f}% {sharpe_str:>10s} "
+            f"{r.cagr:6.1f}% {r.expectancy:6.2f}% {sharpe_str:>10s} "
             f"{r.profit_factor:4.2f} {r.max_drawdown:5.1f}% "
-            f"{r.avg_win:+6.1f}% {r.avg_loss:+7.1f}% {r.avg_hold_days:4.0f}d"
+            f"{r.avg_win:6.1f}% {r.avg_loss:7.1f}% {r.avg_hold_days:4.0f}d"
         )
 
     print(f"{'='*105}")
@@ -243,6 +246,43 @@ def run_backtest(
             continue
         sharpe_str = f"{r.sharpe:.2f}" if r.sharpe_valid else "N/A"
         print(f"  {name}: CAGR={r.cagr:.1f}% | MaxDD={r.max_drawdown:.1f}% | Sharpe={sharpe_str}")
+
+    # ── Benchmarks ──
+    if data:
+        from analytics.benchmark import run_nifty_proxy, run_equal_weight, run_buy_and_hold
+
+        # Determine start/end dates from data
+        all_dates_set: set[pd.Timestamp] = set()
+        for sym in symbols:
+            if sym in data:
+                all_dates_set.update(data[sym].index)
+        if all_dates_set:
+            sorted_dates = sorted(all_dates_set)
+            start_date = sorted_dates[0]
+            end_date = sorted_dates[-1]
+
+            b_nifty = run_nifty_proxy(data, start_date=start_date, end_date=end_date)
+            b_eqw = run_equal_weight(data, symbols, start_date=start_date, end_date=end_date)
+            b_bnh = run_buy_and_hold(data, symbols, start_date=start_date, end_date=end_date)
+
+            print(f"\n{'='*105}")
+            print(f"  BENCHMARKS")
+            print(f"{'='*105}")
+            if b_nifty.equity_curve:
+                print(f"  NIFTY50 Proxy: CAGR={b_nifty.cagr:.1f}% | MaxDD={b_nifty.max_drawdown:.1f}%")
+            else:
+                print(f"  NIFTY50 Proxy: insufficient data")
+            if b_eqw.equity_curve:
+                print(f"  Equal Weight:  CAGR={b_eqw.cagr:.1f}% | MaxDD={b_eqw.max_drawdown:.1f}%")
+            else:
+                print(f"  Equal Weight:  insufficient data")
+            if b_bnh.equity_curve:
+                print(f"  Buy & Hold:    CAGR={b_bnh.cagr:.1f}% | MaxDD={b_bnh.max_drawdown:.1f}%")
+            else:
+                print(f"  Buy & Hold:    insufficient data")
+            print(f"{'='*105}")
+            print(f"  Note: Equal Weight and Buy & Hold are identical for static allocation.")
+            print(f"  For a meaningfully different third benchmark, consider a trend-filtered variant.")
 
     # Save results
     output = {
@@ -300,7 +340,8 @@ def _run_walkforward_backtest(
             data[symbol] = df
         else:
             log.warning(f"    Skipping {symbol} ({len(df)} rows)")
-        time.sleep(0.3)
+        if cfg.DEBUG_SLEEP:
+            time.sleep(0.3)
 
     if not data:
         log.error("No valid data for any symbol")
@@ -365,7 +406,8 @@ def _run_walkforward_backtest(
         except Exception:
             pass
 
-        time.sleep(0.2)
+        if cfg.DEBUG_SLEEP:
+            time.sleep(0.2)
 
     # Summarize
     wf_summary = summarize_walkforward(window_results, is_results)
@@ -513,10 +555,10 @@ def _send_report(summary, mode, n_stocks, years):
             emoji = "🏆" if r.cagr > 10 and r.profit_factor > 1.5 else \
                     "✅" if r.cagr > 5 and r.profit_factor > 1.2 else \
                     "🟡" if r.cagr > 0 else "❌"
-            sharpe_note = f"Sharpe={r.sharpe:+.2f}" if r.sharpe_valid else f"Sharpe={r.sharpe:+.2f}*"
+            sharpe_note = f"Sharpe={r.sharpe:.2f}" if r.sharpe_valid else f"Sharpe={r.sharpe:.2f}*"
             msg += (
                 f"{emoji} <b>{name}</b>: "
-                f"CAGR={r.cagr:+.1f}% E={r.expectancy:+.2f}% "
+                f"CAGR={r.cagr:.1f}% E={r.expectancy:.2f}% "
                 f"{sharpe_note} PF={r.profit_factor:.2f} "
                 f"({r.total_trades} trades, {r.win_rate:.0f}% WR)\n"
             )

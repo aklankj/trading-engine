@@ -390,8 +390,8 @@ def run_backtest(
                     log.info(
                         f"    {strat_name:15s}: {result.total_trades:4d} trades | "
                         f"Win={result.win_rate:5.1f}% | "
-                        f"Return={result.total_return_pct:+7.1f}% | "
-                        f"Sharpe={result.sharpe_ratio:+5.2f} | "
+                        f"Return={result.total_return_pct:7.1f}% | "
+                        f"Sharpe={result.sharpe_ratio:5.2f} | "
                         f"MaxDD={result.max_drawdown_pct:5.1f}%"
                     )
             except Exception as e:
@@ -503,8 +503,8 @@ def _print_summary(summary: dict, years: int, n_stocks: int):
             continue
         print(
             f"  {name:16s} {data['total_trades']:7d} {data['win_rate']:7.1f}% "
-            f"{data['avg_total_return']:+7.1f}% {data['avg_annual_return']:+7.1f}% "
-            f"{data['avg_sharpe']:+7.2f} {data['avg_max_drawdown']:7.1f}% "
+            f"{data['avg_total_return']:7.1f}% {data['avg_annual_return']:7.1f}% "
+            f"{data['avg_sharpe']:7.2f} {data['avg_max_drawdown']:7.1f}% "
             f"{data['avg_profit_factor']:5.2f}  {data['verdict']}"
         )
 
@@ -532,7 +532,7 @@ def _send_backtest_report(summary: dict, years: int, n_stocks: int, failed: list
             msg += (
                 f"{emoji} <b>{name}</b>\n"
                 f"  Trades: {data['total_trades']} | Win: {data['win_rate']:.0f}%\n"
-                f"  Return: {data['avg_total_return']:+.1f}% | Sharpe: {data['avg_sharpe']:+.2f}\n"
+                f"  Return: {data['avg_total_return']:.1f}% | Sharpe: {data['avg_sharpe']:.2f}\n"
                 f"  MaxDD: {data['avg_max_drawdown']:.1f}% | PF: {data['avg_profit_factor']:.2f}\n"
                 f"  → <i>{data['verdict']}</i>\n\n"
             )

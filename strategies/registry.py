@@ -175,9 +175,9 @@ def print_backtest_summary(results: dict[str, BacktestResult], symbol: str = "")
 
         # Show Sharpe with validity marker
         if r.sharpe_valid:
-            sharpe_str = f"{r.sharpe:+6.2f}"
+            sharpe_str = f"{r.sharpe:6.2f}"
         elif r.total_trades > 1:
-            sharpe_str = f"{r.sharpe:+5.2f}(n<30)"
+            sharpe_str = f"{r.sharpe:5.2f}(n<30)"
         else:
             sharpe_str = "   N/A"
 
@@ -187,9 +187,9 @@ def print_backtest_summary(results: dict[str, BacktestResult], symbol: str = "")
 
         print(
             f"  {verdict} {name:16s} {r.total_trades:6d} {r.win_rate:5.1f}% "
-            f"{r.cagr:+6.1f}% {r.expectancy:+6.2f}% {sharpe_str:>10s} "
+            f"{r.cagr:6.1f}% {r.expectancy:6.2f}% {sharpe_str:>10s} "
             f"{r.profit_factor:4.2f} {r.max_drawdown:5.1f}% "
-            f"{r.avg_win:+6.1f}% {r.avg_loss:+7.1f}% {r.avg_hold_days:4.0f}d"
+            f"{r.avg_win:6.1f}% {r.avg_loss:7.1f}% {r.avg_hold_days:4.0f}d"
         )
 
     print(f"{'='*100}")

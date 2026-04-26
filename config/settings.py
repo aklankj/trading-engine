@@ -40,6 +40,7 @@ class _Config:
     INITIAL_CAPITAL: float = float(os.getenv("INITIAL_CAPITAL", "100000"))
     MAX_POSITION_PCT: float = float(os.getenv("MAX_POSITION_PCT", "0.05"))
     MAX_DAILY_LOSS_PCT: float = float(os.getenv("MAX_DAILY_LOSS_PCT", "0.02"))
+    DEBUG_SLEEP: bool = False  # Enable rate-limit sleeps (off by default)
     MAX_OPEN_POSITIONS: int = int(os.getenv("MAX_OPEN_POSITIONS", "10"))
     MAX_SECTOR_EXPOSURE_PCT: float = float(os.getenv("MAX_SECTOR_EXPOSURE_PCT", "0.30"))
     FUNDAMENTAL_ALLOC: float = float(os.getenv("FUNDAMENTAL_ALLOCATION_PCT", "0.60"))
