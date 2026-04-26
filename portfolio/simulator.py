@@ -6,25 +6,45 @@ Multi-strategy portfolio simulator with shared capital.
 Runs all strategies together on a shared capital pool, enforcing
 max positions, no negative cash, one position per symbol,
 and transaction costs.
+
+Re-exports all public symbols from portfolio sub-modules for backward
+compatibility.  Importing from portfolio.simulator still works.
 """
 
 from __future__ import annotations
 
-import numpy as np
-import pandas as pd
 from dataclasses import dataclass, field
 from datetime import date
 from typing import Optional, Union
 
-from utils.logger import log
+import numpy as np
+import pandas as pd
+
+from analytics.drawdown import max_drawdown, ulcer_index, worst_month
+from config.settings import cfg as _cfg
 from strategies.base import BaseStrategy, Position
 from strategies.registry import CORE_STRATEGIES, STRATEGY_WEIGHTS
-from analytics.drawdown import max_drawdown, ulcer_index, worst_month
+from utils.logger import log
+
+from portfolio.execution import fill_entry, fill_exit, compute_trade_pnl
+from portfolio.risk import (
+    compute_sector_exposure,
+    filter_candidates_by_sector,
+    check_cash_constraint,
+)
+from portfolio.metrics import (
+    compute_cagr,
+    compute_equity_sharpe,
+    compute_turnover,
+    compute_trade_metrics,
+    print_portfolio_summary,
+)
 
 
 # ──────────────────────────────────────────
-# Data structures
+# Data structures (kept in simulator.py)
 # ──────────────────────────────────────────
+
 
 @dataclass
 class SimPosition:
@@ -100,27 +120,6 @@ def _parse_date(d: str | pd.Timestamp | None) -> pd.Timestamp | None:
     return pd.to_datetime(d)
 
 
-def _compute_equity_sharpe(equity_curve: list[float], min_days: int = 30) -> tuple[float, bool]:
-    """Sharpe ratio from daily equity-curve returns."""
-    if len(equity_curve) < min_days + 1:
-        return 0.0, False
-    returns = np.diff(equity_curve) / np.array(equity_curve[:-1])
-    if len(returns) == 0 or np.std(returns) == 0 or np.isnan(np.std(returns)):
-        return 0.0, False
-    sharpe = np.mean(returns) / np.std(returns) * np.sqrt(252)
-    return round(sharpe, 2), True
-
-
-# _compute_max_drawdown replaced by analytics.drawdown.max_drawdown
-
-
-def _compute_cagr(initial: float, final: float, years: float) -> float:
-    """Compound annual growth rate (%)."""
-    if years <= 0 or initial <= 0 or final <= 0:
-        return 0.0
-    return round(((final / initial) ** (1 / years) - 1) * 100, 2)
-
-
 def _default_sl_tgt(
     direction: str, price: float, atr: float
 ) -> tuple[float, float]:
@@ -177,13 +176,10 @@ def simulate(
         Fraction of current equity allocated per new position.
     allow_multiple_per_symbol : bool
         If False (default), only one open position per symbol at a time.
-
     slippage_pct : float
-        Slippage applied per trade as fraction of price (e.g. 0.001 for 0.1%).
-        Applied on entry (buy: price * (1 + slippage)) and exit (sell: price * (1 - slippage)).
+        Slippage applied per trade as fraction of price.
     sector_map : dict[str, str] | None
         Optional mapping of symbol -> sector name for sector exposure cap.
-        If provided, MAX_SECTOR_EXPOSURE_PCT from config is enforced.
 
     Returns
     -------
@@ -202,7 +198,6 @@ def simulate(
     if not symbols or not strategies:
         return SimResult(equity_curve=[], trade_log=[])
 
-    from config.settings import cfg as _cfg
     sector_map = sector_map or {}
     max_sector_pct = _cfg.MAX_SECTOR_EXPOSURE_PCT
 
@@ -213,9 +208,7 @@ def simulate(
     indicators: dict[tuple[str, str], pd.DataFrame] = {}
     for strat_name, strategy in strategies.items():
         for sym in symbols:
-            df = data[sym]
-            # Optional date clipping (we still keep full frame so indices line up)
-            indicators[(strat_name, sym)] = strategy.compute_indicators(df.copy())
+            indicators[(strat_name, sym)] = strategy.compute_indicators(data[sym].copy())
 
     # ── build date union ────────────────────
     all_dates: set[pd.Timestamp] = set()
@@ -237,6 +230,7 @@ def simulate(
     trade_log: list[SimTrade] = []
     equity_curve: list[tuple[date, float]] = []
     daily_deployed: list[float] = []
+    total_slippage_acc = 0.0  # FIX: accumulates everywhere
 
     # ── daily loop ──────────────────────────
     for current_date in dates:
@@ -258,7 +252,6 @@ def simulate(
             pos.highest_since_entry = max(pos.highest_since_entry, close_price)
             pos.lowest_since_entry = min(pos.lowest_since_entry, close_price)
 
-            # Build base.Position for should_exit
             base_pos = Position(
                 direction=pos.direction,
                 entry_price=pos.entry_price,
@@ -274,22 +267,16 @@ def simulate(
             should_exit_flag, exit_reason = strategy.should_exit(df_slice, i, base_pos)
 
             if should_exit_flag:
-                # Apply slippage on exit
-                if pos.direction == "BUY":
-                    # Selling — get slightly less due to slippage
-                    exit_slip = close_price * (1 - slippage_pct)
-                else:
-                    exit_slip = close_price * (1 + slippage_pct)
-
-                exit_txn = BaseStrategy.transaction_cost(exit_slip, pos.quantity, "exit")
+                exit_slip, exit_txn, exit_slip_cost = fill_exit(
+                    close_price, pos.quantity, slippage_pct, pos.direction
+                )
                 cash += pos.quantity * exit_slip - exit_txn
-                slippage_cost = abs(close_price - exit_slip) * pos.quantity
+                total_slippage_acc += exit_slip_cost
 
-                pnl = (exit_slip - pos.entry_price) * pos.quantity - exit_txn
-                pnl_pct = (exit_slip - pos.entry_price) / pos.entry_price * 100
-                if pos.direction == "SELL":
-                    pnl = (pos.entry_price - exit_slip) * pos.quantity - exit_txn
-                    pnl_pct = (pos.entry_price - exit_slip) / pos.entry_price * 100
+                pnl, pnl_pct = compute_trade_pnl(
+                    exit_slip, pos.entry_price, pos.quantity,
+                    pos.direction, exit_txn
+                )
 
                 trade_log.append(
                     SimTrade(
@@ -301,8 +288,8 @@ def simulate(
                         entry_price=pos.entry_price,
                         exit_price=close_price,
                         quantity=pos.quantity,
-                        pnl=round(pnl, 2),
-                        pnl_pct=round(pnl_pct, 2),
+                        pnl=pnl,
+                        pnl_pct=pnl_pct,
                         exit_reason=exit_reason,
                         hold_days=(current_date - pos.entry_date).days,
                     )
@@ -310,11 +297,10 @@ def simulate(
                 del open_positions[sym]
 
         # 2. Gather candidate signals
-        candidates = []  # list of (score, sym, strat_name, direction, conf, reason, sl, tgt, price)
+        candidates: list = []
         for strat_name, strategy in strategies.items():
             weight = strategy_weights.get(strat_name, 0.05)
             for sym in symbols:
-                # Skip if already in a position and we disallow multiples
                 if not allow_multiple_per_symbol and sym in open_positions:
                     continue
                 if current_date not in data[sym].index:
@@ -331,7 +317,7 @@ def simulate(
 
                 if not direction or confidence <= 0.3:
                     continue
-                if direction != "BUY":  # Cash equities — no shorting
+                if direction != "BUY":
                     continue
 
                 close_price = float(df_slice["close"].iloc[i])
@@ -346,97 +332,61 @@ def simulate(
 
                 score = confidence * weight
                 candidates.append(
-                    (score, sym, strat_name, direction, confidence, reason, sl, tgt, close_price, atr)
+                    (score, sym, strat_name, direction,
+                     confidence, reason, sl, tgt, close_price, atr)
                 )
 
         # 3. Rank and open positions
         candidates.sort(key=lambda x: x[0], reverse=True)
 
-        # 3b. Apply sector cap before opening
+        # 3b. Sector cap filter
         if sector_map:
-            current_equity_for_sector = cash + sum(
+            deployed_val = sum(
                 float(data[p.symbol].loc[current_date, "close"]) * p.quantity
                 for p in open_positions.values()
                 if current_date in data[p.symbol].index
             )
-            # Compute current sector exposure
-            sector_exposure: dict[str, float] = {}
-            for p in open_positions.values():
-                if current_date in data[p.symbol].index:
-                    sec = sector_map.get(p.symbol, "Unknown")
-                    price_today = float(data[p.symbol].loc[current_date, "close"])
-                    sector_exposure[sec] = sector_exposure.get(sec, 0) + p.quantity * price_today
-
-            # Filter candidates: skip if adding would exceed cap
-            filtered_candidates = []
-            for cand in candidates:
-                score, sym, strat_name, direction, confidence, reason, sl, tgt, entry_price, atr = cand
-                sec = sector_map.get(sym, "Unknown")
-                current_sector_val = sector_exposure.get(sec, 0)
-                # Estimate new position value
-                deployed = sum(
-                    float(data[p.symbol].loc[current_date, "close"]) * p.quantity
-                    for p in open_positions.values()
-                    if current_date in data[p.symbol].index
-                )
-                ce = cash + deployed
-                new_val = ce * position_size_pct
-                new_sector_pct = ((current_sector_val + new_val) / ce * 100) if ce > 0 else 0
-                if new_sector_pct <= max_sector_pct * 100:
-                    filtered_candidates.append(cand)
-                else:
-                    log.debug(f"  SKIPPED {sym}: {sec} exposure {new_sector_pct:.0f}% > {max_sector_pct*100:.0f}% cap")
-            candidates = filtered_candidates
+            sector_exposure = compute_sector_exposure(
+                open_positions, sector_map, data, current_date
+            )
+            candidates = filter_candidates_by_sector(
+                candidates, sector_map, sector_exposure,
+                cash, deployed_val, position_size_pct,
+                max_sector_pct,
+            )
 
         for (
-            score,
-            sym,
-            strat_name,
-            direction,
-            confidence,
-            reason,
-            sl,
-            tgt,
-            entry_price,
-            atr,
+            _score, sym, strat_name, direction, _conf, _reason,
+            sl, tgt, entry_price, atr,
         ) in candidates:
             if len(open_positions) >= max_positions:
                 break
             if not allow_multiple_per_symbol and sym in open_positions:
                 continue
 
-            # Compute position size
-            # Use current equity = cash + value of existing positions at current prices
-            deployed = 0.0
-            for p in open_positions.values():
-                if current_date in data[p.symbol].index:
-                    price_today = float(data[p.symbol].loc[current_date, "close"])
-                    deployed += p.quantity * price_today
-
-            current_equity = cash + deployed
+            # Position size
+            deployed_val = sum(
+                float(data[p.symbol].loc[current_date, "close"]) * p.quantity
+                for p in open_positions.values()
+                if current_date in data[p.symbol].index
+            )
+            current_equity = cash + deployed_val
             notional = current_equity * position_size_pct
             quantity = int(notional / entry_price)
             if quantity <= 0:
                 continue
 
-            entry_txn = BaseStrategy.transaction_cost(entry_price, quantity, "entry")
-            total_cost = quantity * entry_price + entry_txn
-            if total_cost > cash:
-                continue  # Insufficient cash — skip
-
             # Apply slippage on entry
-            if direction == "BUY":
-                exec_price = entry_price * (1 + slippage_pct)
-            else:
-                exec_price = entry_price * (1 - slippage_pct)
-            entry_txn = BaseStrategy.transaction_cost(exec_price, quantity, "entry")
-            total_cost = quantity * exec_price + entry_txn
-            if total_cost > cash:
-                continue  # Recheck with slippage
-            slippage_cost_entry = abs(exec_price - entry_price) * quantity
+            exec_price, entry_txn, entry_slip_cost = fill_entry(
+                entry_price, quantity, slippage_pct, direction
+            )
+            if not check_cash_constraint(cash, quantity, exec_price, entry_txn):
+                continue
+
+            total_slippage_acc += entry_slip_cost
 
             # Open
-            cash -= total_cost
+            cash -= quantity * exec_price + entry_txn
             df_full = indicators[(strat_name, sym)]
             mask = df_full.index <= current_date
             df_slice = df_full[mask]
@@ -447,7 +397,7 @@ def simulate(
                 strategy=strat_name,
                 direction=direction,
                 quantity=quantity,
-                entry_price=exec_price,  # Use executed price
+                entry_price=exec_price,
                 entry_date=current_date,
                 entry_idx=entry_idx,
                 stop_loss=sl,
@@ -457,18 +407,17 @@ def simulate(
                 lowest_since_entry=entry_price,
             )
 
-        # 4. Mark to market and record equity
-        deployed = 0.0
-        for p in open_positions.values():
-            if current_date in data[p.symbol].index:
-                price_today = float(data[p.symbol].loc[current_date, "close"])
-                deployed += p.quantity * price_today
-
-        total_equity = cash + deployed
+        # 4. Mark to market
+        deployed_val = sum(
+            float(data[p.symbol].loc[current_date, "close"]) * p.quantity
+            for p in open_positions.values()
+            if current_date in data[p.symbol].index
+        )
+        total_equity = cash + deployed_val
         equity_curve.append((current_date.date(), round(total_equity, 2)))
-        daily_deployed.append(deployed)
+        daily_deployed.append(deployed_val)
 
-    # ── END_OF_TEST: force close all open positions at final date ──
+    # ── END_OF_TEST: force close ──
     if open_positions and dates:
         last_date = dates[-1]
         for sym, pos in list(open_positions.items()):
@@ -481,14 +430,16 @@ def simulate(
                 continue
             i = len(df_slice) - 1
             close_price = float(df_slice["close"].iloc[i])
-            exit_txn = BaseStrategy.transaction_cost(close_price, pos.quantity, "exit")
-            cash += pos.quantity * close_price - exit_txn
+            exit_slip, exit_txn, exit_slip_cost = fill_exit(
+                close_price, pos.quantity, slippage_pct, pos.direction
+            )
+            cash += pos.quantity * exit_slip - exit_txn
+            total_slippage_acc += exit_slip_cost
 
-            pnl = (close_price - pos.entry_price) * pos.quantity - exit_txn
-            pnl_pct = (close_price - pos.entry_price) / pos.entry_price * 100
-            if pos.direction == "SELL":
-                pnl = (pos.entry_price - close_price) * pos.quantity - exit_txn
-                pnl_pct = (pos.entry_price - close_price) / pos.entry_price * 100
+            pnl, pnl_pct = compute_trade_pnl(
+                exit_slip, pos.entry_price, pos.quantity,
+                pos.direction, exit_txn
+            )
 
             trade_log.append(
                 SimTrade(
@@ -500,71 +451,39 @@ def simulate(
                     entry_price=pos.entry_price,
                     exit_price=close_price,
                     quantity=pos.quantity,
-                    pnl=round(pnl, 2),
-                    pnl_pct=round(pnl_pct, 2),
+                    pnl=pnl,
+                    pnl_pct=pnl_pct,
                     exit_reason="END_OF_TEST",
                     hold_days=(last_date - pos.entry_date).days,
                 )
             )
             del open_positions[sym]
-        # Re-record final equity after forced closes
-        deployed = 0.0
-        for p in open_positions.values():
-            if last_date in data[p.symbol].index:
-                price_today = float(data[p.symbol].loc[last_date, "close"])
-                deployed += p.quantity * price_today
-        total_equity = cash + deployed
+
+        deployed_val = sum(
+            float(data[p.symbol].loc[last_date, "close"]) * p.quantity
+            for p in open_positions.values()
+            if last_date in data[p.symbol].index
+        )
+        total_equity = cash + deployed_val
         if equity_curve and equity_curve[-1][0] != last_date.date():
             equity_curve.append((last_date.date(), round(total_equity, 2)))
         elif equity_curve:
             equity_curve[-1] = (last_date.date(), round(total_equity, 2))
 
-    # ── compute turnover ────────────────────
-    total_turnover = 0.0
-    for t in trade_log:
-        entry_notional = t.quantity * t.entry_price
-        exit_notional = t.quantity * t.exit_price
-        total_turnover += abs(entry_notional) + abs(exit_notional)
-    avg_equity = np.mean([e for _, e in equity_curve]) if equity_curve else initial_capital
-    years_t = max((dates[-1] - dates[0]).days / 365.25, 1/365.25) if len(dates) >= 2 else 1.0
-    turnover_ratio = total_turnover / avg_equity if avg_equity > 0 else 0.0
-    turnover_annual = turnover_ratio / years_t if years_t > 0 else 0.0
-
     # ── compute metrics ─────────────────────
     equities = [e for _, e in equity_curve]
     final_equity = equities[-1] if equities else initial_capital
-    years = max((dates[-1] - dates[0]).days / 365.25, 1/365.25) if len(dates) >= 2 else 0.0
+    years = max((dates[-1] - dates[0]).days / 365.25, 1 / 365.25) if len(dates) >= 2 else 0.0
 
-    cagr = _compute_cagr(initial_capital, final_equity, years)
+    cagr = compute_cagr(initial_capital, final_equity, years)
     max_dd = max_drawdown(equities) if equities else 0.0
-    sharpe, sharpe_valid = _compute_equity_sharpe(equities) if equities else (0.0, False)
+    sharpe, sharpe_valid = compute_equity_sharpe(equities) if equities else (0.0, False)
     ui = ulcer_index(equities) if equities else 0.0
     wm = worst_month(equity_curve) if equity_curve else {}
 
-    # Trade-level metrics
-    if trade_log:
-        total_trades = len(trade_log)
-        wins = [t for t in trade_log if t.pnl > 0]
-        losses = [t for t in trade_log if t.pnl <= 0]
-        win_rate = round(len(wins) / total_trades * 100, 1)
-        avg_win = np.mean([t.pnl_pct for t in wins]) if wins else 0.0
-        avg_loss = np.mean([t.pnl_pct for t in losses]) if losses else 0.0
-        expectancy = round(
-            (len(wins) / total_trades) * avg_win
-            + (len(losses) / total_trades) * avg_loss,
-            2,
-        )
-        gross_profit = sum(t.pnl for t in wins)
-        gross_loss = abs(sum(t.pnl for t in losses))
-        if gross_loss == 0:
-            profit_factor = float("inf") if gross_profit > 0 else 0.0
-        else:
-            profit_factor = round(gross_profit / gross_loss, 2)
-    else:
-        total_trades = 0
-        win_rate = 0.0
-        expectancy = 0.0
-        profit_factor = 0.0
+    tm = compute_trade_metrics(trade_log)
+    total_tm = tm["total_trades"]
+    total_turnover, turnover_annual = compute_turnover(trade_log, equity_curve, initial_capital, dates)
 
     cash_utilization_avg = 0.0
     if equities and daily_deployed:
@@ -573,19 +492,11 @@ def simulate(
 
     total_return_pct = round((final_equity / initial_capital - 1) * 100, 2)
 
-    # Compact summary print
-    sharpe_str = f"{sharpe:.2f}" if sharpe_valid else "N/A"
-    pf_str = "INF" if profit_factor == float("inf") else f"{profit_factor:.2f}"
-    turnover_str = f"{turnover_annual:.1f}x/yr" if turnover_annual < 100 else f"{turnover_annual:.0f}x/yr"
-    print(
-        f"Portfolio: CAGR={cagr:.1f}% | MaxDD={max_dd:.1f}% "
-        f"| Sharpe={sharpe_str} | PF={pf_str} | Ulcer={ui:.2f} "
-        f"| Turnover={turnover_str}"
+    # Summary print
+    print_portfolio_summary(
+        cagr, max_dd, sharpe, sharpe_valid, tm["profit_factor"],
+        ui, turnover_annual, total_tm, wm,
     )
-    if wm:
-        print(f"  Worst Month: {wm['month']} ({wm['return_pct']:.1f}%)")
-    if turnover_annual > 3.0 and total_trades > 5:
-        print(f"  ⚠️  High turnover ({turnover_annual:.1f}x/yr) increases transaction costs")
 
     return SimResult(
         equity_curve=equity_curve,
@@ -594,18 +505,18 @@ def simulate(
         max_drawdown=max_dd,
         sharpe=sharpe,
         sharpe_valid=sharpe_valid,
-        expectancy=expectancy,
-        total_trades=total_trades,
-        win_rate=win_rate,
+        expectancy=tm["expectancy"],
+        total_trades=total_tm,
+        win_rate=tm["win_rate"],
         cash_utilization_avg=cash_utilization_avg,
         final_equity=round(final_equity, 2),
         initial_capital=round(initial_capital, 2),
         total_return_pct=total_return_pct,
-        profit_factor=profit_factor,
+        profit_factor=tm["profit_factor"],
         ulcer_index=round(ui, 2),
         worst_month_return=wm.get("return_pct", 0.0) if wm else 0.0,
         worst_month_label=wm.get("month", "") if wm else "",
-        turnover=round(total_turnover, 2),
-        turnover_annual=round(turnover_annual, 2),
-        total_slippage_cost=0.0,
+        turnover=total_turnover,
+        turnover_annual=turnover_annual,
+        total_slippage_cost=round(total_slippage_acc, 2),
     )

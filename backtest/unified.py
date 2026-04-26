@@ -67,6 +67,16 @@ NIFTY100_PLUS = NIFTY50 + [
 
 
 from backtest.walkforward import generate_walkforward_windows, summarize_walkforward
+from backtest.reporting import (
+    print_backtest_header,
+    print_backtest_table,
+    print_backtest_footer,
+    print_compact_summary,
+    print_benchmarks,
+    print_walkforward_header,
+    print_walkforward_table,
+    print_walkforward_summary,
+)
 
 
 def _run_window(
@@ -205,53 +215,15 @@ def run_backtest(
 
     # Print results
     mode = "IN-SAMPLE"
-    print(f"\n{'='*105}")
-    print(f"  UNIFIED BACKTEST ({mode}) — {len(symbols)} stocks, {years} years")
-    print(f"  Strategy code: strategies.registry (SAME as live engine)")
-    print(f"{'='*105}")
-    print(f"  {'Strategy':18s} {'Trades':>6s} {'WR':>6s} {'CAGR':>7s} {'Expect':>7s} {'Sharpe':>10s} {'PF':>5s} {'MaxDD':>6s} {'AvgWin':>7s} {'AvgLoss':>8s} {'Hold':>5s}")
-    print(f"  {'-'*102}")
-
-    for name, r in sorted(summary.items(), key=lambda x: x[1].cagr, reverse=True):
-        if r.total_trades == 0:
-            print(f"  {name:18s}  — no trades —")
-            continue
-
-        if r.sharpe_valid:
-            sharpe_str = f"{r.sharpe:6.2f}"
-        elif r.total_trades > 1:
-            sharpe_str = f"{r.sharpe:5.2f}(n<30)"
-        else:
-            sharpe_str = "   N/A"
-
-        verdict = "🏆" if r.cagr > 10 and r.profit_factor > 1.5 else \
-                  "✅" if r.cagr > 5 and r.profit_factor > 1.2 else \
-                  "🟡" if r.cagr > 0 else "❌"
-
-        print(
-            f"  {verdict} {name:16s} {r.total_trades:6d} {r.win_rate:5.1f}% "
-            f"{r.cagr:6.1f}% {r.expectancy:6.2f}% {sharpe_str:>10s} "
-            f"{r.profit_factor:4.2f} {r.max_drawdown:5.1f}% "
-            f"{r.avg_win:6.1f}% {r.avg_loss:7.1f}% {r.avg_hold_days:4.0f}d"
-        )
-
-    print(f"{'='*105}")
-    print(f"  Note: Sharpe marked (n<30) has insufficient trades for statistical validity.")
-    print(f"  Primary metrics: CAGR (compound growth), Expectancy (avg return/trade), PF (profit/loss ratio)")
-
-    # Compact one-line summary per strategy
-    print()
-    for name, r in sorted(summary.items(), key=lambda x: x[1].cagr, reverse=True):
-        if r.total_trades == 0:
-            continue
-        sharpe_str = f"{r.sharpe:.2f}" if r.sharpe_valid else "N/A"
-        print(f"  {name}: CAGR={r.cagr:.1f}% | MaxDD={r.max_drawdown:.1f}% | Sharpe={sharpe_str}")
+    print_backtest_header(mode, len(symbols), years)
+    print_backtest_table(summary)
+    print_backtest_footer()
+    print_compact_summary(summary)
 
     # ── Benchmarks ──
     if data:
         from analytics.benchmark import run_nifty_proxy, run_equal_weight, run_buy_and_hold
 
-        # Determine start/end dates from data
         all_dates_set: set[pd.Timestamp] = set()
         for sym in symbols:
             if sym in data:
@@ -265,24 +237,7 @@ def run_backtest(
             b_eqw = run_equal_weight(data, symbols, start_date=start_date, end_date=end_date)
             b_bnh = run_buy_and_hold(data, symbols, start_date=start_date, end_date=end_date)
 
-            print(f"\n{'='*105}")
-            print(f"  BENCHMARKS")
-            print(f"{'='*105}")
-            if b_nifty.equity_curve:
-                print(f"  NIFTY50 Proxy: CAGR={b_nifty.cagr:.1f}% | MaxDD={b_nifty.max_drawdown:.1f}%")
-            else:
-                print(f"  NIFTY50 Proxy: insufficient data")
-            if b_eqw.equity_curve:
-                print(f"  Equal Weight:  CAGR={b_eqw.cagr:.1f}% | MaxDD={b_eqw.max_drawdown:.1f}%")
-            else:
-                print(f"  Equal Weight:  insufficient data")
-            if b_bnh.equity_curve:
-                print(f"  Buy & Hold:    CAGR={b_bnh.cagr:.1f}% | MaxDD={b_bnh.max_drawdown:.1f}%")
-            else:
-                print(f"  Buy & Hold:    insufficient data")
-            print(f"{'='*105}")
-            print(f"  Note: Equal Weight and Buy & Hold are identical for static allocation.")
-            print(f"  For a meaningfully different third benchmark, consider a trend-filtered variant.")
+            print_benchmarks(b_nifty, b_eqw, b_bnh)
 
     # Save results
     output = {
@@ -412,37 +367,10 @@ def _run_walkforward_backtest(
     # Summarize
     wf_summary = summarize_walkforward(window_results, is_results)
 
-    # Print walk-forward table
-    print(f"\n{'='*100}")
-    print(f"  WALK-FORWARD VALIDATION — {len(symbols)} stocks, {len(windows)} windows")
-    print(f"  {train_years}yr train / {test_years}yr test / {step_years}yr step")
-    print(f"{'='*100}")
-    header = f"  {'Window':>6s}  {'Train Start':>12s}  {'Train End':>12s}  {'Test Start':>12s}  {'Test End':>12s}  {'CAGR':>7s}  {'MaxDD':>7s}  {'Trades':>6s}"
-    print(header)
-    print(f"  {'-'*96}")
-
-    for w_idx, w in enumerate(window_results):
-        ts_str = w["test_start"].strftime("%Y-%m-%d")
-        te_str = w["test_end"].strftime("%Y-%m-%d")
-        trs_str = w["train_start"].strftime("%Y-%m-%d")
-        tre_str = w["train_end"].strftime("%Y-%m-%d")
-        print(
-            f"  {w_idx+1:6d}  {trs_str:>12s}  {tre_str:>12s}  {ts_str:>12s}  {te_str:>12s}  "
-            f"{w['cagr']:6.1f}%  {w['max_dd']:6.1f}%  {w['total_trades']:6d}"
-        )
-
-    print(f"  {'-'*96}")
-
-    # Print summary
-    wfe_str = str(wf_summary["wfe"]) if isinstance(wf_summary["wfe"], str) else f"{wf_summary['wfe']:.2f}"
-    print(f"  SUMMARY")
-    print(f"  {'─'*40}")
-    print(f"    Avg OOS CAGR:    {wf_summary['avg_oos_cagr']:.1f}%")
-    print(f"    Avg OOS MaxDD:   {wf_summary['avg_oos_maxdd']:.1f}%")
-    print(f"    Avg OOS Trades:  {wf_summary['avg_oos_trades']:.1f}")
-    print(f"    % Positive:      {wf_summary['pct_positive_windows']:.1f}%")
-    print(f"    WFE:             {wfe_str}")
-    print(f"{'='*100}")
+    # Print walk-forward results
+    print_walkforward_header(len(symbols), len(windows), train_years, test_years, step_years)
+    print_walkforward_table(window_results)
+    print_walkforward_summary(wf_summary)
 
     # Save results
     output = {
