@@ -6,3 +6,14 @@ data/instrument_cache.json
 data/fundamental_full_universe.json
 data/fundscan_progress.json
 
+
+.env
+.env.*
+*.token
+logs/
+*.log
+*.gz
+data/kite_token.json
+__pycache__/
+*.pyc
+
