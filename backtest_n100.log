@@ -1,0 +1,530 @@
+nohup: ignoring input
+[32m12:13:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m═══ UNIFIED BACKTEST — 114 stocks, 10yr ═══[0m
+[32m12:13:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [1/114] RELIANCE...[0m
+[32m12:13:33[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   4 trades | WR=100.0% | Sharpe=+5.17 | PF=53.63[0m
+[32m12:13:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 53.8% | Sharpe=+0.36 | PF=2.78[0m
+[32m12:15:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.31 | PF=2.20[0m
+[32m12:17:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.13 | PF=0.68[0m
+[32m12:17:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  46 trades | WR= 47.8% | Sharpe=+0.50 | PF=1.81[0m
+[32m12:18:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  46 trades | WR= 41.3% | Sharpe=+0.14 | PF=1.16[0m
+[32m12:18:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [2/114] TCS...[0m
+[32m12:18:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   4 trades | WR= 75.0% | Sharpe=+0.15 | PF=1.43[0m
+[32m12:18:54[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 55.6% | Sharpe=+0.59 | PF=5.32[0m
+[32m12:20:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.23 | PF=1.74[0m
+[32m12:22:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+1.07 | PF=21.26[0m
+[32m12:22:22[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  39 trades | WR= 59.0% | Sharpe=+0.48 | PF=1.87[0m
+[32m12:23:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  39 trades | WR= 51.3% | Sharpe=+0.66 | PF=2.22[0m
+[32m12:23:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [3/114] HDFCBANK...[0m
+[32m12:23:19[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   3 trades | WR=100.0% | Sharpe=+15.49 | PF=37.66[0m
+[32m12:23:19[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 40.0% | Sharpe=+0.20 | PF=1.66[0m
+[32m12:24:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 81.8% | Sharpe=+0.58 | PF=4.36[0m
+[32m12:26:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.18 | PF=1.53[0m
+[32m12:26:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  37 trades | WR= 51.4% | Sharpe=+0.37 | PF=1.54[0m
+[32m12:27:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  39 trades | WR= 46.2% | Sharpe=+0.07 | PF=1.08[0m
+[32m12:27:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [4/114] INFY...[0m
+[32m12:27:54[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   5 trades | WR= 60.0% | Sharpe=+0.31 | PF=1.93[0m
+[32m12:27:54[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   7 trades | WR= 71.4% | Sharpe=+0.50 | PF=6.66[0m
+[32m12:29:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 41.7% | Sharpe=+0.04 | PF=1.12[0m
+[32m12:31:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.56 | PF=4.16[0m
+[32m12:31:45[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 55.0% | Sharpe=+0.53 | PF=1.88[0m
+[32m12:32:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  33 trades | WR= 36.4% | Sharpe=+0.05 | PF=1.07[0m
+[32m12:32:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [5/114] ICICIBANK...[0m
+[32m12:32:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   9 trades | WR= 66.7% | Sharpe=+0.43 | PF=2.35[0m
+[32m12:32:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  16 trades | WR= 37.5% | Sharpe=+0.32 | PF=2.24[0m
+[32m12:34:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 81.8% | Sharpe=+0.79 | PF=8.05[0m
+[32m12:36:12[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=-0.27 | PF=0.43[0m
+[32m12:36:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  48 trades | WR= 54.2% | Sharpe=+0.61 | PF=2.01[0m
+[32m12:37:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  56 trades | WR= 44.6% | Sharpe=+0.44 | PF=1.58[0m
+[32m12:37:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [6/114] BHARTIARTL...[0m
+[32m12:37:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   9 trades | WR= 66.7% | Sharpe=+0.30 | PF=1.91[0m
+[32m12:37:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 58.3% | Sharpe=+0.62 | PF=6.09[0m
+[32m12:38:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=+0.35 | PF=2.21[0m
+[32m12:40:42[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.72 | PF=9.75[0m
+[32m12:40:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 52.5% | Sharpe=+0.42 | PF=1.66[0m
+[32m12:41:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  43 trades | WR= 44.2% | Sharpe=+0.44 | PF=1.84[0m
+[32m12:41:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [7/114] ITC...[0m
+[32m12:41:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR= 50.0% | Sharpe=+0.05 | PF=1.12[0m
+[32m12:41:35[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 55.6% | Sharpe=+0.32 | PF=3.01[0m
+[32m12:43:14[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.25 | PF=1.68[0m
+[32m12:45:08[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.35 | PF=2.36[0m
+[32m12:45:09[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  32 trades | WR= 50.0% | Sharpe=+0.54 | PF=2.15[0m
+[32m12:46:23[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  26 trades | WR= 50.0% | Sharpe=+0.30 | PF=2.36[0m
+[32m12:46:23[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [8/114] SBIN...[0m
+[32m12:46:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  14 trades | WR= 50.0% | Sharpe=+0.06 | PF=1.15[0m
+[32m12:46:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  17 trades | WR= 35.3% | Sharpe=+0.09 | PF=1.32[0m
+[32m12:48:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.01 | PF=1.02[0m
+[32m12:49:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.41 | PF=3.65[0m
+[32m12:49:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  42 trades | WR= 57.1% | Sharpe=+0.67 | PF=2.18[0m
+[32m12:51:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  45 trades | WR= 46.7% | Sharpe=+0.36 | PF=1.50[0m
+[32m12:51:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [9/114] LT...[0m
+[32m12:51:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   4 trades | WR= 75.0% | Sharpe=+0.77 | PF=4.50[0m
+[32m12:51:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  15 trades | WR= 26.7% | Sharpe=+0.20 | PF=1.72[0m
+[32m12:52:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.22 | PF=1.73[0m
+[32m12:54:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.75 | PF=6.53[0m
+[32m12:54:28[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  41 trades | WR= 58.5% | Sharpe=+0.45 | PF=1.71[0m
+[32m12:55:35[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  39 trades | WR= 53.8% | Sharpe=+0.58 | PF=2.04[0m
+[32m12:55:35[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [10/114] HCLTECH...[0m
+[32m12:55:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   7 trades | WR= 71.4% | Sharpe=+0.52 | PF=2.76[0m
+[32m12:55:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 46.2% | Sharpe=+0.36 | PF=3.16[0m
+[32m12:57:20[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 75.0% | Sharpe=+0.61 | PF=12.08[0m
+[32m12:59:01[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.42 | PF=3.02[0m
+[32m12:59:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  36 trades | WR= 61.1% | Sharpe=+0.64 | PF=2.41[0m
+[32m13:00:00[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 59.5% | Sharpe=+0.63 | PF=2.11[0m
+[32m13:00:01[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [11/114] BAJFINANCE...[0m
+[32m13:00:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  12 trades | WR= 50.0% | Sharpe=+0.17 | PF=1.41[0m
+[32m13:00:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  17 trades | WR= 47.1% | Sharpe=+0.34 | PF=2.51[0m
+[32m13:02:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.20 | PF=0.62[0m
+[32m13:04:12[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.21 | PF=0.50[0m
+[32m13:04:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  43 trades | WR= 44.2% | Sharpe=+0.38 | PF=1.64[0m
+[32m13:05:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  43 trades | WR= 46.5% | Sharpe=+0.55 | PF=2.12[0m
+[32m13:05:28[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [12/114] HINDUNILVR...[0m
+[32m13:05:30[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  10 trades | WR= 60.0% | Sharpe=+0.20 | PF=1.53[0m
+[32m13:05:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 66.7% | Sharpe=+0.48 | PF=5.04[0m
+[32m13:07:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=+0.04 | PF=1.09[0m
+[32m13:09:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=+0.06 | PF=1.18[0m
+[32m13:09:43[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  37 trades | WR= 45.9% | Sharpe=+0.31 | PF=1.48[0m
+[32m13:11:14[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  35 trades | WR= 25.7% | Sharpe=-0.14 | PF=0.84[0m
+[32m13:11:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [13/114] MARUTI...[0m
+[32m13:11:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR= 66.7% | Sharpe=+0.37 | PF=2.15[0m
+[32m13:11:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  14 trades | WR= 35.7% | Sharpe=+0.15 | PF=1.53[0m
+[32m13:13:13[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 41.7% | Sharpe=+0.03 | PF=1.09[0m
+[32m13:15:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.06 | PF=1.15[0m
+[32m13:15:23[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 60.0% | Sharpe=+0.40 | PF=1.69[0m
+[32m13:16:38[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 54.1% | Sharpe=+0.29 | PF=1.43[0m
+[32m13:16:38[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [14/114] KOTAKBANK...[0m
+[32m13:16:39[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   9 trades | WR= 55.6% | Sharpe=-0.00 | PF=0.99[0m
+[32m13:16:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 30.8% | Sharpe=+0.04 | PF=1.11[0m
+[32m13:18:33[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.07 | PF=0.84[0m
+[32m13:20:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.40 | PF=2.50[0m
+[32m13:20:42[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  36 trades | WR= 50.0% | Sharpe=+0.32 | PF=1.57[0m
+[32m13:21:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  35 trades | WR= 45.7% | Sharpe=+0.06 | PF=1.08[0m
+[32m13:21:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [15/114] SUNPHARMA...[0m
+[32m13:21:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR= 16.7% | Sharpe=-0.76 | PF=0.24[0m
+[32m13:21:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 50.0% | Sharpe=+0.48 | PF=5.97[0m
+[32m13:23:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 75.0% | Sharpe=+0.37 | PF=2.49[0m
+[32m13:25:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 25.0% | Sharpe=-0.81 | PF=0.13[0m
+[32m13:25:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  42 trades | WR= 52.4% | Sharpe=+0.62 | PF=2.18[0m
+[32m13:27:06[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  31 trades | WR= 41.9% | Sharpe=+0.32 | PF=1.55[0m
+[32m13:27:06[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [16/114] WIPRO...[0m
+[32m13:27:07[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   7 trades | WR= 71.4% | Sharpe=+0.46 | PF=2.54[0m
+[32m13:27:07[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 44.4% | Sharpe=+0.32 | PF=5.13[0m
+[32m13:29:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.49 | PF=3.16[0m
+[32m13:31:08[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 22.2% | Sharpe=-0.09 | PF=0.79[0m
+[32m13:31:10[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  37 trades | WR= 51.4% | Sharpe=+0.35 | PF=1.55[0m
+[32m13:32:22[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  33 trades | WR= 54.5% | Sharpe=+0.50 | PF=1.94[0m
+[32m13:32:22[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [17/114] M&M...[0m
+[32m13:32:23[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   7 trades | WR= 57.1% | Sharpe=+0.44 | PF=2.48[0m
+[32m13:32:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 70.0% | Sharpe=+0.55 | PF=15.42[0m
+[32m13:34:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.06 | PF=1.17[0m
+[32m13:36:11[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.45 | PF=3.25[0m
+[32m13:36:14[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  39 trades | WR= 51.3% | Sharpe=+0.02 | PF=1.03[0m
+[32m13:37:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  38 trades | WR= 50.0% | Sharpe=+0.77 | PF=3.06[0m
+[32m13:37:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [18/114] ULTRACEMCO...[0m
+[32m13:37:19[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   4 trades | WR= 50.0% | Sharpe=+0.31 | PF=1.95[0m
+[32m13:37:20[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 30.0% | Sharpe=+0.18 | PF=1.71[0m
+[32m13:39:13[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 41.7% | Sharpe=+0.07 | PF=1.20[0m
+[32m13:41:19[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.41 | PF=4.06[0m
+[32m13:41:20[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  38 trades | WR= 44.7% | Sharpe=+0.31 | PF=1.53[0m
+[32m13:42:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  38 trades | WR= 39.5% | Sharpe=+0.24 | PF=1.38[0m
+[32m13:42:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [19/114] AXISBANK...[0m
+[32m13:42:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  10 trades | WR= 90.0% | Sharpe=+1.33 | PF=29.71[0m
+[32m13:42:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 33.3% | Sharpe=-0.10 | PF=0.79[0m
+[32m13:44:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.37 | PF=2.41[0m
+[32m13:46:20[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=-0.17 | PF=0.61[0m
+[32m13:46:22[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  41 trades | WR= 46.3% | Sharpe=+0.06 | PF=1.07[0m
+[32m13:47:28[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 43.2% | Sharpe=+0.20 | PF=1.27[0m
+[32m13:47:29[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [20/114] ASIANPAINT...[0m
+[32m13:47:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   4 trades | WR=100.0% | Sharpe=+9.37 | PF=55.09[0m
+[32m13:47:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  16 trades | WR= 31.2% | Sharpe=+0.01 | PF=1.03[0m
+[32m13:49:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.70 | PF=9.68[0m
+[32m13:51:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.34 | PF=2.82[0m
+[32m13:51:43[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  42 trades | WR= 47.6% | Sharpe=+0.39 | PF=1.61[0m
+[32m13:53:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  39 trades | WR= 38.5% | Sharpe=+0.07 | PF=1.09[0m
+[32m13:53:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [21/114] TITAN...[0m
+[32m13:53:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR=100.0% | Sharpe=+3.96 | PF=88.32[0m
+[32m13:53:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  14 trades | WR= 50.0% | Sharpe=+0.50 | PF=6.36[0m
+[32m13:54:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.22 | PF=1.83[0m
+[32m13:56:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.76 | PF=6.56[0m
+[32m13:56:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 60.0% | Sharpe=+0.65 | PF=2.37[0m
+[32m13:57:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  43 trades | WR= 51.2% | Sharpe=+0.72 | PF=2.69[0m
+[32m13:57:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [22/114] NESTLEIND...[0m
+[32m13:57:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   4 trades | WR=100.0% | Sharpe=+1.93 | PF=39.99[0m
+[32m13:57:49[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 58.3% | Sharpe=+0.57 | PF=4.88[0m
+[32m13:59:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=-0.32 | PF=0.45[0m
+[32m14:02:10[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.33 | PF=2.17[0m
+[32m14:02:12[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  38 trades | WR= 50.0% | Sharpe=+0.65 | PF=2.39[0m
+[32m14:03:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  40 trades | WR= 47.5% | Sharpe=+0.36 | PF=1.55[0m
+[32m14:03:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [23/114] JSWSTEEL...[0m
+[32m14:03:18[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   5 trades | WR= 40.0% | Sharpe=+0.18 | PF=1.51[0m
+[32m14:03:19[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  11 trades | WR= 54.5% | Sharpe=+0.46 | PF=7.06[0m
+[32m14:04:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 75.0% | Sharpe=+0.41 | PF=5.00[0m
+[32m14:06:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.43 | PF=7.52[0m
+[32m14:06:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  39 trades | WR= 53.8% | Sharpe=+0.70 | PF=3.51[0m
+[32m14:07:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  40 trades | WR= 55.0% | Sharpe=+0.74 | PF=2.51[0m
+[32m14:07:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [24/114] TATASTEEL...[0m
+[32m14:07:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  20 trades | WR= 40.0% | Sharpe=+0.05 | PF=1.10[0m
+[32m14:07:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  16 trades | WR= 31.2% | Sharpe=+0.34 | PF=2.94[0m
+[32m14:09:06[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.59 | PF=8.25[0m
+[32m14:10:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.43 | PF=6.72[0m
+[32m14:10:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  39 trades | WR= 53.8% | Sharpe=+0.68 | PF=2.76[0m
+[32m14:12:01[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  35 trades | WR= 48.6% | Sharpe=+0.48 | PF=2.11[0m
+[32m14:12:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [25/114] BAJAJ-AUTO...[0m
+[32m14:12:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   5 trades | WR= 60.0% | Sharpe=+0.16 | PF=1.38[0m
+[32m14:12:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 60.0% | Sharpe=+0.43 | PF=4.27[0m
+[32m14:13:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.22 | PF=1.85[0m
+[32m14:15:43[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.17 | PF=1.70[0m
+[32m14:15:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  34 trades | WR= 58.8% | Sharpe=+0.50 | PF=2.08[0m
+[32m14:16:59[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 59.5% | Sharpe=+0.47 | PF=1.95[0m
+[32m14:16:59[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [26/114] TECHM...[0m
+[32m14:17:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   9 trades | WR= 55.6% | Sharpe=+0.16 | PF=1.40[0m
+[32m14:17:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 66.7% | Sharpe=+0.54 | PF=7.87[0m
+[32m14:19:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.03 | PF=0.94[0m
+[32m14:21:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.14 | PF=1.44[0m
+[32m14:21:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  39 trades | WR= 51.3% | Sharpe=+0.43 | PF=1.82[0m
+[32m14:22:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 51.4% | Sharpe=+0.74 | PF=2.78[0m
+[32m14:22:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [27/114] INDUSINDBK...[0m
+[32m14:22:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  13 trades | WR= 30.8% | Sharpe=-0.16 | PF=0.71[0m
+[32m14:22:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  14 trades | WR= 28.6% | Sharpe=+0.01 | PF=1.02[0m
+[32m14:24:13[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.08 | PF=1.24[0m
+[32m14:26:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.57 | PF=4.30[0m
+[32m14:26:26[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  33 trades | WR= 51.5% | Sharpe=+0.13 | PF=1.18[0m
+[32m14:28:01[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  28 trades | WR= 53.6% | Sharpe=+0.08 | PF=1.24[0m
+[32m14:28:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [28/114] CIPLA...[0m
+[32m14:28:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   1 trades | WR=  0.0% | Sharpe=+0.00 | PF=0.00[0m
+[32m14:28:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  11 trades | WR= 27.3% | Sharpe=+0.12 | PF=1.38[0m
+[32m14:29:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 25.0% | Sharpe=-0.19 | PF=0.65[0m
+[32m14:31:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.38 | PF=0.38[0m
+[32m14:32:00[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  31 trades | WR= 45.2% | Sharpe=+0.08 | PF=1.12[0m
+[32m14:33:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  33 trades | WR= 33.3% | Sharpe=+0.02 | PF=1.02[0m
+[32m14:33:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [29/114] DRREDDY...[0m
+[32m14:33:23[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR= 66.7% | Sharpe=+0.71 | PF=4.87[0m
+[32m14:33:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 60.0% | Sharpe=+0.25 | PF=2.24[0m
+[32m14:35:19[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.18 | PF=0.63[0m
+[32m14:37:18[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.36 | PF=2.97[0m
+[32m14:37:20[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  33 trades | WR= 60.6% | Sharpe=+0.94 | PF=3.69[0m
+[32m14:38:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  33 trades | WR= 48.5% | Sharpe=+0.55 | PF=2.19[0m
+[32m14:38:45[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [30/114] EICHERMOT...[0m
+[32m14:38:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   7 trades | WR= 71.4% | Sharpe=+0.42 | PF=2.48[0m
+[32m14:38:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 61.5% | Sharpe=+0.47 | PF=3.82[0m
+[32m14:40:35[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.09 | PF=1.26[0m
+[32m14:42:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.23 | PF=1.69[0m
+[32m14:42:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  44 trades | WR= 47.7% | Sharpe=+0.38 | PF=1.54[0m
+[32m14:42:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  42 trades | WR= 47.6% | Sharpe=+0.56 | PF=2.11[0m
+[32m14:42:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [31/114] BPCL...[0m
+[32m14:42:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  15 trades | WR= 73.3% | Sharpe=+0.62 | PF=3.54[0m
+[32m14:42:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  11 trades | WR= 45.5% | Sharpe=+0.24 | PF=1.98[0m
+[32m14:44:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.10 | PF=1.29[0m
+[32m14:46:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 22.2% | Sharpe=-0.75 | PF=0.06[0m
+[32m14:46:06[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  45 trades | WR= 53.3% | Sharpe=+0.21 | PF=1.27[0m
+[32m14:47:10[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  40 trades | WR= 45.0% | Sharpe=+0.05 | PF=1.06[0m
+[32m14:47:10[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [32/114] COALINDIA...[0m
+[32m14:47:11[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  10 trades | WR= 80.0% | Sharpe=+0.90 | PF=6.13[0m
+[32m14:47:12[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   8 trades | WR= 75.0% | Sharpe=+0.62 | PF=10.65[0m
+[32m14:48:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.47 | PF=3.22[0m
+[32m14:50:33[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.13 | PF=1.35[0m
+[32m14:50:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 50.0% | Sharpe=+0.65 | PF=2.25[0m
+[32m14:51:38[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  33 trades | WR= 57.6% | Sharpe=+0.67 | PF=2.98[0m
+[32m14:51:38[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [33/114] DIVISLAB...[0m
+[32m14:51:39[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR= 83.3% | Sharpe=+1.01 | PF=5.99[0m
+[32m14:51:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  11 trades | WR= 54.5% | Sharpe=+0.64 | PF=5.81[0m
+[32m14:53:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.25 | PF=1.91[0m
+[32m14:55:00[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 22.2% | Sharpe=-0.37 | PF=0.39[0m
+[32m14:55:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  39 trades | WR= 53.8% | Sharpe=+1.03 | PF=4.33[0m
+[32m14:55:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  36 trades | WR= 50.0% | Sharpe=+0.66 | PF=2.66[0m
+[32m14:55:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [34/114] BRITANNIA...[0m
+[32m14:56:00[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR= 66.7% | Sharpe=+0.33 | PF=1.94[0m
+[32m14:56:01[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 50.0% | Sharpe=+0.37 | PF=3.17[0m
+[32m14:57:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.17 | PF=0.66[0m
+[32m14:59:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.17 | PF=1.55[0m
+[32m14:59:26[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  35 trades | WR= 42.9% | Sharpe=+0.66 | PF=2.44[0m
+[32m15:00:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  36 trades | WR= 38.9% | Sharpe=+0.17 | PF=1.24[0m
+[32m15:00:28[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [35/114] HEROMOTOCO...[0m
+[32m15:00:30[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   8 trades | WR= 37.5% | Sharpe=+0.10 | PF=1.24[0m
+[32m15:00:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 33.3% | Sharpe=+0.16 | PF=2.09[0m
+[32m15:02:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.18 | PF=0.61[0m
+[32m15:03:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.06 | PF=0.87[0m
+[32m15:03:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  35 trades | WR= 40.0% | Sharpe=+0.13 | PF=1.17[0m
+[32m15:04:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  30 trades | WR= 50.0% | Sharpe=+0.58 | PF=2.44[0m
+[32m15:04:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [36/114] HINDALCO...[0m
+[32m15:04:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  16 trades | WR= 56.2% | Sharpe=+0.26 | PF=1.71[0m
+[32m15:04:49[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  15 trades | WR= 46.7% | Sharpe=+0.37 | PF=3.64[0m
+[32m15:06:29[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.38 | PF=3.61[0m
+[32m15:07:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 25.0% | Sharpe=+0.03 | PF=1.07[0m
+[32m15:07:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 52.5% | Sharpe=+0.74 | PF=2.31[0m
+[32m15:09:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  39 trades | WR= 51.3% | Sharpe=+0.62 | PF=2.16[0m
+[32m15:09:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [37/114] GRASIM...[0m
+[32m15:09:07[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   8 trades | WR= 50.0% | Sharpe=+0.19 | PF=1.46[0m
+[32m15:09:09[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 30.0% | Sharpe=+0.38 | PF=4.29[0m
+[32m15:10:54[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.55 | PF=10.36[0m
+[32m15:12:37[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.66 | PF=12.24[0m
+[32m15:12:37[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  37 trades | WR= 64.9% | Sharpe=+0.78 | PF=2.60[0m
+[32m15:13:37[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  35 trades | WR= 65.7% | Sharpe=+0.77 | PF=3.35[0m
+[32m15:13:37[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [38/114] TRENT...[0m
+[32m15:13:38[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  22 trades | WR= 54.5% | Sharpe=+0.27 | PF=1.73[0m
+[32m15:13:38[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  23 trades | WR= 47.8% | Sharpe=+0.34 | PF=4.26[0m
+[32m15:15:33[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 90.9% | Sharpe=+0.85 | PF=269.71[0m
+[32m15:17:35[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.72 | PF=11.26[0m
+[32m15:17:35[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  36 trades | WR= 61.1% | Sharpe=+0.89 | PF=3.38[0m
+[32m15:18:43[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  36 trades | WR= 66.7% | Sharpe=+0.73 | PF=2.61[0m
+[32m15:18:43[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [39/114] ADANIPORTS...[0m
+[32m15:18:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  15 trades | WR= 53.3% | Sharpe=+0.11 | PF=1.28[0m
+[32m15:18:45[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  18 trades | WR= 33.3% | Sharpe=+0.08 | PF=1.30[0m
+[32m15:20:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  10 trades | WR= 30.0% | Sharpe=-0.21 | PF=0.54[0m
+[32m15:21:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.57 | PF=9.08[0m
+[32m15:21:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  35 trades | WR= 51.4% | Sharpe=+0.10 | PF=1.13[0m
+[32m15:22:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  36 trades | WR= 47.2% | Sharpe=+0.35 | PF=1.61[0m
+[32m15:22:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [40/114] PIDILITIND...[0m
+[32m15:22:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   4 trades | WR= 50.0% | Sharpe=-0.12 | PF=0.78[0m
+[32m15:22:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 33.3% | Sharpe=+0.34 | PF=2.82[0m
+[32m15:24:29[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.09 | PF=0.80[0m
+[32m15:26:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.42 | PF=3.12[0m
+[32m15:26:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  35 trades | WR= 48.6% | Sharpe=+0.57 | PF=2.12[0m
+[32m15:26:59[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  39 trades | WR= 43.6% | Sharpe=+0.42 | PF=1.69[0m
+[32m15:27:00[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [41/114] NTPC...[0m
+[32m15:27:01[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   8 trades | WR= 50.0% | Sharpe=+0.26 | PF=1.75[0m
+[32m15:27:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 77.8% | Sharpe=+0.70 | PF=9.75[0m
+[32m15:28:38[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.19 | PF=1.84[0m
+[32m15:30:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.09 | PF=0.81[0m
+[32m15:30:07[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  34 trades | WR= 58.8% | Sharpe=+0.76 | PF=2.69[0m
+[32m15:31:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  35 trades | WR= 51.4% | Sharpe=+0.53 | PF=1.98[0m
+[32m15:31:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [42/114] POWERGRID...[0m
+[32m15:31:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   3 trades | WR= 66.7% | Sharpe=+0.60 | PF=3.26[0m
+[32m15:31:18[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 50.0% | Sharpe=+0.49 | PF=4.67[0m
+[32m15:32:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 18.2% | Sharpe=-0.24 | PF=0.52[0m
+[32m15:34:39[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=-0.09 | PF=0.79[0m
+[32m15:34:39[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  27 trades | WR= 63.0% | Sharpe=+0.48 | PF=3.31[0m
+[32m15:35:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  30 trades | WR= 50.0% | Sharpe=+0.75 | PF=2.82[0m
+[32m15:35:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [43/114] ONGC...[0m
+[32m15:35:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  16 trades | WR= 50.0% | Sharpe=+0.22 | PF=1.59[0m
+[32m15:35:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 50.0% | Sharpe=+0.31 | PF=2.16[0m
+[32m15:37:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.06 | PF=1.15[0m
+[32m15:39:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.21 | PF=1.77[0m
+[32m15:39:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  36 trades | WR= 50.0% | Sharpe=+0.39 | PF=1.62[0m
+[32m15:40:39[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  32 trades | WR= 46.9% | Sharpe=+0.49 | PF=2.19[0m
+[32m15:40:39[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [44/114] APOLLOHOSP...[0m
+[32m15:40:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  11 trades | WR= 45.5% | Sharpe=+0.16 | PF=1.40[0m
+[32m15:40:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 66.7% | Sharpe=+0.39 | PF=7.10[0m
+[32m15:42:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.46 | PF=3.58[0m
+[32m15:43:45[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 75.0% | Sharpe=+0.70 | PF=7.12[0m
+[32m15:43:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 57.5% | Sharpe=+0.78 | PF=2.90[0m
+[32m15:44:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  39 trades | WR= 48.7% | Sharpe=+0.47 | PF=1.96[0m
+[32m15:44:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [45/114] SBILIFE...[0m
+[32m15:44:45[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR= 50.0% | Sharpe=+0.06 | PF=1.12[0m
+[32m15:44:45[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  11 trades | WR= 45.5% | Sharpe=-0.02 | PF=0.95[0m
+[32m15:45:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  10 trades | WR= 60.0% | Sharpe=+0.24 | PF=1.88[0m
+[32m15:47:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 25.0% | Sharpe=-0.94 | PF=0.05[0m
+[32m15:47:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  28 trades | WR= 50.0% | Sharpe=+0.16 | PF=1.49[0m
+[32m15:47:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  28 trades | WR= 53.6% | Sharpe=+0.20 | PF=1.71[0m
+[32m15:47:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [46/114] TATACONSUM...[0m
+[32m15:47:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   9 trades | WR= 44.4% | Sharpe=+0.13 | PF=1.30[0m
+[32m15:47:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  14 trades | WR= 35.7% | Sharpe=+0.43 | PF=3.66[0m
+[32m15:49:22[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=+0.29 | PF=2.22[0m
+[32m15:51:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR=100.0% | Sharpe=+0.88 | PF=263.23[0m
+[32m15:51:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  35 trades | WR= 48.6% | Sharpe=+0.72 | PF=2.56[0m
+[32m15:52:01[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  36 trades | WR= 47.2% | Sharpe=+0.63 | PF=2.42[0m
+[32m15:52:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [47/114] BAJAJFINSV...[0m
+[32m15:52:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  16 trades | WR= 68.8% | Sharpe=+0.44 | PF=2.58[0m
+[32m15:52:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 46.2% | Sharpe=+0.36 | PF=2.88[0m
+[32m15:53:38[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=-0.12 | PF=0.70[0m
+[32m15:55:09[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.37 | PF=0.24[0m
+[32m15:55:09[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  41 trades | WR= 53.7% | Sharpe=+0.44 | PF=1.79[0m
+[32m15:56:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  38 trades | WR= 39.5% | Sharpe=+0.16 | PF=1.24[0m
+[32m15:56:06[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [48/114] ADANIGREEN...[0m
+[32m15:56:07[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  28 trades | WR= 46.4% | Sharpe=+0.15 | PF=1.37[0m
+[32m15:56:07[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  22 trades | WR= 40.9% | Sharpe=+0.39 | PF=5.74[0m
+[32m15:57:12[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :   9 trades | WR= 66.7% | Sharpe=+0.59 | PF=7.03[0m
+[32m15:58:13[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   7 trades | WR= 57.1% | Sharpe=+0.48 | PF=9.59[0m
+[32m15:58:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  29 trades | WR= 55.2% | Sharpe=+0.40 | PF=5.24[0m
+[32m15:58:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  24 trades | WR= 45.8% | Sharpe=+0.40 | PF=3.42[0m
+[32m15:58:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [49/114] ADANIPOWER...[0m
+[32m15:58:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  46 trades | WR= 43.5% | Sharpe=+0.25 | PF=1.26[0m
+[32m15:58:59[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  32 trades | WR= 43.8% | Sharpe=+0.54 | PF=2.30[0m
+[32m16:01:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 36.4% | Sharpe=-0.39 | PF=0.29[0m
+[32m16:02:49[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 37.5% | Sharpe=-0.36 | PF=0.39[0m
+[32m16:02:50[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  47 trades | WR= 46.8% | Sharpe=+0.55 | PF=1.90[0m
+[32m16:03:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 51.4% | Sharpe=+0.42 | PF=1.76[0m
+[32m16:03:49[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [50/114] AMBUJACEM...[0m
+[32m16:03:50[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  14 trades | WR= 57.1% | Sharpe=+0.30 | PF=1.91[0m
+[32m16:03:50[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  11 trades | WR= 45.5% | Sharpe=+0.25 | PF=2.12[0m
+[32m16:05:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.04 | PF=0.90[0m
+[32m16:07:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.31 | PF=3.23[0m
+[32m16:07:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  38 trades | WR= 50.0% | Sharpe=+0.26 | PF=1.36[0m
+[32m16:09:12[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  28 trades | WR= 42.9% | Sharpe=+0.16 | PF=1.57[0m
+[32m16:09:12[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [51/114] AUROPHARMA...[0m
+[32m16:09:13[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  13 trades | WR= 69.2% | Sharpe=+0.53 | PF=2.93[0m
+[32m16:09:14[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 66.7% | Sharpe=+0.37 | PF=4.23[0m
+[32m16:11:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=-0.02 | PF=0.95[0m
+[32m16:13:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.12 | PF=1.34[0m
+[32m16:13:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  36 trades | WR= 47.2% | Sharpe=+0.17 | PF=1.23[0m
+[32m16:14:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  29 trades | WR= 34.5% | Sharpe=+0.12 | PF=1.36[0m
+[32m16:14:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [52/114] BANKBARODA...[0m
+[32m16:14:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  24 trades | WR= 58.3% | Sharpe=+0.26 | PF=1.75[0m
+[32m16:14:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  19 trades | WR= 31.6% | Sharpe=+0.17 | PF=1.70[0m
+[32m16:15:42[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.41 | PF=2.51[0m
+[32m16:17:29[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.04 | PF=1.11[0m
+[32m16:17:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  45 trades | WR= 53.3% | Sharpe=+0.49 | PF=1.78[0m
+[32m16:18:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  38 trades | WR= 44.7% | Sharpe=+0.51 | PF=1.88[0m
+[32m16:18:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [53/114] BEL...[0m
+[32m16:18:26[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  13 trades | WR= 69.2% | Sharpe=+0.68 | PF=4.07[0m
+[32m16:18:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  19 trades | WR= 42.1% | Sharpe=+0.33 | PF=3.52[0m
+[32m16:20:03[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=+0.05 | PF=1.12[0m
+[32m16:21:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.53 | PF=4.08[0m
+[32m16:21:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  46 trades | WR= 52.2% | Sharpe=+0.73 | PF=2.40[0m
+[32m16:22:49[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  39 trades | WR= 48.7% | Sharpe=+0.75 | PF=3.10[0m
+[32m16:22:50[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [54/114] BERGEPAINT...[0m
+[32m16:22:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  12 trades | WR= 58.3% | Sharpe=+0.33 | PF=1.98[0m
+[32m16:22:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 53.8% | Sharpe=+0.28 | PF=2.79[0m
+[32m16:24:22[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=-0.05 | PF=0.87[0m
+[32m16:25:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 75.0% | Sharpe=+0.63 | PF=5.58[0m
+[32m16:25:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  32 trades | WR= 56.2% | Sharpe=+0.37 | PF=1.73[0m
+[32m16:26:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  29 trades | WR= 58.6% | Sharpe=+0.15 | PF=1.44[0m
+[32m16:26:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [55/114] BOSCHLTD...[0m
+[32m16:26:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  13 trades | WR= 46.2% | Sharpe=+0.07 | PF=1.16[0m
+[32m16:26:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  10 trades | WR= 30.0% | Sharpe=+0.16 | PF=1.79[0m
+[32m16:28:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.21 | PF=0.59[0m
+[32m16:30:08[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 37.5% | Sharpe=-0.11 | PF=0.78[0m
+[32m16:30:12[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  39 trades | WR= 51.3% | Sharpe=+0.48 | PF=1.86[0m
+[32m16:31:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  32 trades | WR= 46.9% | Sharpe=-0.01 | PF=0.98[0m
+[32m16:31:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [56/114] CANBK...[0m
+[32m16:31:18[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  20 trades | WR= 55.0% | Sharpe=+0.27 | PF=1.76[0m
+[32m16:31:19[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  19 trades | WR= 36.8% | Sharpe=+0.13 | PF=1.54[0m
+[32m16:33:05[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=-0.02 | PF=0.95[0m
+[32m16:34:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.04 | PF=1.10[0m
+[32m16:34:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  50 trades | WR= 44.0% | Sharpe=+0.37 | PF=1.50[0m
+[32m16:35:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 45.9% | Sharpe=+0.17 | PF=1.25[0m
+[32m16:35:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [57/114] CHOLAFIN...[0m
+[32m16:35:42[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  16 trades | WR= 62.5% | Sharpe=+0.41 | PF=2.25[0m
+[32m16:35:43[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 61.5% | Sharpe=+0.51 | PF=4.37[0m
+[32m16:37:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.00 | PF=0.99[0m
+[32m16:39:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.21 | PF=1.75[0m
+[32m16:39:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  45 trades | WR= 53.3% | Sharpe=+0.70 | PF=2.43[0m
+[32m16:40:33[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  46 trades | WR= 39.1% | Sharpe=+0.40 | PF=1.74[0m
+[32m16:40:33[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [58/114] COLPAL...[0m
+[32m16:40:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   6 trades | WR= 33.3% | Sharpe=-0.49 | PF=0.38[0m
+[32m16:40:35[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 38.5% | Sharpe=+0.16 | PF=1.65[0m
+[32m16:42:09[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.15 | PF=0.66[0m
+[32m16:43:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=-0.27 | PF=0.45[0m
+[32m16:43:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  33 trades | WR= 45.5% | Sharpe=+0.19 | PF=1.32[0m
+[32m16:44:43[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  32 trades | WR= 37.5% | Sharpe=-0.06 | PF=0.92[0m
+[32m16:44:43[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [59/114] DABUR...[0m
+[32m16:44:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   4 trades | WR= 75.0% | Sharpe=+0.42 | PF=2.77[0m
+[32m16:44:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 33.3% | Sharpe=+0.20 | PF=1.79[0m
+[32m16:46:14[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.13 | PF=1.38[0m
+[32m16:47:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.08 | PF=1.20[0m
+[32m16:47:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  38 trades | WR= 52.6% | Sharpe=+0.28 | PF=1.41[0m
+[32m16:48:45[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  32 trades | WR= 37.5% | Sharpe=-0.17 | PF=0.80[0m
+[32m16:48:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [60/114] DLF...[0m
+[32m16:48:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  22 trades | WR= 36.4% | Sharpe=-0.08 | PF=0.85[0m
+[32m16:48:47[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  18 trades | WR= 22.2% | Sharpe=+0.16 | PF=1.68[0m
+[32m16:50:22[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.54 | PF=4.57[0m
+[32m16:51:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 50.0% | Sharpe=+0.52 | PF=6.17[0m
+[32m16:51:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  37 trades | WR= 40.5% | Sharpe=-0.02 | PF=0.97[0m
+[32m16:52:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  35 trades | WR= 37.1% | Sharpe=+0.04 | PF=1.06[0m
+[32m16:52:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [61/114] GAIL...[0m
+[32m16:52:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  11 trades | WR= 63.6% | Sharpe=+0.49 | PF=2.67[0m
+[32m16:52:59[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  18 trades | WR= 33.3% | Sharpe=+0.15 | PF=1.62[0m
+[32m16:54:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.23 | PF=1.90[0m
+[32m16:56:08[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.12 | PF=1.42[0m
+[32m16:56:08[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  37 trades | WR= 45.9% | Sharpe=+0.09 | PF=1.11[0m
+[32m16:57:15[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  30 trades | WR= 46.7% | Sharpe=+0.26 | PF=1.47[0m
+[32m16:57:16[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [62/114] GODREJCP...[0m
+[32m16:57:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  11 trades | WR= 18.2% | Sharpe=-0.45 | PF=0.37[0m
+[32m16:57:18[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 41.7% | Sharpe=+0.26 | PF=2.09[0m
+[32m16:58:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.12 | PF=1.36[0m
+[32m17:00:42[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 50.0% | Sharpe=+0.37 | PF=2.31[0m
+[32m17:00:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 42.5% | Sharpe=+0.43 | PF=1.67[0m
+[32m17:01:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  36 trades | WR= 50.0% | Sharpe=+0.32 | PF=1.53[0m
+[32m17:01:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [63/114] HAVELLS...[0m
+[32m17:01:50[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   9 trades | WR= 44.4% | Sharpe=+0.06 | PF=1.14[0m
+[32m17:01:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  12 trades | WR= 50.0% | Sharpe=+0.47 | PF=3.51[0m
+[32m17:03:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 81.8% | Sharpe=+0.59 | PF=9.70[0m
+[32m17:05:07[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.39 | PF=3.76[0m
+[32m17:05:09[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  33 trades | WR= 54.5% | Sharpe=+0.42 | PF=1.85[0m
+[32m17:06:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  29 trades | WR= 62.1% | Sharpe=+0.30 | PF=2.24[0m
+[32m17:06:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [64/114] HAL...[0m
+[32m17:06:26[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  17 trades | WR= 58.8% | Sharpe=+0.26 | PF=1.71[0m
+[32m17:06:27[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 46.2% | Sharpe=+0.50 | PF=4.60[0m
+[32m17:07:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :   9 trades | WR= 44.4% | Sharpe=-0.23 | PF=0.48[0m
+[32m17:08:44[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   7 trades | WR= 71.4% | Sharpe=+0.51 | PF=4.49[0m
+[32m17:08:46[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  35 trades | WR= 60.0% | Sharpe=+1.00 | PF=3.41[0m
+[32m17:09:29[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  31 trades | WR= 51.6% | Sharpe=+0.66 | PF=2.53[0m
+[32m17:09:29[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [65/114] ICICIPRULI...[0m
+[32m17:09:30[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  16 trades | WR= 50.0% | Sharpe=-0.09 | PF=0.82[0m
+[32m17:09:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 23.1% | Sharpe=-0.07 | PF=0.84[0m
+[32m17:11:13[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.16 | PF=1.50[0m
+[32m17:12:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.30 | PF=0.51[0m
+[32m17:12:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  30 trades | WR= 46.7% | Sharpe=+0.21 | PF=1.33[0m
+[32m17:13:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  26 trades | WR= 26.9% | Sharpe=+0.00 | PF=1.00[0m
+[32m17:13:51[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [66/114] INDHOTEL...[0m
+[32m17:13:52[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  16 trades | WR= 68.8% | Sharpe=+0.35 | PF=2.20[0m
+[32m17:13:53[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  14 trades | WR= 42.9% | Sharpe=+0.49 | PF=4.60[0m
+[32m17:15:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.37 | PF=0.40[0m
+[32m17:17:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.29 | PF=2.26[0m
+[32m17:17:33[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  42 trades | WR= 50.0% | Sharpe=+0.64 | PF=2.67[0m
+[32m17:18:29[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  40 trades | WR= 47.5% | Sharpe=+0.52 | PF=2.05[0m
+[32m17:18:30[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [67/114] INDUSTOWER...[0m
+[32m17:18:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  18 trades | WR= 33.3% | Sharpe=-0.22 | PF=0.62[0m
+[32m17:18:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  14 trades | WR= 35.7% | Sharpe=+0.03 | PF=1.08[0m
+[32m17:20:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.16 | PF=1.61[0m
+[32m17:22:13[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.20 | PF=0.51[0m
+[32m17:22:14[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  40 trades | WR= 42.5% | Sharpe=-0.01 | PF=0.99[0m
+[32m17:23:23[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  29 trades | WR= 41.4% | Sharpe=-0.03 | PF=0.92[0m
+[32m17:23:24[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [68/114] IOC...[0m
+[32m17:23:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  12 trades | WR= 66.7% | Sharpe=+0.50 | PF=2.79[0m
+[32m17:23:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  13 trades | WR= 38.5% | Sharpe=+0.22 | PF=2.14[0m
+[32m17:25:00[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=-0.30 | PF=0.42[0m
+[32m17:27:00[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.45 | PF=0.23[0m
+[32m17:27:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  45 trades | WR= 48.9% | Sharpe=+0.33 | PF=1.47[0m
+[32m17:28:09[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 43.2% | Sharpe=+0.30 | PF=1.57[0m
+[32m17:28:10[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [69/114] IRCTC...[0m
+[32m17:28:10[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  13 trades | WR= 38.5% | Sharpe=+0.04 | PF=1.10[0m
+[32m17:28:11[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   8 trades | WR= 50.0% | Sharpe=+0.48 | PF=10.20[0m
+[32m17:28:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :   8 trades | WR= 62.5% | Sharpe=+0.45 | PF=4.24[0m
+[32m17:29:48[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   6 trades | WR= 66.7% | Sharpe=-0.16 | PF=0.63[0m
+[32m17:29:49[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  21 trades | WR= 57.1% | Sharpe=+0.26 | PF=2.17[0m
+[32m17:30:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  15 trades | WR= 73.3% | Sharpe=+0.51 | PF=5.19[0m
+[32m17:30:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [70/114] JINDALSTEL...[0m
+[32m17:30:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  25 trades | WR= 56.0% | Sharpe=+0.30 | PF=1.84[0m
+[32m17:30:33[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  22 trades | WR= 45.5% | Sharpe=+0.30 | PF=2.87[0m
+[32m17:32:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=-0.14 | PF=0.63[0m
+[32m17:34:20[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.49 | PF=4.31[0m
+[32m17:34:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  42 trades | WR= 52.4% | Sharpe=+0.71 | PF=2.44[0m
+[32m17:35:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  37 trades | WR= 43.2% | Sharpe=+0.41 | PF=1.84[0m
+[32m17:35:35[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [71/114] LUPIN...[0m
+[32m17:35:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   7 trades | WR= 42.9% | Sharpe=-0.14 | PF=0.71[0m
+[32m17:35:36[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :   9 trades | WR= 44.4% | Sharpe=+0.42 | PF=6.03[0m
+[32m17:37:37[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.44 | PF=2.95[0m
+[32m17:39:25[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.35 | PF=2.49[0m
+[32m17:39:26[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  35 trades | WR= 54.3% | Sharpe=+0.37 | PF=1.61[0m
+[32m17:40:39[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  19 trades | WR= 47.4% | Sharpe=+0.30 | PF=2.30[0m
+[32m17:40:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [72/114] MARICO...[0m
+[32m17:40:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :   3 trades | WR=100.0% | Sharpe=+2.72 | PF=26.19[0m
+[32m17:40:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  14 trades | WR= 21.4% | Sharpe=+0.04 | PF=1.14[0m
+[32m17:42:28[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.18 | PF=1.54[0m
+[32m17:44:02[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.26 | PF=2.15[0m
+[32m17:44:04[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  35 trades | WR= 62.9% | Sharpe=+0.39 | PF=1.81[0m
+[32m17:44:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  38 trades | WR= 47.4% | Sharpe=+0.15 | PF=1.21[0m
+[32m17:44:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [73/114] MAXHEALTH...[0m
+[32m17:44:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  10 trades | WR= 90.0% | Sharpe=+1.59 | PF=13.96[0m
+[32m17:44:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  11 trades | WR= 63.6% | Sharpe=+0.64 | PF=7.91[0m
+[32m17:45:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :   6 trades | WR= 83.3% | Sharpe=+0.69 | PF=4.75[0m
+[32m17:46:17[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   5 trades | WR= 80.0% | Sharpe=+1.02 | PF=29.80[0m
+[32m17:46:18[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  22 trades | WR= 54.5% | Sharpe=+0.38 | PF=2.71[0m
+[32m17:46:30[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  24 trades | WR= 58.3% | Sharpe=+0.38 | PF=2.84[0m
+[32m17:46:30[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [74/114] MOTHERSON...[0m
+[32m17:46:31[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  19 trades | WR= 52.6% | Sharpe=+0.25 | PF=1.71[0m
+[32m17:46:32[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  15 trades | WR= 40.0% | Sharpe=+0.33 | PF=3.19[0m
+[32m17:47:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.56 | PF=4.20[0m
+[32m17:49:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.10 | PF=1.34[0m
+[32m17:49:34[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  45 trades | WR= 51.1% | Sharpe=+0.62 | PF=2.11[0m
+[32m17:50:39[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  33 trades | WR= 42.4% | Sharpe=+0.35 | PF=1.61[0m
+[32m17:50:40[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [75/114] NAUKRI...[0m
+[32m17:50:41[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  23 trades | WR= 52.2% | Sharpe=+0.33 | PF=2.00[0m
+[32m17:50:42[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  18 trades | WR= 38.9% | Sharpe=+0.47 | PF=5.12[0m
+[32m17:52:21[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.15 | PF=1.39[0m
+[32m17:53:55[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.01 | PF=0.98[0m
+[32m17:53:57[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AllWeather        :  38 trades | WR= 63.2% | Sharpe=+0.80 | PF=2.86[0m
+[32m17:54:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    WeeklyDaily       :  33 trades | WR= 60.6% | Sharpe=+0.81 | PF=2.98[0m
+[32m17:54:56[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m  [76/114] NHPC...[0m
+[32m17:54:58[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    QualityDipBuy     :  18 trades | WR= 44.4% | Sharpe=+0.02 | PF=1.04[0m
+[32m17:54:59[0m | [1mINFO   [0m | [36m__main__[0m:[36mrun_backtest[0m - [1m    AnnualMomentum    :  11 trades | WR= 45.5% | Sharpe=+0.45 | PF=3.98[0m

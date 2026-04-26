@@ -1,0 +1,244 @@
+nohup: ignoring input
+[32m20:14:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m═══ FULL UNIVERSE FUNDAMENTAL SCAN ═══[0m
+[32m20:14:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mget_all_equity_symbols[0m - [1mFiltered 9336 NSE instruments to 9042 likely equities[0m
+[32m20:14:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1mTotal: 9042 | Already done: 0 | Remaining: 9042[0m
+[32m20:16:55[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  50 errors so far (likely non-equity symbols)[0m
+[32m20:17:33[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 108/9042 | Valid: 45 | Errors: 58[0m
+[32m20:20:34[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 197/9042 | Valid: 87 | Errors: 97[0m
+[32m20:20:49[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  100 errors so far (likely non-equity symbols)[0m
+[32m20:23:32[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  150 errors so far (likely non-equity symbols)[0m
+[32m20:23:58[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 306/9042 | Valid: 129 | Errors: 156[0m
+[32m20:26:36[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  200 errors so far (likely non-equity symbols)[0m
+[32m20:27:19[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 410/9042 | Valid: 174 | Errors: 210[0m
+[32m20:29:52[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  250 errors so far (likely non-equity symbols)[0m
+[32m20:31:00[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 526/9042 | Valid: 216 | Errors: 276[0m
+[32m20:32:04[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  300 errors so far (likely non-equity symbols)[0m
+[32m20:34:38[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 647/9042 | Valid: 254 | Errors: 347[0m
+[32m20:35:14[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  350 errors so far (likely non-equity symbols)[0m
+[32m20:37:53[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  400 errors so far (likely non-equity symbols)[0m
+[32m20:38:12[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 760/9042 | Valid: 297 | Errors: 410[0m
+[32m20:41:10[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 845/9042 | Valid: 340 | Errors: 445[0m
+[32m20:41:24[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  450 errors so far (likely non-equity symbols)[0m
+[32m20:44:04[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  500 errors so far (likely non-equity symbols)[0m
+[32m20:44:54[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 967/9042 | Valid: 377 | Errors: 517[0m
+[32m20:47:26[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 1037/9042 | Valid: 416 | Errors: 537[0m
+[32m20:48:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  550 errors so far (likely non-equity symbols)[0m
+[32m20:50:21[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  600 errors so far (likely non-equity symbols)[0m
+[32m20:52:05[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 1198/9042 | Valid: 455 | Errors: 648[0m
+[32m20:52:20[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  650 errors so far (likely non-equity symbols)[0m
+[32m20:54:16[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  700 errors so far (likely non-equity symbols)[0m
+[32m20:55:58[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  750 errors so far (likely non-equity symbols)[0m
+[32m20:57:09[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 1384/9042 | Valid: 493 | Errors: 784[0m
+[32m20:57:55[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  800 errors so far (likely non-equity symbols)[0m
+[32m21:00:24[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  850 errors so far (likely non-equity symbols)[0m
+[32m21:01:14[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 1516/9042 | Valid: 536 | Errors: 866[0m
+[32m21:02:37[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  900 errors so far (likely non-equity symbols)[0m
+[32m21:05:13[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  950 errors so far (likely non-equity symbols)[0m
+[32m21:05:58[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 1675/9042 | Valid: 576 | Errors: 975[0m
+[32m21:06:35[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1000 errors so far (likely non-equity symbols)[0m
+[32m21:08:34[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1050 errors so far (likely non-equity symbols)[0m
+[32m21:09:57[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1100 errors so far (likely non-equity symbols)[0m
+[32m21:11:47[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 1899/9042 | Valid: 614 | Errors: 1149[0m
+[32m21:11:55[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1150 errors so far (likely non-equity symbols)[0m
+[32m21:14:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 1987/9042 | Valid: 655 | Errors: 1187[0m
+[32m21:15:17[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1200 errors so far (likely non-equity symbols)[0m
+[32m21:16:44[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1250 errors so far (likely non-equity symbols)[0m
+[32m21:17:45[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1300 errors so far (likely non-equity symbols)[0m
+[32m21:18:51[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1350 errors so far (likely non-equity symbols)[0m
+[32m21:20:59[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1400 errors so far (likely non-equity symbols)[0m
+[32m21:22:18[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 2281/9042 | Valid: 695 | Errors: 1431[0m
+[32m21:23:09[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1450 errors so far (likely non-equity symbols)[0m
+[32m21:24:59[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1500 errors so far (likely non-equity symbols)[0m
+[32m21:26:34[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 2431/9042 | Valid: 731 | Errors: 1531[0m
+[32m21:27:38[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1550 errors so far (likely non-equity symbols)[0m
+[32m21:29:58[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 2533/9042 | Valid: 770 | Errors: 1583[0m
+[32m21:31:09[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1600 errors so far (likely non-equity symbols)[0m
+[32m21:33:37[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 2646/9042 | Valid: 816 | Errors: 1646[0m
+[32m21:34:00[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1650 errors so far (likely non-equity symbols)[0m
+[32m21:36:55[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 2748/9042 | Valid: 857 | Errors: 1698[0m
+[32m21:37:05[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1700 errors so far (likely non-equity symbols)[0m
+[32m21:39:41[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1750 errors so far (likely non-equity symbols)[0m
+[32m21:40:36[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 2860/9042 | Valid: 902 | Errors: 1760[0m
+[32m21:43:31[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 2943/9042 | Valid: 942 | Errors: 1793[0m
+[32m21:44:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1800 errors so far (likely non-equity symbols)[0m
+[32m21:46:00[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1850 errors so far (likely non-equity symbols)[0m
+[32m21:48:02[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 3097/9042 | Valid: 985 | Errors: 1897[0m
+[32m21:48:16[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1900 errors so far (likely non-equity symbols)[0m
+[32m21:50:23[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  1950 errors so far (likely non-equity symbols)[0m
+[32m21:52:27[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 3242/9042 | Valid: 1025 | Errors: 1992[0m
+[32m21:52:42[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2000 errors so far (likely non-equity symbols)[0m
+[32m21:55:37[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2050 errors so far (likely non-equity symbols)[0m
+[32m21:56:02[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 3352/9042 | Valid: 1067 | Errors: 2052[0m
+[32m21:58:52[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2100 errors so far (likely non-equity symbols)[0m
+[32m21:59:57[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2150 errors so far (likely non-equity symbols)[0m
+[32m22:00:33[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 3511/9042 | Valid: 1108 | Errors: 2161[0m
+[32m22:02:14[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2200 errors so far (likely non-equity symbols)[0m
+[32m22:04:12[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2250 errors so far (likely non-equity symbols)[0m
+[32m22:05:13[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 3668/9042 | Valid: 1146 | Errors: 2268[0m
+[32m22:06:55[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2300 errors so far (likely non-equity symbols)[0m
+[32m22:08:38[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 3772/9042 | Valid: 1188 | Errors: 2322[0m
+[32m22:10:34[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2350 errors so far (likely non-equity symbols)[0m
+[32m22:12:26[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2400 errors so far (likely non-equity symbols)[0m
+[32m22:12:43[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 3909/9042 | Valid: 1226 | Errors: 2409[0m
+[32m22:14:18[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2450 errors so far (likely non-equity symbols)[0m
+[32m22:16:18[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2500 errors so far (likely non-equity symbols)[0m
+[32m22:17:05[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 4063/9042 | Valid: 1268 | Errors: 2513[0m
+[32m22:18:24[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2550 errors so far (likely non-equity symbols)[0m
+[32m22:19:38[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2600 errors so far (likely non-equity symbols)[0m
+[32m22:21:15[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2650 errors so far (likely non-equity symbols)[0m
+[32m22:22:40[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2700 errors so far (likely non-equity symbols)[0m
+[32m22:24:15[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2750 errors so far (likely non-equity symbols)[0m
+[32m22:24:36[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 4365/9042 | Valid: 1309 | Errors: 2765[0m
+[32m22:25:28[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2800 errors so far (likely non-equity symbols)[0m
+[32m22:26:51[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2850 errors so far (likely non-equity symbols)[0m
+[32m22:28:22[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2900 errors so far (likely non-equity symbols)[0m
+[32m22:29:34[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  2950 errors so far (likely non-equity symbols)[0m
+[32m22:31:09[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3000 errors so far (likely non-equity symbols)[0m
+[32m22:32:27[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 4682/9042 | Valid: 1349 | Errors: 3032[0m
+[32m22:33:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3050 errors so far (likely non-equity symbols)[0m
+[32m22:34:41[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3100 errors so far (likely non-equity symbols)[0m
+[32m22:35:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3150 errors so far (likely non-equity symbols)[0m
+[32m22:36:52[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3200 errors so far (likely non-equity symbols)[0m
+[32m22:37:52[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3250 errors so far (likely non-equity symbols)[0m
+[32m22:38:53[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3300 errors so far (likely non-equity symbols)[0m
+[32m22:39:55[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3350 errors so far (likely non-equity symbols)[0m
+[32m22:41:12[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3400 errors so far (likely non-equity symbols)[0m
+[32m22:42:28[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3450 errors so far (likely non-equity symbols)[0m
+[32m22:43:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3500 errors so far (likely non-equity symbols)[0m
+[32m22:45:00[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3550 errors so far (likely non-equity symbols)[0m
+[32m22:46:08[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3600 errors so far (likely non-equity symbols)[0m
+[32m22:47:13[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3650 errors so far (likely non-equity symbols)[0m
+[32m22:47:36[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 5365/9042 | Valid: 1381 | Errors: 3665[0m
+[32m22:48:22[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3700 errors so far (likely non-equity symbols)[0m
+[32m22:49:22[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3750 errors so far (likely non-equity symbols)[0m
+[32m22:50:29[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3800 errors so far (likely non-equity symbols)[0m
+[32m22:51:38[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3850 errors so far (likely non-equity symbols)[0m
+[32m22:52:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3900 errors so far (likely non-equity symbols)[0m
+[32m22:53:57[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  3950 errors so far (likely non-equity symbols)[0m
+[32m22:55:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4000 errors so far (likely non-equity symbols)[0m
+[32m22:56:12[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4050 errors so far (likely non-equity symbols)[0m
+[32m22:57:30[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4100 errors so far (likely non-equity symbols)[0m
+[32m22:58:56[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4150 errors so far (likely non-equity symbols)[0m
+[32m23:00:06[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4200 errors so far (likely non-equity symbols)[0m
+[32m23:01:36[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4250 errors so far (likely non-equity symbols)[0m
+[32m23:02:02[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 6015/9042 | Valid: 1422 | Errors: 4265[0m
+[32m23:03:02[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4300 errors so far (likely non-equity symbols)[0m
+[32m23:04:32[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4350 errors so far (likely non-equity symbols)[0m
+[32m23:06:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4400 errors so far (likely non-equity symbols)[0m
+[32m23:07:15[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4450 errors so far (likely non-equity symbols)[0m
+[32m23:09:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4500 errors so far (likely non-equity symbols)[0m
+[32m23:09:20[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 6311/9042 | Valid: 1461 | Errors: 4511[0m
+[32m23:10:27[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4550 errors so far (likely non-equity symbols)[0m
+[32m23:12:00[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4600 errors so far (likely non-equity symbols)[0m
+[32m23:13:31[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4650 errors so far (likely non-equity symbols)[0m
+[32m23:14:43[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4700 errors so far (likely non-equity symbols)[0m
+[32m23:16:13[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4750 errors so far (likely non-equity symbols)[0m
+[32m23:17:28[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4800 errors so far (likely non-equity symbols)[0m
+[32m23:17:33[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 6652/9042 | Valid: 1503 | Errors: 4802[0m
+[32m23:18:44[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4850 errors so far (likely non-equity symbols)[0m
+[32m23:20:15[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4900 errors so far (likely non-equity symbols)[0m
+[32m23:21:38[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  4950 errors so far (likely non-equity symbols)[0m
+[32m23:22:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5000 errors so far (likely non-equity symbols)[0m
+[32m23:24:06[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5050 errors so far (likely non-equity symbols)[0m
+[32m23:25:11[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5100 errors so far (likely non-equity symbols)[0m
+[32m23:26:23[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5150 errors so far (likely non-equity symbols)[0m
+[32m23:27:30[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5200 errors so far (likely non-equity symbols)[0m
+[32m23:28:42[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5250 errors so far (likely non-equity symbols)[0m
+[32m23:29:44[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5300 errors so far (likely non-equity symbols)[0m
+[32m23:30:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5350 errors so far (likely non-equity symbols)[0m
+[32m23:31:09[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 7255/9042 | Valid: 1534 | Errors: 5355[0m
+[32m23:32:23[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5400 errors so far (likely non-equity symbols)[0m
+[32m23:33:32[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5450 errors so far (likely non-equity symbols)[0m
+[32m23:34:35[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5500 errors so far (likely non-equity symbols)[0m
+[32m23:35:43[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5550 errors so far (likely non-equity symbols)[0m
+[32m23:36:58[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5600 errors so far (likely non-equity symbols)[0m
+[32m23:38:03[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5650 errors so far (likely non-equity symbols)[0m
+[32m23:39:10[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5700 errors so far (likely non-equity symbols)[0m
+[32m23:40:22[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5750 errors so far (likely non-equity symbols)[0m
+[32m23:41:36[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5800 errors so far (likely non-equity symbols)[0m
+[32m23:42:57[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5850 errors so far (likely non-equity symbols)[0m
+[32m23:44:16[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5900 errors so far (likely non-equity symbols)[0m
+[32m23:45:17[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 7891/9042 | Valid: 1565 | Errors: 5941[0m
+[32m23:45:33[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  5950 errors so far (likely non-equity symbols)[0m
+[32m23:46:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6000 errors so far (likely non-equity symbols)[0m
+[32m23:48:04[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6050 errors so far (likely non-equity symbols)[0m
+[32m23:49:42[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6100 errors so far (likely non-equity symbols)[0m
+[32m23:51:04[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6150 errors so far (likely non-equity symbols)[0m
+[32m23:52:21[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6200 errors so far (likely non-equity symbols)[0m
+[32m23:53:17[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 8222/9042 | Valid: 1593 | Errors: 6222[0m
+[32m23:54:01[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6250 errors so far (likely non-equity symbols)[0m
+[32m23:55:38[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6300 errors so far (likely non-equity symbols)[0m
+[32m23:56:53[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6350 errors so far (likely non-equity symbols)[0m
+[32m23:58:21[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6400 errors so far (likely non-equity symbols)[0m
+[32m23:59:30[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6450 errors so far (likely non-equity symbols)[0m
+[32m00:00:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6500 errors so far (likely non-equity symbols)[0m
+[32m00:01:37[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  Progress: 8577/9042 | Valid: 1623 | Errors: 6527[0m
+[32m00:02:09[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6550 errors so far (likely non-equity symbols)[0m
+[32m00:03:09[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6600 errors so far (likely non-equity symbols)[0m
+[32m00:04:12[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6650 errors so far (likely non-equity symbols)[0m
+[32m00:05:18[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6700 errors so far (likely non-equity symbols)[0m
+[32m00:06:26[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6750 errors so far (likely non-equity symbols)[0m
+[32m00:07:36[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6800 errors so far (likely non-equity symbols)[0m
+[32m00:08:47[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6850 errors so far (likely non-equity symbols)[0m
+[32m00:10:14[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6900 errors so far (likely non-equity symbols)[0m
+[32m00:11:24[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  6950 errors so far (likely non-equity symbols)[0m
+[32m00:11:44[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1mRunning news analysis for top 50 companies...[0m
+[32m00:11:44[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [1/50]: NATIONALUM[0m
+[32m00:11:44[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [2/50]: COALINDIA[0m
+[32m00:11:44[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [3/50]: TANLA[0m
+[32m00:11:44[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [4/50]: ALLDIGI[0m
+[32m00:11:45[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [5/50]: DLINKINDIA[0m
+[32m00:11:45[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [6/50]: HEXT[0m
+[32m00:11:45[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [7/50]: HEROMOTOCO[0m
+[32m00:11:45[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [8/50]: INFY[0m
+[32m00:11:45[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [9/50]: HCLTECH[0m
+[32m00:11:45[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [10/50]: SHARDAMOTR[0m
+[32m00:11:45[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [11/50]: NMDC[0m
+[32m00:11:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [12/50]: NATCOPHARM[0m
+[32m00:11:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [13/50]: KPITTECH[0m
+[32m00:11:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [14/50]: MPSLTD[0m
+[32m00:11:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [15/50]: IEX[0m
+[32m00:11:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [16/50]: LICI[0m
+[32m00:11:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [17/50]: GVPTECH[0m
+[32m00:11:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [18/50]: PETRONET[0m
+[32m00:11:46[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [19/50]: MONARCH[0m
+[32m00:11:47[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [20/50]: WAAREEENER[0m
+[32m00:11:47[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [21/50]: NEWGEN[0m
+[32m00:11:47[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [22/50]: LTM[0m
+[32m00:11:47[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [23/50]: NAM-INDIA[0m
+[32m00:11:47[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [24/50]: CHAMBLFERT[0m
+[32m00:11:47[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [25/50]: ITC[0m
+[32m00:11:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [26/50]: VEDL[0m
+[32m00:11:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [27/50]: GULFOILLUB[0m
+[32m00:11:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [28/50]: ARROWGREEN[0m
+[32m00:11:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [29/50]: MSTCLTD[0m
+[32m00:11:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [30/50]: INDIAMART[0m
+[32m00:11:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [31/50]: OFSS[0m
+[32m00:11:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [32/50]: BANCOINDIA[0m
+[32m00:11:48[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [33/50]: CAPLIPOINT[0m
+[32m00:11:49[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [34/50]: DSSL[0m
+[32m00:11:49[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [35/50]: KPEL[0m
+[32m00:11:49[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [36/50]: DAMCAPITAL[0m
+[32m00:11:49[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [37/50]: GANESHHOU[0m
+[32m00:11:49[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [38/50]: KNRCON[0m
+[32m00:11:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [39/50]: CPEDU[0m
+[32m00:11:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [40/50]: ANGELONE[0m
+[32m00:11:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [41/50]: BEPL[0m
+[32m00:11:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [42/50]: ACCELYA[0m
+[32m00:11:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [43/50]: KSOLVES[0m
+[32m00:11:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [44/50]: IIFLCAPS[0m
+[32m00:11:50[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [45/50]: EMAMILTD[0m
+[32m00:11:51[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [46/50]: FIEMIND[0m
+[32m00:11:51[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [47/50]: MAITHANALL[0m
+[32m00:11:51[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [48/50]: SKFINDIA[0m
+[32m00:11:51[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [49/50]: ACE[0m
+[32m00:11:51[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m  News [50/50]: GATECHDVR[0m
+[32m00:11:51[0m | [1mINFO   [0m | [36mfundamental.full_universe_scan[0m:[36mrun_full_universe_scan[0m - [1m═══ FULL UNIVERSE SCAN COMPLETE ═══
+  Scanned: 9042 symbols
+  Valid companies: 1636
+  Score >= 90: 0
+  Score >= 80: 0
+  Score >= 70: 20
+  Watchlist: 74
+  News buy opportunities: 0
+  News structural risks: 0[0m

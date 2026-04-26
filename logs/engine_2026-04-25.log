@@ -1,0 +1,601 @@
+2026-04-25 11:20:36.530 | INFO    | __main__:run_backtest:103 - ═══ UNIFIED BACKTEST — 10 stocks, 10yr ═══
+2026-04-25 11:20:36.531 | INFO    | __main__:run_backtest:109 -   [1/10] RELIANCE...
+2026-04-25 11:20:38.669 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR=100.0% | Sharpe=+5.17 | PF=53.63
+2026-04-25 11:20:39.773 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 53.8% | Sharpe=+0.36 | PF=2.78
+2026-04-25 11:22:24.805 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.31 | PF=2.20
+2026-04-25 11:24:26.357 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.13 | PF=0.68
+2026-04-25 11:24:28.615 | INFO    | __main__:run_backtest:130 -     AllWeather        :  46 trades | WR= 47.8% | Sharpe=+0.50 | PF=1.81
+2026-04-25 11:25:49.042 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  46 trades | WR= 41.3% | Sharpe=+0.14 | PF=1.16
+2026-04-25 11:25:49.546 | INFO    | __main__:run_backtest:109 -   [2/10] TCS...
+2026-04-25 11:25:50.368 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR= 75.0% | Sharpe=+0.15 | PF=1.43
+2026-04-25 11:25:50.810 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 55.6% | Sharpe=+0.59 | PF=5.32
+2026-04-25 11:27:49.943 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.23 | PF=1.74
+2026-04-25 11:29:51.263 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+1.07 | PF=21.26
+2026-04-25 11:29:51.863 | INFO    | __main__:run_backtest:130 -     AllWeather        :  39 trades | WR= 59.0% | Sharpe=+0.48 | PF=1.87
+2026-04-25 11:31:10.475 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 51.3% | Sharpe=+0.66 | PF=2.22
+2026-04-25 11:31:10.975 | INFO    | __main__:run_backtest:109 -   [3/10] HDFCBANK...
+2026-04-25 11:31:11.849 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   3 trades | WR=100.0% | Sharpe=+15.49 | PF=37.66
+2026-04-25 11:31:12.400 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 40.0% | Sharpe=+0.20 | PF=1.66
+2026-04-25 11:33:23.257 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 81.8% | Sharpe=+0.58 | PF=4.36
+2026-04-25 11:35:35.020 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.18 | PF=1.53
+2026-04-25 11:35:35.809 | INFO    | __main__:run_backtest:130 -     AllWeather        :  37 trades | WR= 51.4% | Sharpe=+0.37 | PF=1.54
+2026-04-25 11:37:03.701 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 46.2% | Sharpe=+0.07 | PF=1.08
+2026-04-25 11:37:04.206 | INFO    | __main__:run_backtest:109 -   [4/10] INFY...
+2026-04-25 11:37:06.038 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   5 trades | WR= 60.0% | Sharpe=+0.31 | PF=1.93
+2026-04-25 11:37:07.503 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   7 trades | WR= 71.4% | Sharpe=+0.50 | PF=6.66
+2026-04-25 11:39:06.854 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 41.7% | Sharpe=+0.04 | PF=1.12
+2026-04-25 11:41:08.294 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.56 | PF=4.16
+2026-04-25 11:41:10.072 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 55.0% | Sharpe=+0.53 | PF=1.88
+2026-04-25 11:42:26.736 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  33 trades | WR= 36.4% | Sharpe=+0.05 | PF=1.07
+2026-04-25 11:42:27.237 | INFO    | __main__:run_backtest:109 -   [5/10] ICICIBANK...
+2026-04-25 11:42:28.141 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   9 trades | WR= 66.7% | Sharpe=+0.43 | PF=2.35
+2026-04-25 11:42:28.797 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  16 trades | WR= 37.5% | Sharpe=+0.32 | PF=2.24
+2026-04-25 11:44:24.462 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 81.8% | Sharpe=+0.79 | PF=8.05
+2026-04-25 11:46:22.272 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=-0.27 | PF=0.43
+2026-04-25 11:46:23.218 | INFO    | __main__:run_backtest:130 -     AllWeather        :  48 trades | WR= 54.2% | Sharpe=+0.61 | PF=2.01
+2026-04-25 11:47:19.281 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  56 trades | WR= 44.6% | Sharpe=+0.44 | PF=1.58
+2026-04-25 11:47:19.785 | INFO    | __main__:run_backtest:109 -   [6/10] BHARTIARTL...
+2026-04-25 11:47:21.837 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   9 trades | WR= 66.7% | Sharpe=+0.30 | PF=1.91
+2026-04-25 11:47:22.962 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 58.3% | Sharpe=+0.62 | PF=6.09
+2026-04-25 11:49:10.907 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=+0.35 | PF=2.21
+2026-04-25 11:50:56.823 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.72 | PF=9.78
+2026-04-25 11:50:59.013 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 52.5% | Sharpe=+0.42 | PF=1.66
+2026-04-25 11:51:58.526 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  43 trades | WR= 44.2% | Sharpe=+0.44 | PF=1.84
+2026-04-25 11:51:59.027 | INFO    | __main__:run_backtest:109 -   [7/10] ITC...
+2026-04-25 11:51:59.750 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 50.0% | Sharpe=+0.05 | PF=1.12
+2026-04-25 11:52:00.210 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 55.6% | Sharpe=+0.32 | PF=3.01
+2026-04-25 11:53:56.673 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.25 | PF=1.68
+2026-04-25 11:55:56.483 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.35 | PF=2.36
+2026-04-25 11:55:58.453 | INFO    | __main__:run_backtest:130 -     AllWeather        :  32 trades | WR= 50.0% | Sharpe=+0.54 | PF=2.15
+2026-04-25 11:57:28.811 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  26 trades | WR= 50.0% | Sharpe=+0.30 | PF=2.36
+2026-04-25 11:57:29.312 | INFO    | __main__:run_backtest:109 -   [8/10] SBIN...
+2026-04-25 11:57:30.194 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  14 trades | WR= 50.0% | Sharpe=+0.06 | PF=1.15
+2026-04-25 11:57:30.710 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  17 trades | WR= 35.3% | Sharpe=+0.09 | PF=1.32
+2026-04-25 11:59:15.148 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.01 | PF=1.02
+2026-04-25 12:01:17.337 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.41 | PF=3.65
+2026-04-25 12:01:19.542 | INFO    | __main__:run_backtest:130 -     AllWeather        :  42 trades | WR= 57.1% | Sharpe=+0.67 | PF=2.18
+2026-04-25 12:02:25.588 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  45 trades | WR= 46.7% | Sharpe=+0.36 | PF=1.50
+2026-04-25 12:02:26.092 | INFO    | __main__:run_backtest:109 -   [9/10] LT...
+2026-04-25 12:02:28.189 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR= 75.0% | Sharpe=+0.77 | PF=4.50
+2026-04-25 12:02:29.551 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  15 trades | WR= 26.7% | Sharpe=+0.20 | PF=1.72
+2026-04-25 12:04:23.776 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.22 | PF=1.73
+2026-04-25 12:06:29.079 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.75 | PF=6.53
+2026-04-25 12:06:31.642 | INFO    | __main__:run_backtest:130 -     AllWeather        :  41 trades | WR= 58.5% | Sharpe=+0.45 | PF=1.71
+2026-04-25 12:07:49.977 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 53.8% | Sharpe=+0.58 | PF=2.04
+2026-04-25 12:07:50.481 | INFO    | __main__:run_backtest:109 -   [10/10] HCLTECH...
+2026-04-25 12:07:51.258 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   7 trades | WR= 71.4% | Sharpe=+0.52 | PF=2.76
+2026-04-25 12:07:51.725 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 46.2% | Sharpe=+0.36 | PF=3.16
+2026-04-25 12:10:12.050 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 75.0% | Sharpe=+0.61 | PF=12.08
+2026-04-25 12:12:17.540 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.42 | PF=3.02
+2026-04-25 12:12:18.332 | INFO    | __main__:run_backtest:130 -     AllWeather        :  36 trades | WR= 61.1% | Sharpe=+0.64 | PF=2.41
+2026-04-25 12:13:28.847 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 59.5% | Sharpe=+0.63 | PF=2.11
+2026-04-25 12:13:29.355 | INFO    | __main__:run_backtest:258 - Results saved to /root/trading-engine/data/backtest_results.json
+2026-04-25 12:13:31.512 | INFO    | __main__:run_backtest:103 - ═══ UNIFIED BACKTEST — 114 stocks, 10yr ═══
+2026-04-25 12:13:31.514 | INFO    | __main__:run_backtest:109 -   [1/114] RELIANCE...
+2026-04-25 12:13:33.660 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR=100.0% | Sharpe=+5.17 | PF=53.63
+2026-04-25 12:13:34.906 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 53.8% | Sharpe=+0.36 | PF=2.78
+2026-04-25 12:15:41.276 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.31 | PF=2.20
+2026-04-25 12:17:34.793 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.13 | PF=0.68
+2026-04-25 12:17:36.347 | INFO    | __main__:run_backtest:130 -     AllWeather        :  46 trades | WR= 47.8% | Sharpe=+0.50 | PF=1.81
+2026-04-25 12:18:51.109 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  46 trades | WR= 41.3% | Sharpe=+0.14 | PF=1.16
+2026-04-25 12:18:51.609 | INFO    | __main__:run_backtest:109 -   [2/114] TCS...
+2026-04-25 12:18:53.657 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR= 75.0% | Sharpe=+0.15 | PF=1.43
+2026-04-25 12:18:54.900 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 55.6% | Sharpe=+0.59 | PF=5.32
+2026-04-25 12:20:46.268 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.23 | PF=1.74
+2026-04-25 12:22:21.550 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+1.07 | PF=21.26
+2026-04-25 12:22:22.313 | INFO    | __main__:run_backtest:130 -     AllWeather        :  39 trades | WR= 59.0% | Sharpe=+0.48 | PF=1.87
+2026-04-25 12:23:17.324 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 51.3% | Sharpe=+0.66 | PF=2.22
+2026-04-25 12:23:17.828 | INFO    | __main__:run_backtest:109 -   [3/114] HDFCBANK...
+2026-04-25 12:23:19.116 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   3 trades | WR=100.0% | Sharpe=+15.49 | PF=37.66
+2026-04-25 12:23:19.854 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 40.0% | Sharpe=+0.20 | PF=1.66
+2026-04-25 12:24:58.252 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 81.8% | Sharpe=+0.58 | PF=4.36
+2026-04-25 12:26:51.234 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.18 | PF=1.53
+2026-04-25 12:26:51.965 | INFO    | __main__:run_backtest:130 -     AllWeather        :  37 trades | WR= 51.4% | Sharpe=+0.37 | PF=1.54
+2026-04-25 12:27:53.342 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 46.2% | Sharpe=+0.07 | PF=1.08
+2026-04-25 12:27:53.842 | INFO    | __main__:run_backtest:109 -   [4/114] INFY...
+2026-04-25 12:27:54.432 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   5 trades | WR= 60.0% | Sharpe=+0.31 | PF=1.93
+2026-04-25 12:27:54.987 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   7 trades | WR= 71.4% | Sharpe=+0.50 | PF=6.66
+2026-04-25 12:29:46.064 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 41.7% | Sharpe=+0.04 | PF=1.12
+2026-04-25 12:31:44.851 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.56 | PF=4.16
+2026-04-25 12:31:45.598 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 55.0% | Sharpe=+0.53 | PF=1.88
+2026-04-25 12:32:55.492 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  33 trades | WR= 36.4% | Sharpe=+0.05 | PF=1.07
+2026-04-25 12:32:55.993 | INFO    | __main__:run_backtest:109 -   [5/114] ICICIBANK...
+2026-04-25 12:32:57.531 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   9 trades | WR= 66.7% | Sharpe=+0.43 | PF=2.35
+2026-04-25 12:32:58.432 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  16 trades | WR= 37.5% | Sharpe=+0.32 | PF=2.24
+2026-04-25 12:34:40.139 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 81.8% | Sharpe=+0.79 | PF=8.05
+2026-04-25 12:36:12.874 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=-0.27 | PF=0.43
+2026-04-25 12:36:15.054 | INFO    | __main__:run_backtest:130 -     AllWeather        :  48 trades | WR= 54.2% | Sharpe=+0.61 | PF=2.01
+2026-04-25 12:37:02.756 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  56 trades | WR= 44.6% | Sharpe=+0.44 | PF=1.58
+2026-04-25 12:37:03.256 | INFO    | __main__:run_backtest:109 -   [6/114] BHARTIARTL...
+2026-04-25 12:37:04.029 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   9 trades | WR= 66.7% | Sharpe=+0.30 | PF=1.91
+2026-04-25 12:37:04.431 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 58.3% | Sharpe=+0.62 | PF=6.09
+2026-04-25 12:38:47.750 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=+0.35 | PF=2.21
+2026-04-25 12:40:42.741 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.72 | PF=9.75
+2026-04-25 12:40:44.696 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 52.5% | Sharpe=+0.42 | PF=1.66
+2026-04-25 12:41:31.928 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  43 trades | WR= 44.2% | Sharpe=+0.44 | PF=1.84
+2026-04-25 12:41:32.429 | INFO    | __main__:run_backtest:109 -   [7/114] ITC...
+2026-04-25 12:41:34.188 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 50.0% | Sharpe=+0.05 | PF=1.12
+2026-04-25 12:41:35.123 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 55.6% | Sharpe=+0.32 | PF=3.01
+2026-04-25 12:43:14.072 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.25 | PF=1.68
+2026-04-25 12:45:08.944 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.35 | PF=2.36
+2026-04-25 12:45:09.838 | INFO    | __main__:run_backtest:130 -     AllWeather        :  32 trades | WR= 50.0% | Sharpe=+0.54 | PF=2.15
+2026-04-25 12:46:23.070 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  26 trades | WR= 50.0% | Sharpe=+0.30 | PF=2.36
+2026-04-25 12:46:23.571 | INFO    | __main__:run_backtest:109 -   [8/114] SBIN...
+2026-04-25 12:46:24.378 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  14 trades | WR= 50.0% | Sharpe=+0.06 | PF=1.15
+2026-04-25 12:46:24.889 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  17 trades | WR= 35.3% | Sharpe=+0.09 | PF=1.32
+2026-04-25 12:48:17.770 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.01 | PF=1.02
+2026-04-25 12:49:56.873 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.41 | PF=3.65
+2026-04-25 12:49:58.514 | INFO    | __main__:run_backtest:130 -     AllWeather        :  42 trades | WR= 57.1% | Sharpe=+0.67 | PF=2.18
+2026-04-25 12:51:02.576 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  45 trades | WR= 46.7% | Sharpe=+0.36 | PF=1.50
+2026-04-25 12:51:03.080 | INFO    | __main__:run_backtest:109 -   [9/114] LT...
+2026-04-25 12:51:04.782 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR= 75.0% | Sharpe=+0.77 | PF=4.50
+2026-04-25 12:51:05.890 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  15 trades | WR= 26.7% | Sharpe=+0.20 | PF=1.72
+2026-04-25 12:52:47.244 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.22 | PF=1.73
+2026-04-25 12:54:27.824 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.75 | PF=6.53
+2026-04-25 12:54:28.617 | INFO    | __main__:run_backtest:130 -     AllWeather        :  41 trades | WR= 58.5% | Sharpe=+0.45 | PF=1.71
+2026-04-25 12:55:35.146 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 53.8% | Sharpe=+0.58 | PF=2.04
+2026-04-25 12:55:35.646 | INFO    | __main__:run_backtest:109 -   [10/114] HCLTECH...
+2026-04-25 12:55:36.425 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   7 trades | WR= 71.4% | Sharpe=+0.52 | PF=2.76
+2026-04-25 12:55:36.884 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 46.2% | Sharpe=+0.36 | PF=3.16
+2026-04-25 12:57:20.268 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 75.0% | Sharpe=+0.61 | PF=12.08
+2026-04-25 12:59:01.167 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.42 | PF=3.02
+2026-04-25 12:59:03.609 | INFO    | __main__:run_backtest:130 -     AllWeather        :  36 trades | WR= 61.1% | Sharpe=+0.64 | PF=2.41
+2026-04-25 13:00:00.546 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 59.5% | Sharpe=+0.63 | PF=2.11
+2026-04-25 13:00:01.047 | INFO    | __main__:run_backtest:109 -   [11/114] BAJFINANCE...
+2026-04-25 13:00:02.441 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  12 trades | WR= 50.0% | Sharpe=+0.17 | PF=1.41
+2026-04-25 13:00:03.560 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  17 trades | WR= 47.1% | Sharpe=+0.34 | PF=2.51
+2026-04-25 13:02:15.714 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.20 | PF=0.62
+2026-04-25 13:04:12.820 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.21 | PF=0.50
+2026-04-25 13:04:15.504 | INFO    | __main__:run_backtest:130 -     AllWeather        :  43 trades | WR= 44.2% | Sharpe=+0.38 | PF=1.64
+2026-04-25 13:05:27.519 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  43 trades | WR= 46.5% | Sharpe=+0.55 | PF=2.12
+2026-04-25 13:05:28.020 | INFO    | __main__:run_backtest:109 -   [12/114] HINDUNILVR...
+2026-04-25 13:05:30.127 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  10 trades | WR= 60.0% | Sharpe=+0.20 | PF=1.53
+2026-04-25 13:05:31.562 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 66.7% | Sharpe=+0.48 | PF=5.04
+2026-04-25 13:07:41.817 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=+0.04 | PF=1.09
+2026-04-25 13:09:41.911 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=+0.06 | PF=1.18
+2026-04-25 13:09:43.869 | INFO    | __main__:run_backtest:130 -     AllWeather        :  37 trades | WR= 45.9% | Sharpe=+0.31 | PF=1.48
+2026-04-25 13:11:14.552 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  35 trades | WR= 25.7% | Sharpe=-0.14 | PF=0.84
+2026-04-25 13:11:15.053 | INFO    | __main__:run_backtest:109 -   [13/114] MARUTI...
+2026-04-25 13:11:15.885 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 66.7% | Sharpe=+0.37 | PF=2.15
+2026-04-25 13:11:16.391 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  14 trades | WR= 35.7% | Sharpe=+0.15 | PF=1.53
+2026-04-25 13:13:13.863 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 41.7% | Sharpe=+0.03 | PF=1.09
+2026-04-25 13:15:21.897 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.06 | PF=1.15
+2026-04-25 13:15:23.035 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 60.0% | Sharpe=+0.40 | PF=1.69
+2026-04-25 13:16:38.260 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 54.1% | Sharpe=+0.29 | PF=1.43
+2026-04-25 13:16:38.761 | INFO    | __main__:run_backtest:109 -   [14/114] KOTAKBANK...
+2026-04-25 13:16:39.674 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   9 trades | WR= 55.6% | Sharpe=-0.00 | PF=0.99
+2026-04-25 13:16:40.102 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 30.8% | Sharpe=+0.04 | PF=1.11
+2026-04-25 13:18:33.010 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.07 | PF=0.84
+2026-04-25 13:20:41.485 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.40 | PF=2.50
+2026-04-25 13:20:42.188 | INFO    | __main__:run_backtest:130 -     AllWeather        :  36 trades | WR= 50.0% | Sharpe=+0.32 | PF=1.57
+2026-04-25 13:21:51.842 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  35 trades | WR= 45.7% | Sharpe=+0.06 | PF=1.08
+2026-04-25 13:21:52.342 | INFO    | __main__:run_backtest:109 -   [15/114] SUNPHARMA...
+2026-04-25 13:21:53.234 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 16.7% | Sharpe=-0.76 | PF=0.24
+2026-04-25 13:21:53.661 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 50.0% | Sharpe=+0.48 | PF=5.97
+2026-04-25 13:23:47.959 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 75.0% | Sharpe=+0.37 | PF=2.49
+2026-04-25 13:25:51.505 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 25.0% | Sharpe=-0.81 | PF=0.13
+2026-04-25 13:25:52.290 | INFO    | __main__:run_backtest:130 -     AllWeather        :  42 trades | WR= 52.4% | Sharpe=+0.62 | PF=2.18
+2026-04-25 13:27:06.345 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  31 trades | WR= 41.9% | Sharpe=+0.32 | PF=1.55
+2026-04-25 13:27:06.845 | INFO    | __main__:run_backtest:109 -   [16/114] WIPRO...
+2026-04-25 13:27:07.526 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   7 trades | WR= 71.4% | Sharpe=+0.46 | PF=2.54
+2026-04-25 13:27:07.924 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 44.4% | Sharpe=+0.32 | PF=5.13
+2026-04-25 13:29:04.595 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.49 | PF=3.16
+2026-04-25 13:31:08.398 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 22.2% | Sharpe=-0.09 | PF=0.79
+2026-04-25 13:31:10.141 | INFO    | __main__:run_backtest:130 -     AllWeather        :  37 trades | WR= 51.4% | Sharpe=+0.35 | PF=1.55
+2026-04-25 13:32:22.459 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  33 trades | WR= 54.5% | Sharpe=+0.50 | PF=1.94
+2026-04-25 13:32:22.960 | INFO    | __main__:run_backtest:109 -   [17/114] M&M...
+2026-04-25 13:32:23.841 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   7 trades | WR= 57.1% | Sharpe=+0.44 | PF=2.48
+2026-04-25 13:32:24.418 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 70.0% | Sharpe=+0.55 | PF=15.42
+2026-04-25 13:34:15.429 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.06 | PF=1.17
+2026-04-25 13:36:11.639 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.45 | PF=3.25
+2026-04-25 13:36:14.396 | INFO    | __main__:run_backtest:130 -     AllWeather        :  39 trades | WR= 51.3% | Sharpe=+0.02 | PF=1.03
+2026-04-25 13:37:17.306 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  38 trades | WR= 50.0% | Sharpe=+0.77 | PF=3.06
+2026-04-25 13:37:17.807 | INFO    | __main__:run_backtest:109 -   [18/114] ULTRACEMCO...
+2026-04-25 13:37:19.603 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR= 50.0% | Sharpe=+0.31 | PF=1.95
+2026-04-25 13:37:20.636 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 30.0% | Sharpe=+0.18 | PF=1.71
+2026-04-25 13:39:13.649 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 41.7% | Sharpe=+0.07 | PF=1.20
+2026-04-25 13:41:19.043 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.41 | PF=4.06
+2026-04-25 13:41:20.894 | INFO    | __main__:run_backtest:130 -     AllWeather        :  38 trades | WR= 44.7% | Sharpe=+0.31 | PF=1.53
+2026-04-25 13:42:32.175 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  38 trades | WR= 39.5% | Sharpe=+0.24 | PF=1.38
+2026-04-25 13:42:32.680 | INFO    | __main__:run_backtest:109 -   [19/114] AXISBANK...
+2026-04-25 13:42:34.224 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  10 trades | WR= 90.0% | Sharpe=+1.33 | PF=29.71
+2026-04-25 13:42:34.727 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 33.3% | Sharpe=-0.10 | PF=0.79
+2026-04-25 13:44:21.901 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.37 | PF=2.41
+2026-04-25 13:46:20.304 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=-0.17 | PF=0.61
+2026-04-25 13:46:22.474 | INFO    | __main__:run_backtest:130 -     AllWeather        :  41 trades | WR= 46.3% | Sharpe=+0.06 | PF=1.07
+2026-04-25 13:47:28.967 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 43.2% | Sharpe=+0.20 | PF=1.27
+2026-04-25 13:47:29.468 | INFO    | __main__:run_backtest:109 -   [20/114] ASIANPAINT...
+2026-04-25 13:47:31.497 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR=100.0% | Sharpe=+9.37 | PF=55.09
+2026-04-25 13:47:32.647 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  16 trades | WR= 31.2% | Sharpe=+0.01 | PF=1.03
+2026-04-25 13:49:32.723 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.70 | PF=9.68
+2026-04-25 13:51:41.267 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.34 | PF=2.82
+2026-04-25 13:51:43.233 | INFO    | __main__:run_backtest:130 -     AllWeather        :  42 trades | WR= 47.6% | Sharpe=+0.39 | PF=1.61
+2026-04-25 13:53:02.689 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 38.5% | Sharpe=+0.07 | PF=1.09
+2026-04-25 13:53:03.190 | INFO    | __main__:run_backtest:109 -   [21/114] TITAN...
+2026-04-25 13:53:04.074 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR=100.0% | Sharpe=+3.96 | PF=88.32
+2026-04-25 13:53:04.519 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  14 trades | WR= 50.0% | Sharpe=+0.50 | PF=6.36
+2026-04-25 13:54:53.580 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.22 | PF=1.83
+2026-04-25 13:56:52.161 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.76 | PF=6.56
+2026-04-25 13:56:53.946 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 60.0% | Sharpe=+0.65 | PF=2.37
+2026-04-25 13:57:47.489 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  43 trades | WR= 51.2% | Sharpe=+0.72 | PF=2.69
+2026-04-25 13:57:47.989 | INFO    | __main__:run_backtest:109 -   [22/114] NESTLEIND...
+2026-04-25 13:57:48.658 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR=100.0% | Sharpe=+1.93 | PF=39.99
+2026-04-25 13:57:49.151 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 58.3% | Sharpe=+0.57 | PF=4.88
+2026-04-25 13:59:58.681 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=-0.32 | PF=0.45
+2026-04-25 14:02:10.366 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.33 | PF=2.17
+2026-04-25 14:02:12.673 | INFO    | __main__:run_backtest:130 -     AllWeather        :  38 trades | WR= 50.0% | Sharpe=+0.65 | PF=2.39
+2026-04-25 14:03:15.997 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  40 trades | WR= 47.5% | Sharpe=+0.36 | PF=1.55
+2026-04-25 14:03:16.498 | INFO    | __main__:run_backtest:109 -   [23/114] JSWSTEEL...
+2026-04-25 14:03:18.026 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   5 trades | WR= 40.0% | Sharpe=+0.18 | PF=1.51
+2026-04-25 14:03:19.159 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  11 trades | WR= 54.5% | Sharpe=+0.46 | PF=7.06
+2026-04-25 14:04:57.324 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 75.0% | Sharpe=+0.41 | PF=5.00
+2026-04-25 14:06:40.322 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.43 | PF=7.52
+2026-04-25 14:06:41.915 | INFO    | __main__:run_backtest:130 -     AllWeather        :  39 trades | WR= 53.8% | Sharpe=+0.70 | PF=3.51
+2026-04-25 14:07:24.215 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  40 trades | WR= 55.0% | Sharpe=+0.74 | PF=2.51
+2026-04-25 14:07:24.715 | INFO    | __main__:run_backtest:109 -   [24/114] TATASTEEL...
+2026-04-25 14:07:25.396 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  20 trades | WR= 40.0% | Sharpe=+0.05 | PF=1.10
+2026-04-25 14:07:25.822 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  16 trades | WR= 31.2% | Sharpe=+0.34 | PF=2.94
+2026-04-25 14:09:06.720 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.59 | PF=8.25
+2026-04-25 14:10:53.210 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.43 | PF=6.72
+2026-04-25 14:10:55.798 | INFO    | __main__:run_backtest:130 -     AllWeather        :  39 trades | WR= 53.8% | Sharpe=+0.68 | PF=2.76
+2026-04-25 14:12:01.836 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  35 trades | WR= 48.6% | Sharpe=+0.48 | PF=2.11
+2026-04-25 14:12:02.338 | INFO    | __main__:run_backtest:109 -   [25/114] BAJAJ-AUTO...
+2026-04-25 14:12:04.477 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   5 trades | WR= 60.0% | Sharpe=+0.16 | PF=1.38
+2026-04-25 14:12:05.842 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 60.0% | Sharpe=+0.43 | PF=4.27
+2026-04-25 14:13:55.285 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.22 | PF=1.85
+2026-04-25 14:15:43.667 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.17 | PF=1.70
+2026-04-25 14:15:44.434 | INFO    | __main__:run_backtest:130 -     AllWeather        :  34 trades | WR= 58.8% | Sharpe=+0.50 | PF=2.08
+2026-04-25 14:16:59.304 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 59.5% | Sharpe=+0.47 | PF=1.95
+2026-04-25 14:16:59.806 | INFO    | __main__:run_backtest:109 -   [26/114] TECHM...
+2026-04-25 14:17:02.332 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   9 trades | WR= 55.6% | Sharpe=+0.16 | PF=1.40
+2026-04-25 14:17:03.825 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 66.7% | Sharpe=+0.54 | PF=7.87
+2026-04-25 14:19:27.273 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.03 | PF=0.94
+2026-04-25 14:21:16.089 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.14 | PF=1.44
+2026-04-25 14:21:17.148 | INFO    | __main__:run_backtest:130 -     AllWeather        :  39 trades | WR= 51.3% | Sharpe=+0.43 | PF=1.82
+2026-04-25 14:22:15.272 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 51.4% | Sharpe=+0.74 | PF=2.78
+2026-04-25 14:22:15.773 | INFO    | __main__:run_backtest:109 -   [27/114] INDUSINDBK...
+2026-04-25 14:22:16.726 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  13 trades | WR= 30.8% | Sharpe=-0.16 | PF=0.71
+2026-04-25 14:22:17.204 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  14 trades | WR= 28.6% | Sharpe=+0.01 | PF=1.02
+2026-04-25 14:24:13.078 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.08 | PF=1.24
+2026-04-25 14:26:25.645 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.57 | PF=4.30
+2026-04-25 14:26:26.572 | INFO    | __main__:run_backtest:130 -     AllWeather        :  33 trades | WR= 51.5% | Sharpe=+0.13 | PF=1.18
+2026-04-25 14:28:01.972 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  28 trades | WR= 53.6% | Sharpe=+0.08 | PF=1.24
+2026-04-25 14:28:02.472 | INFO    | __main__:run_backtest:109 -   [28/114] CIPLA...
+2026-04-25 14:28:04.602 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   1 trades | WR=  0.0% | Sharpe=+0.00 | PF=0.00
+2026-04-25 14:28:05.157 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  11 trades | WR= 27.3% | Sharpe=+0.12 | PF=1.38
+2026-04-25 14:29:52.580 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 25.0% | Sharpe=-0.19 | PF=0.65
+2026-04-25 14:31:58.515 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.38 | PF=0.38
+2026-04-25 14:32:00.628 | INFO    | __main__:run_backtest:130 -     AllWeather        :  31 trades | WR= 45.2% | Sharpe=+0.08 | PF=1.12
+2026-04-25 14:33:21.402 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  33 trades | WR= 33.3% | Sharpe=+0.02 | PF=1.02
+2026-04-25 14:33:21.904 | INFO    | __main__:run_backtest:109 -   [29/114] DRREDDY...
+2026-04-25 14:33:23.788 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 66.7% | Sharpe=+0.71 | PF=4.87
+2026-04-25 14:33:24.239 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 60.0% | Sharpe=+0.25 | PF=2.24
+2026-04-25 14:35:19.346 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.18 | PF=0.63
+2026-04-25 14:37:18.375 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.36 | PF=2.97
+2026-04-25 14:37:20.193 | INFO    | __main__:run_backtest:130 -     AllWeather        :  33 trades | WR= 60.6% | Sharpe=+0.94 | PF=3.69
+2026-04-25 14:38:44.909 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  33 trades | WR= 48.5% | Sharpe=+0.55 | PF=2.19
+2026-04-25 14:38:45.409 | INFO    | __main__:run_backtest:109 -   [30/114] EICHERMOT...
+2026-04-25 14:38:46.355 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   7 trades | WR= 71.4% | Sharpe=+0.42 | PF=2.48
+2026-04-25 14:38:46.774 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 61.5% | Sharpe=+0.47 | PF=3.82
+2026-04-25 14:40:35.727 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.09 | PF=1.26
+2026-04-25 14:42:02.414 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.23 | PF=1.69
+2026-04-25 14:42:03.220 | INFO    | __main__:run_backtest:130 -     AllWeather        :  44 trades | WR= 47.7% | Sharpe=+0.38 | PF=1.54
+2026-04-25 14:42:56.621 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  42 trades | WR= 47.6% | Sharpe=+0.56 | PF=2.11
+2026-04-25 14:42:57.122 | INFO    | __main__:run_backtest:109 -   [31/114] BPCL...
+2026-04-25 14:42:58.200 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  15 trades | WR= 73.3% | Sharpe=+0.62 | PF=3.54
+2026-04-25 14:42:58.545 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  11 trades | WR= 45.5% | Sharpe=+0.24 | PF=1.98
+2026-04-25 14:44:32.278 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.10 | PF=1.29
+2026-04-25 14:46:05.200 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 22.2% | Sharpe=-0.75 | PF=0.06
+2026-04-25 14:46:06.007 | INFO    | __main__:run_backtest:130 -     AllWeather        :  45 trades | WR= 53.3% | Sharpe=+0.21 | PF=1.27
+2026-04-25 14:47:10.295 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  40 trades | WR= 45.0% | Sharpe=+0.05 | PF=1.06
+2026-04-25 14:47:10.796 | INFO    | __main__:run_backtest:109 -   [32/114] COALINDIA...
+2026-04-25 14:47:11.481 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  10 trades | WR= 80.0% | Sharpe=+0.90 | PF=6.13
+2026-04-25 14:47:12.126 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   8 trades | WR= 75.0% | Sharpe=+0.62 | PF=10.65
+2026-04-25 14:48:51.142 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.47 | PF=3.22
+2026-04-25 14:50:33.419 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.13 | PF=1.35
+2026-04-25 14:50:34.267 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 50.0% | Sharpe=+0.65 | PF=2.25
+2026-04-25 14:51:38.395 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  33 trades | WR= 57.6% | Sharpe=+0.67 | PF=2.98
+2026-04-25 14:51:38.895 | INFO    | __main__:run_backtest:109 -   [33/114] DIVISLAB...
+2026-04-25 14:51:39.914 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 83.3% | Sharpe=+1.01 | PF=5.99
+2026-04-25 14:51:40.612 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  11 trades | WR= 54.5% | Sharpe=+0.64 | PF=5.81
+2026-04-25 14:53:24.978 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.25 | PF=1.91
+2026-04-25 14:55:00.221 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 22.2% | Sharpe=-0.37 | PF=0.39
+2026-04-25 14:55:02.610 | INFO    | __main__:run_backtest:130 -     AllWeather        :  39 trades | WR= 53.8% | Sharpe=+1.03 | PF=4.33
+2026-04-25 14:55:57.910 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  36 trades | WR= 50.0% | Sharpe=+0.66 | PF=2.66
+2026-04-25 14:55:58.410 | INFO    | __main__:run_backtest:109 -   [34/114] BRITANNIA...
+2026-04-25 14:56:00.037 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 66.7% | Sharpe=+0.33 | PF=1.94
+2026-04-25 14:56:01.266 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 50.0% | Sharpe=+0.37 | PF=3.17
+2026-04-25 14:57:44.306 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.17 | PF=0.66
+2026-04-25 14:59:24.535 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.17 | PF=1.55
+2026-04-25 14:59:26.180 | INFO    | __main__:run_backtest:130 -     AllWeather        :  35 trades | WR= 42.9% | Sharpe=+0.66 | PF=2.44
+2026-04-25 15:00:27.829 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  36 trades | WR= 38.9% | Sharpe=+0.17 | PF=1.24
+2026-04-25 15:00:28.331 | INFO    | __main__:run_backtest:109 -   [35/114] HEROMOTOCO...
+2026-04-25 15:00:30.419 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   8 trades | WR= 37.5% | Sharpe=+0.10 | PF=1.24
+2026-04-25 15:00:32.116 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 33.3% | Sharpe=+0.16 | PF=2.09
+2026-04-25 15:02:02.428 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.18 | PF=0.61
+2026-04-25 15:03:34.757 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.06 | PF=0.87
+2026-04-25 15:03:36.574 | INFO    | __main__:run_backtest:130 -     AllWeather        :  35 trades | WR= 40.0% | Sharpe=+0.13 | PF=1.17
+2026-04-25 15:04:46.310 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  30 trades | WR= 50.0% | Sharpe=+0.58 | PF=2.44
+2026-04-25 15:04:46.811 | INFO    | __main__:run_backtest:109 -   [36/114] HINDALCO...
+2026-04-25 15:04:48.246 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  16 trades | WR= 56.2% | Sharpe=+0.26 | PF=1.71
+2026-04-25 15:04:49.263 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  15 trades | WR= 46.7% | Sharpe=+0.37 | PF=3.64
+2026-04-25 15:06:29.774 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.38 | PF=3.61
+2026-04-25 15:07:56.971 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 25.0% | Sharpe=+0.03 | PF=1.07
+2026-04-25 15:07:58.705 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 52.5% | Sharpe=+0.74 | PF=2.31
+2026-04-25 15:09:05.312 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 51.3% | Sharpe=+0.62 | PF=2.16
+2026-04-25 15:09:05.813 | INFO    | __main__:run_backtest:109 -   [37/114] GRASIM...
+2026-04-25 15:09:07.693 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   8 trades | WR= 50.0% | Sharpe=+0.19 | PF=1.46
+2026-04-25 15:09:09.032 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 30.0% | Sharpe=+0.38 | PF=4.29
+2026-04-25 15:10:54.981 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=+0.55 | PF=10.36
+2026-04-25 15:12:37.070 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.66 | PF=12.24
+2026-04-25 15:12:37.955 | INFO    | __main__:run_backtest:130 -     AllWeather        :  37 trades | WR= 64.9% | Sharpe=+0.78 | PF=2.60
+2026-04-25 15:13:37.146 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  35 trades | WR= 65.7% | Sharpe=+0.77 | PF=3.35
+2026-04-25 15:13:37.646 | INFO    | __main__:run_backtest:109 -   [38/114] TRENT...
+2026-04-25 15:13:38.456 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  22 trades | WR= 54.5% | Sharpe=+0.27 | PF=1.73
+2026-04-25 15:13:38.981 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  23 trades | WR= 47.8% | Sharpe=+0.34 | PF=4.26
+2026-04-25 15:15:33.166 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 90.9% | Sharpe=+0.85 | PF=269.71
+2026-04-25 15:17:35.203 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.72 | PF=11.26
+2026-04-25 15:17:35.803 | INFO    | __main__:run_backtest:130 -     AllWeather        :  36 trades | WR= 61.1% | Sharpe=+0.89 | PF=3.38
+2026-04-25 15:18:43.214 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  36 trades | WR= 66.7% | Sharpe=+0.73 | PF=2.61
+2026-04-25 15:18:43.716 | INFO    | __main__:run_backtest:109 -   [39/114] ADANIPORTS...
+2026-04-25 15:18:44.687 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  15 trades | WR= 53.3% | Sharpe=+0.11 | PF=1.28
+2026-04-25 15:18:45.136 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  18 trades | WR= 33.3% | Sharpe=+0.08 | PF=1.30
+2026-04-25 15:20:21.924 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  10 trades | WR= 30.0% | Sharpe=-0.21 | PF=0.54
+2026-04-25 15:21:55.940 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.57 | PF=9.08
+2026-04-25 15:21:56.525 | INFO    | __main__:run_backtest:130 -     AllWeather        :  35 trades | WR= 51.4% | Sharpe=+0.10 | PF=1.13
+2026-04-25 15:22:55.848 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  36 trades | WR= 47.2% | Sharpe=+0.35 | PF=1.61
+2026-04-25 15:22:56.349 | INFO    | __main__:run_backtest:109 -   [40/114] PIDILITIND...
+2026-04-25 15:22:57.104 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR= 50.0% | Sharpe=-0.12 | PF=0.78
+2026-04-25 15:22:57.398 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 33.3% | Sharpe=+0.34 | PF=2.82
+2026-04-25 15:24:29.018 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.09 | PF=0.80
+2026-04-25 15:26:02.822 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.42 | PF=3.12
+2026-04-25 15:26:03.619 | INFO    | __main__:run_backtest:130 -     AllWeather        :  35 trades | WR= 48.6% | Sharpe=+0.57 | PF=2.12
+2026-04-25 15:26:59.570 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 43.6% | Sharpe=+0.42 | PF=1.69
+2026-04-25 15:27:00.072 | INFO    | __main__:run_backtest:109 -   [41/114] NTPC...
+2026-04-25 15:27:01.737 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   8 trades | WR= 50.0% | Sharpe=+0.26 | PF=1.75
+2026-04-25 15:27:02.327 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 77.8% | Sharpe=+0.70 | PF=9.75
+2026-04-25 15:28:38.483 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.19 | PF=1.84
+2026-04-25 15:30:03.394 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.09 | PF=0.81
+2026-04-25 15:30:07.748 | INFO    | __main__:run_backtest:130 -     AllWeather        :  34 trades | WR= 58.8% | Sharpe=+0.76 | PF=2.69
+2026-04-25 15:31:16.738 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  35 trades | WR= 51.4% | Sharpe=+0.53 | PF=1.98
+2026-04-25 15:31:17.238 | INFO    | __main__:run_backtest:109 -   [42/114] POWERGRID...
+2026-04-25 15:31:17.917 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   3 trades | WR= 66.7% | Sharpe=+0.60 | PF=3.26
+2026-04-25 15:31:18.301 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 50.0% | Sharpe=+0.49 | PF=4.67
+2026-04-25 15:32:57.542 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 18.2% | Sharpe=-0.24 | PF=0.52
+2026-04-25 15:34:39.050 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=-0.09 | PF=0.79
+2026-04-25 15:34:39.713 | INFO    | __main__:run_backtest:130 -     AllWeather        :  27 trades | WR= 63.0% | Sharpe=+0.48 | PF=3.31
+2026-04-25 15:35:55.203 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  30 trades | WR= 50.0% | Sharpe=+0.75 | PF=2.82
+2026-04-25 15:35:55.705 | INFO    | __main__:run_backtest:109 -   [43/114] ONGC...
+2026-04-25 15:35:57.335 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  16 trades | WR= 50.0% | Sharpe=+0.22 | PF=1.59
+2026-04-25 15:35:58.802 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 50.0% | Sharpe=+0.31 | PF=2.16
+2026-04-25 15:37:47.581 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.06 | PF=1.15
+2026-04-25 15:39:27.146 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.21 | PF=1.77
+2026-04-25 15:39:27.757 | INFO    | __main__:run_backtest:130 -     AllWeather        :  36 trades | WR= 50.0% | Sharpe=+0.39 | PF=1.62
+2026-04-25 15:40:39.087 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  32 trades | WR= 46.9% | Sharpe=+0.49 | PF=2.19
+2026-04-25 15:40:39.587 | INFO    | __main__:run_backtest:109 -   [44/114] APOLLOHOSP...
+2026-04-25 15:40:40.468 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  11 trades | WR= 45.5% | Sharpe=+0.16 | PF=1.40
+2026-04-25 15:40:40.942 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 66.7% | Sharpe=+0.39 | PF=7.10
+2026-04-25 15:42:16.337 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.46 | PF=3.58
+2026-04-25 15:43:45.505 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 75.0% | Sharpe=+0.70 | PF=7.12
+2026-04-25 15:43:46.120 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 57.5% | Sharpe=+0.78 | PF=2.90
+2026-04-25 15:44:44.098 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 48.7% | Sharpe=+0.47 | PF=1.96
+2026-04-25 15:44:44.599 | INFO    | __main__:run_backtest:109 -   [45/114] SBILIFE...
+2026-04-25 15:44:45.279 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 50.0% | Sharpe=+0.06 | PF=1.12
+2026-04-25 15:44:45.557 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  11 trades | WR= 45.5% | Sharpe=-0.02 | PF=0.95
+2026-04-25 15:45:48.538 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  10 trades | WR= 60.0% | Sharpe=+0.24 | PF=1.88
+2026-04-25 15:47:04.269 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 25.0% | Sharpe=-0.94 | PF=0.05
+2026-04-25 15:47:05.581 | INFO    | __main__:run_backtest:130 -     AllWeather        :  28 trades | WR= 50.0% | Sharpe=+0.16 | PF=1.49
+2026-04-25 15:47:47.378 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  28 trades | WR= 53.6% | Sharpe=+0.20 | PF=1.71
+2026-04-25 15:47:47.878 | INFO    | __main__:run_backtest:109 -   [46/114] TATACONSUM...
+2026-04-25 15:47:48.588 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   9 trades | WR= 44.4% | Sharpe=+0.13 | PF=1.30
+2026-04-25 15:47:48.933 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  14 trades | WR= 35.7% | Sharpe=+0.43 | PF=3.66
+2026-04-25 15:49:22.523 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=+0.29 | PF=2.22
+2026-04-25 15:51:04.091 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR=100.0% | Sharpe=+0.88 | PF=263.23
+2026-04-25 15:51:04.563 | INFO    | __main__:run_backtest:130 -     AllWeather        :  35 trades | WR= 48.6% | Sharpe=+0.72 | PF=2.56
+2026-04-25 15:52:01.952 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  36 trades | WR= 47.2% | Sharpe=+0.63 | PF=2.42
+2026-04-25 15:52:02.453 | INFO    | __main__:run_backtest:109 -   [47/114] BAJAJFINSV...
+2026-04-25 15:52:03.351 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  16 trades | WR= 68.8% | Sharpe=+0.44 | PF=2.58
+2026-04-25 15:52:03.854 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 46.2% | Sharpe=+0.36 | PF=2.88
+2026-04-25 15:53:38.224 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=-0.12 | PF=0.70
+2026-04-25 15:55:09.345 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 33.3% | Sharpe=-0.37 | PF=0.24
+2026-04-25 15:55:09.824 | INFO    | __main__:run_backtest:130 -     AllWeather        :  41 trades | WR= 53.7% | Sharpe=+0.44 | PF=1.79
+2026-04-25 15:56:05.543 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  38 trades | WR= 39.5% | Sharpe=+0.16 | PF=1.24
+2026-04-25 15:56:06.044 | INFO    | __main__:run_backtest:109 -   [48/114] ADANIGREEN...
+2026-04-25 15:56:07.164 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  28 trades | WR= 46.4% | Sharpe=+0.15 | PF=1.37
+2026-04-25 15:56:07.833 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  22 trades | WR= 40.9% | Sharpe=+0.39 | PF=5.74
+2026-04-25 15:57:12.001 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :   9 trades | WR= 66.7% | Sharpe=+0.59 | PF=7.03
+2026-04-25 15:58:13.738 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   7 trades | WR= 57.1% | Sharpe=+0.48 | PF=9.59
+2026-04-25 15:58:15.369 | INFO    | __main__:run_backtest:130 -     AllWeather        :  29 trades | WR= 55.2% | Sharpe=+0.40 | PF=5.24
+2026-04-25 15:58:57.044 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  24 trades | WR= 45.8% | Sharpe=+0.40 | PF=3.42
+2026-04-25 15:58:57.544 | INFO    | __main__:run_backtest:109 -   [49/114] ADANIPOWER...
+2026-04-25 15:58:58.942 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  46 trades | WR= 43.5% | Sharpe=+0.25 | PF=1.26
+2026-04-25 15:58:59.969 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  32 trades | WR= 43.8% | Sharpe=+0.54 | PF=2.30
+2026-04-25 16:01:03.545 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 36.4% | Sharpe=-0.39 | PF=0.29
+2026-04-25 16:02:49.958 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 37.5% | Sharpe=-0.36 | PF=0.39
+2026-04-25 16:02:50.790 | INFO    | __main__:run_backtest:130 -     AllWeather        :  47 trades | WR= 46.8% | Sharpe=+0.55 | PF=1.90
+2026-04-25 16:03:48.920 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 51.4% | Sharpe=+0.42 | PF=1.76
+2026-04-25 16:03:49.421 | INFO    | __main__:run_backtest:109 -   [50/114] AMBUJACEM...
+2026-04-25 16:03:50.089 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  14 trades | WR= 57.1% | Sharpe=+0.30 | PF=1.91
+2026-04-25 16:03:50.596 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  11 trades | WR= 45.5% | Sharpe=+0.25 | PF=2.12
+2026-04-25 16:05:36.864 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.04 | PF=0.90
+2026-04-25 16:07:57.732 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.31 | PF=3.23
+2026-04-25 16:07:58.538 | INFO    | __main__:run_backtest:130 -     AllWeather        :  38 trades | WR= 50.0% | Sharpe=+0.26 | PF=1.36
+2026-04-25 16:09:12.410 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  28 trades | WR= 42.9% | Sharpe=+0.16 | PF=1.57
+2026-04-25 16:09:12.910 | INFO    | __main__:run_backtest:109 -   [51/114] AUROPHARMA...
+2026-04-25 16:09:13.741 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  13 trades | WR= 69.2% | Sharpe=+0.53 | PF=2.93
+2026-04-25 16:09:14.233 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 66.7% | Sharpe=+0.37 | PF=4.23
+2026-04-25 16:11:16.101 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=-0.02 | PF=0.95
+2026-04-25 16:13:04.064 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.12 | PF=1.34
+2026-04-25 16:13:04.593 | INFO    | __main__:run_backtest:130 -     AllWeather        :  36 trades | WR= 47.2% | Sharpe=+0.17 | PF=1.23
+2026-04-25 16:14:03.763 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  29 trades | WR= 34.5% | Sharpe=+0.12 | PF=1.36
+2026-04-25 16:14:04.264 | INFO    | __main__:run_backtest:109 -   [52/114] BANKBARODA...
+2026-04-25 16:14:05.112 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  24 trades | WR= 58.3% | Sharpe=+0.26 | PF=1.75
+2026-04-25 16:14:05.497 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  19 trades | WR= 31.6% | Sharpe=+0.17 | PF=1.70
+2026-04-25 16:15:42.503 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.41 | PF=2.51
+2026-04-25 16:17:29.819 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.04 | PF=1.11
+2026-04-25 16:17:31.524 | INFO    | __main__:run_backtest:130 -     AllWeather        :  45 trades | WR= 53.3% | Sharpe=+0.49 | PF=1.78
+2026-04-25 16:18:25.119 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  38 trades | WR= 44.7% | Sharpe=+0.51 | PF=1.88
+2026-04-25 16:18:25.620 | INFO    | __main__:run_backtest:109 -   [53/114] BEL...
+2026-04-25 16:18:26.544 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  13 trades | WR= 69.2% | Sharpe=+0.68 | PF=4.07
+2026-04-25 16:18:27.000 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  19 trades | WR= 42.1% | Sharpe=+0.33 | PF=3.52
+2026-04-25 16:20:03.632 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=+0.05 | PF=1.12
+2026-04-25 16:21:56.612 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.53 | PF=4.08
+2026-04-25 16:21:57.889 | INFO    | __main__:run_backtest:130 -     AllWeather        :  46 trades | WR= 52.2% | Sharpe=+0.73 | PF=2.40
+2026-04-25 16:22:49.523 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  39 trades | WR= 48.7% | Sharpe=+0.75 | PF=3.10
+2026-04-25 16:22:50.023 | INFO    | __main__:run_backtest:109 -   [54/114] BERGEPAINT...
+2026-04-25 16:22:51.108 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  12 trades | WR= 58.3% | Sharpe=+0.33 | PF=1.98
+2026-04-25 16:22:52.094 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 53.8% | Sharpe=+0.28 | PF=2.79
+2026-04-25 16:24:22.352 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=-0.05 | PF=0.87
+2026-04-25 16:25:52.152 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 75.0% | Sharpe=+0.63 | PF=5.58
+2026-04-25 16:25:52.954 | INFO    | __main__:run_backtest:130 -     AllWeather        :  32 trades | WR= 56.2% | Sharpe=+0.37 | PF=1.73
+2026-04-25 16:26:55.982 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  29 trades | WR= 58.6% | Sharpe=+0.15 | PF=1.44
+2026-04-25 16:26:56.482 | INFO    | __main__:run_backtest:109 -   [55/114] BOSCHLTD...
+2026-04-25 16:26:57.203 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  13 trades | WR= 46.2% | Sharpe=+0.07 | PF=1.16
+2026-04-25 16:26:58.046 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  10 trades | WR= 30.0% | Sharpe=+0.16 | PF=1.79
+2026-04-25 16:28:32.775 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 33.3% | Sharpe=-0.21 | PF=0.59
+2026-04-25 16:30:08.985 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 37.5% | Sharpe=-0.11 | PF=0.78
+2026-04-25 16:30:12.029 | INFO    | __main__:run_backtest:130 -     AllWeather        :  39 trades | WR= 51.3% | Sharpe=+0.48 | PF=1.86
+2026-04-25 16:31:16.044 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  32 trades | WR= 46.9% | Sharpe=-0.01 | PF=0.98
+2026-04-25 16:31:16.545 | INFO    | __main__:run_backtest:109 -   [56/114] CANBK...
+2026-04-25 16:31:18.146 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  20 trades | WR= 55.0% | Sharpe=+0.27 | PF=1.76
+2026-04-25 16:31:19.297 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  19 trades | WR= 36.8% | Sharpe=+0.13 | PF=1.54
+2026-04-25 16:33:05.317 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=-0.02 | PF=0.95
+2026-04-25 16:34:44.957 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.04 | PF=1.10
+2026-04-25 16:34:46.668 | INFO    | __main__:run_backtest:130 -     AllWeather        :  50 trades | WR= 44.0% | Sharpe=+0.37 | PF=1.50
+2026-04-25 16:35:40.713 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 45.9% | Sharpe=+0.17 | PF=1.25
+2026-04-25 16:35:41.213 | INFO    | __main__:run_backtest:109 -   [57/114] CHOLAFIN...
+2026-04-25 16:35:42.554 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  16 trades | WR= 62.5% | Sharpe=+0.41 | PF=2.25
+2026-04-25 16:35:43.556 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 61.5% | Sharpe=+0.51 | PF=4.37
+2026-04-25 16:37:21.179 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.00 | PF=0.99
+2026-04-25 16:39:15.287 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.21 | PF=1.75
+2026-04-25 16:39:16.136 | INFO    | __main__:run_backtest:130 -     AllWeather        :  45 trades | WR= 53.3% | Sharpe=+0.70 | PF=2.43
+2026-04-25 16:40:33.355 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  46 trades | WR= 39.1% | Sharpe=+0.40 | PF=1.74
+2026-04-25 16:40:33.856 | INFO    | __main__:run_backtest:109 -   [58/114] COLPAL...
+2026-04-25 16:40:34.739 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   6 trades | WR= 33.3% | Sharpe=-0.49 | PF=0.38
+2026-04-25 16:40:35.204 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 38.5% | Sharpe=+0.16 | PF=1.65
+2026-04-25 16:42:09.551 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.15 | PF=0.66
+2026-04-25 16:43:40.655 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=-0.27 | PF=0.45
+2026-04-25 16:43:41.148 | INFO    | __main__:run_backtest:130 -     AllWeather        :  33 trades | WR= 45.5% | Sharpe=+0.19 | PF=1.32
+2026-04-25 16:44:43.113 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  32 trades | WR= 37.5% | Sharpe=-0.06 | PF=0.92
+2026-04-25 16:44:43.614 | INFO    | __main__:run_backtest:109 -   [59/114] DABUR...
+2026-04-25 16:44:44.347 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   4 trades | WR= 75.0% | Sharpe=+0.42 | PF=2.77
+2026-04-25 16:44:44.750 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 33.3% | Sharpe=+0.20 | PF=1.79
+2026-04-25 16:46:14.619 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.13 | PF=1.38
+2026-04-25 16:47:40.777 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.08 | PF=1.20
+2026-04-25 16:47:41.558 | INFO    | __main__:run_backtest:130 -     AllWeather        :  38 trades | WR= 52.6% | Sharpe=+0.28 | PF=1.41
+2026-04-25 16:48:45.815 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  32 trades | WR= 37.5% | Sharpe=-0.17 | PF=0.80
+2026-04-25 16:48:46.315 | INFO    | __main__:run_backtest:109 -   [60/114] DLF...
+2026-04-25 16:48:46.936 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  22 trades | WR= 36.4% | Sharpe=-0.08 | PF=0.85
+2026-04-25 16:48:47.275 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  18 trades | WR= 22.2% | Sharpe=+0.16 | PF=1.68
+2026-04-25 16:50:22.016 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.54 | PF=4.57
+2026-04-25 16:51:56.158 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 50.0% | Sharpe=+0.52 | PF=6.17
+2026-04-25 16:51:56.724 | INFO    | __main__:run_backtest:130 -     AllWeather        :  37 trades | WR= 40.5% | Sharpe=-0.02 | PF=0.97
+2026-04-25 16:52:57.134 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  35 trades | WR= 37.1% | Sharpe=+0.04 | PF=1.06
+2026-04-25 16:52:57.634 | INFO    | __main__:run_backtest:109 -   [61/114] GAIL...
+2026-04-25 16:52:58.403 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  11 trades | WR= 63.6% | Sharpe=+0.49 | PF=2.67
+2026-04-25 16:52:59.011 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  18 trades | WR= 33.3% | Sharpe=+0.15 | PF=1.62
+2026-04-25 16:54:32.039 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.23 | PF=1.90
+2026-04-25 16:56:08.286 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=+0.12 | PF=1.42
+2026-04-25 16:56:08.941 | INFO    | __main__:run_backtest:130 -     AllWeather        :  37 trades | WR= 45.9% | Sharpe=+0.09 | PF=1.11
+2026-04-25 16:57:15.826 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  30 trades | WR= 46.7% | Sharpe=+0.26 | PF=1.47
+2026-04-25 16:57:16.327 | INFO    | __main__:run_backtest:109 -   [62/114] GODREJCP...
+2026-04-25 16:57:17.637 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  11 trades | WR= 18.2% | Sharpe=-0.45 | PF=0.37
+2026-04-25 16:57:18.475 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 41.7% | Sharpe=+0.26 | PF=2.09
+2026-04-25 16:58:52.430 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.12 | PF=1.36
+2026-04-25 17:00:42.339 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 50.0% | Sharpe=+0.37 | PF=2.31
+2026-04-25 17:00:44.308 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 42.5% | Sharpe=+0.43 | PF=1.67
+2026-04-25 17:01:48.398 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  36 trades | WR= 50.0% | Sharpe=+0.32 | PF=1.53
+2026-04-25 17:01:48.898 | INFO    | __main__:run_backtest:109 -   [63/114] HAVELLS...
+2026-04-25 17:01:50.541 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   9 trades | WR= 44.4% | Sharpe=+0.06 | PF=1.14
+2026-04-25 17:01:51.526 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  12 trades | WR= 50.0% | Sharpe=+0.47 | PF=3.51
+2026-04-25 17:03:27.180 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 81.8% | Sharpe=+0.59 | PF=9.70
+2026-04-25 17:05:07.735 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.39 | PF=3.76
+2026-04-25 17:05:09.679 | INFO    | __main__:run_backtest:130 -     AllWeather        :  33 trades | WR= 54.5% | Sharpe=+0.42 | PF=1.85
+2026-04-25 17:06:25.354 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  29 trades | WR= 62.1% | Sharpe=+0.30 | PF=2.24
+2026-04-25 17:06:25.854 | INFO    | __main__:run_backtest:109 -   [64/114] HAL...
+2026-04-25 17:06:26.673 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  17 trades | WR= 58.8% | Sharpe=+0.26 | PF=1.71
+2026-04-25 17:06:27.112 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 46.2% | Sharpe=+0.50 | PF=4.60
+2026-04-25 17:07:31.277 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :   9 trades | WR= 44.4% | Sharpe=-0.23 | PF=0.48
+2026-04-25 17:08:44.641 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   7 trades | WR= 71.4% | Sharpe=+0.51 | PF=4.49
+2026-04-25 17:08:46.004 | INFO    | __main__:run_backtest:130 -     AllWeather        :  35 trades | WR= 60.0% | Sharpe=+1.00 | PF=3.41
+2026-04-25 17:09:29.273 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  31 trades | WR= 51.6% | Sharpe=+0.66 | PF=2.53
+2026-04-25 17:09:29.773 | INFO    | __main__:run_backtest:109 -   [65/114] ICICIPRULI...
+2026-04-25 17:09:30.557 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  16 trades | WR= 50.0% | Sharpe=-0.09 | PF=0.82
+2026-04-25 17:09:31.012 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 23.1% | Sharpe=-0.07 | PF=0.84
+2026-04-25 17:11:13.909 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 63.6% | Sharpe=+0.16 | PF=1.50
+2026-04-25 17:12:48.157 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.30 | PF=0.51
+2026-04-25 17:12:48.862 | INFO    | __main__:run_backtest:130 -     AllWeather        :  30 trades | WR= 46.7% | Sharpe=+0.21 | PF=1.33
+2026-04-25 17:13:51.469 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  26 trades | WR= 26.9% | Sharpe=+0.00 | PF=1.00
+2026-04-25 17:13:51.969 | INFO    | __main__:run_backtest:109 -   [66/114] INDHOTEL...
+2026-04-25 17:13:52.778 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  16 trades | WR= 68.8% | Sharpe=+0.35 | PF=2.20
+2026-04-25 17:13:53.275 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  14 trades | WR= 42.9% | Sharpe=+0.49 | PF=4.60
+2026-04-25 17:15:36.989 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 45.5% | Sharpe=-0.37 | PF=0.40
+2026-04-25 17:17:31.727 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.29 | PF=2.26
+2026-04-25 17:17:33.540 | INFO    | __main__:run_backtest:130 -     AllWeather        :  42 trades | WR= 50.0% | Sharpe=+0.64 | PF=2.67
+2026-04-25 17:18:29.728 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  40 trades | WR= 47.5% | Sharpe=+0.52 | PF=2.05
+2026-04-25 17:18:30.229 | INFO    | __main__:run_backtest:109 -   [67/114] INDUSTOWER...
+2026-04-25 17:18:32.253 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  18 trades | WR= 33.3% | Sharpe=-0.22 | PF=0.62
+2026-04-25 17:18:34.160 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  14 trades | WR= 35.7% | Sharpe=+0.03 | PF=1.08
+2026-04-25 17:20:36.284 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.16 | PF=1.61
+2026-04-25 17:22:13.431 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.20 | PF=0.51
+2026-04-25 17:22:14.247 | INFO    | __main__:run_backtest:130 -     AllWeather        :  40 trades | WR= 42.5% | Sharpe=-0.01 | PF=0.99
+2026-04-25 17:23:23.956 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  29 trades | WR= 41.4% | Sharpe=-0.03 | PF=0.92
+2026-04-25 17:23:24.457 | INFO    | __main__:run_backtest:109 -   [68/114] IOC...
+2026-04-25 17:23:25.302 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  12 trades | WR= 66.7% | Sharpe=+0.50 | PF=2.79
+2026-04-25 17:23:25.779 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  13 trades | WR= 38.5% | Sharpe=+0.22 | PF=2.14
+2026-04-25 17:25:00.346 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 50.0% | Sharpe=-0.30 | PF=0.42
+2026-04-25 17:27:00.201 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.45 | PF=0.23
+2026-04-25 17:27:02.476 | INFO    | __main__:run_backtest:130 -     AllWeather        :  45 trades | WR= 48.9% | Sharpe=+0.33 | PF=1.47
+2026-04-25 17:28:09.863 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 43.2% | Sharpe=+0.30 | PF=1.57
+2026-04-25 17:28:10.363 | INFO    | __main__:run_backtest:109 -   [69/114] IRCTC...
+2026-04-25 17:28:10.969 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  13 trades | WR= 38.5% | Sharpe=+0.04 | PF=1.10
+2026-04-25 17:28:11.253 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   8 trades | WR= 50.0% | Sharpe=+0.48 | PF=10.20
+2026-04-25 17:28:55.558 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :   8 trades | WR= 62.5% | Sharpe=+0.45 | PF=4.24
+2026-04-25 17:29:48.578 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   6 trades | WR= 66.7% | Sharpe=-0.16 | PF=0.63
+2026-04-25 17:29:49.058 | INFO    | __main__:run_backtest:130 -     AllWeather        :  21 trades | WR= 57.1% | Sharpe=+0.26 | PF=2.17
+2026-04-25 17:30:31.610 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  15 trades | WR= 73.3% | Sharpe=+0.51 | PF=5.19
+2026-04-25 17:30:32.111 | INFO    | __main__:run_backtest:109 -   [70/114] JINDALSTEL...
+2026-04-25 17:30:32.989 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  25 trades | WR= 56.0% | Sharpe=+0.30 | PF=1.84
+2026-04-25 17:30:33.596 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  22 trades | WR= 45.5% | Sharpe=+0.30 | PF=2.87
+2026-04-25 17:32:25.195 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 58.3% | Sharpe=-0.14 | PF=0.63
+2026-04-25 17:34:20.671 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 66.7% | Sharpe=+0.49 | PF=4.31
+2026-04-25 17:34:21.367 | INFO    | __main__:run_backtest:130 -     AllWeather        :  42 trades | WR= 52.4% | Sharpe=+0.71 | PF=2.44
+2026-04-25 17:35:34.810 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  37 trades | WR= 43.2% | Sharpe=+0.41 | PF=1.84
+2026-04-25 17:35:35.310 | INFO    | __main__:run_backtest:109 -   [71/114] LUPIN...
+2026-04-25 17:35:36.235 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   7 trades | WR= 42.9% | Sharpe=-0.14 | PF=0.71
+2026-04-25 17:35:36.780 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :   9 trades | WR= 44.4% | Sharpe=+0.42 | PF=6.03
+2026-04-25 17:37:37.673 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.44 | PF=2.95
+2026-04-25 17:39:25.934 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 55.6% | Sharpe=+0.35 | PF=2.49
+2026-04-25 17:39:26.483 | INFO    | __main__:run_backtest:130 -     AllWeather        :  35 trades | WR= 54.3% | Sharpe=+0.37 | PF=1.61
+2026-04-25 17:40:39.638 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  19 trades | WR= 47.4% | Sharpe=+0.30 | PF=2.30
+2026-04-25 17:40:40.139 | INFO    | __main__:run_backtest:109 -   [72/114] MARICO...
+2026-04-25 17:40:40.962 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :   3 trades | WR=100.0% | Sharpe=+2.72 | PF=26.19
+2026-04-25 17:40:41.829 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  14 trades | WR= 21.4% | Sharpe=+0.04 | PF=1.14
+2026-04-25 17:42:28.213 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  12 trades | WR= 66.7% | Sharpe=+0.18 | PF=1.54
+2026-04-25 17:44:02.954 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   8 trades | WR= 62.5% | Sharpe=+0.26 | PF=2.15
+2026-04-25 17:44:04.749 | INFO    | __main__:run_backtest:130 -     AllWeather        :  35 trades | WR= 62.9% | Sharpe=+0.39 | PF=1.81
+2026-04-25 17:44:55.788 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  38 trades | WR= 47.4% | Sharpe=+0.15 | PF=1.21
+2026-04-25 17:44:56.288 | INFO    | __main__:run_backtest:109 -   [73/114] MAXHEALTH...
+2026-04-25 17:44:56.719 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  10 trades | WR= 90.0% | Sharpe=+1.59 | PF=13.96
+2026-04-25 17:44:56.973 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  11 trades | WR= 63.6% | Sharpe=+0.64 | PF=7.91
+2026-04-25 17:45:40.111 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :   6 trades | WR= 83.3% | Sharpe=+0.69 | PF=4.75
+2026-04-25 17:46:17.219 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   5 trades | WR= 80.0% | Sharpe=+1.02 | PF=29.80
+2026-04-25 17:46:18.225 | INFO    | __main__:run_backtest:130 -     AllWeather        :  22 trades | WR= 54.5% | Sharpe=+0.38 | PF=2.71
+2026-04-25 17:46:30.310 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  24 trades | WR= 58.3% | Sharpe=+0.38 | PF=2.84
+2026-04-25 17:46:30.811 | INFO    | __main__:run_backtest:109 -   [74/114] MOTHERSON...
+2026-04-25 17:46:31.711 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  19 trades | WR= 52.6% | Sharpe=+0.25 | PF=1.71
+2026-04-25 17:46:32.201 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  15 trades | WR= 40.0% | Sharpe=+0.33 | PF=3.19
+2026-04-25 17:47:57.665 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 72.7% | Sharpe=+0.56 | PF=4.20
+2026-04-25 17:49:34.255 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 77.8% | Sharpe=+0.10 | PF=1.34
+2026-04-25 17:49:34.876 | INFO    | __main__:run_backtest:130 -     AllWeather        :  45 trades | WR= 51.1% | Sharpe=+0.62 | PF=2.11
+2026-04-25 17:50:39.726 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  33 trades | WR= 42.4% | Sharpe=+0.35 | PF=1.61
+2026-04-25 17:50:40.227 | INFO    | __main__:run_backtest:109 -   [75/114] NAUKRI...
+2026-04-25 17:50:41.913 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  23 trades | WR= 52.2% | Sharpe=+0.33 | PF=2.00
+2026-04-25 17:50:42.946 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  18 trades | WR= 38.9% | Sharpe=+0.47 | PF=5.12
+2026-04-25 17:52:21.029 | INFO    | __main__:run_backtest:130 -     WeeklyTrend       :  11 trades | WR= 54.5% | Sharpe=+0.15 | PF=1.39
+2026-04-25 17:53:55.670 | INFO    | __main__:run_backtest:130 -     DonchianMonthly   :   9 trades | WR= 44.4% | Sharpe=-0.01 | PF=0.98
+2026-04-25 17:53:57.478 | INFO    | __main__:run_backtest:130 -     AllWeather        :  38 trades | WR= 63.2% | Sharpe=+0.80 | PF=2.86
+2026-04-25 17:54:56.101 | INFO    | __main__:run_backtest:130 -     WeeklyDaily       :  33 trades | WR= 60.6% | Sharpe=+0.81 | PF=2.98
+2026-04-25 17:54:56.603 | INFO    | __main__:run_backtest:109 -   [76/114] NHPC...
+2026-04-25 17:54:58.330 | INFO    | __main__:run_backtest:130 -     QualityDipBuy     :  18 trades | WR= 44.4% | Sharpe=+0.02 | PF=1.04
+2026-04-25 17:54:59.377 | INFO    | __main__:run_backtest:130 -     AnnualMomentum    :  11 trades | WR= 45.5% | Sharpe=+0.45 | PF=3.98

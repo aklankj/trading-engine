@@ -1,0 +1,772 @@
+{
+  "NIFTY 50": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "NIFTY BANK": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "RELIANCE": {
+    "regime": "Bear",
+    "confidence": 0.65,
+    "date": "2026-04-24"
+  },
+  "HDFCBANK": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "INFY": {
+    "regime": "Bear",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "TCS": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "ICICIBANK": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "BAJFINANCE": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "ASIANPAINT": {
+    "regime": "Recovery",
+    "confidence": 0.55,
+    "date": "2026-04-24"
+  },
+  "TITAN": {
+    "regime": "Bull",
+    "confidence": 0.8092617768289678,
+    "date": "2026-04-24"
+  },
+  "PIDILITIND": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "SBIN": {
+    "regime": "Bull",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "BHARTIARTL": {
+    "regime": "Bear",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "ITC": {
+    "regime": "Sideways",
+    "confidence": 0.45,
+    "date": "2026-04-24"
+  },
+  "MARUTI": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "LT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "AXISBANK": {
+    "regime": "Bull",
+    "confidence": 0.7105126323740842,
+    "date": "2026-04-24"
+  },
+  "KOTAKBANK": {
+    "regime": "Bear",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "SUNPHARMA": {
+    "regime": "Bear",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "WIPRO": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "HCLTECH": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "HINDUNILVR": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "ADANIENT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "NTPC": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "ONGC": {
+    "regime": "Bull",
+    "confidence": 0.9340510133458915,
+    "date": "2026-04-24"
+  },
+  "M&M": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "ULTRACEMCO": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "POWERGRID": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "NESTLEIND": {
+    "regime": "Bull",
+    "confidence": 0.7729784393874306,
+    "date": "2026-04-24"
+  },
+  "JSWSTEEL": {
+    "regime": "Bull",
+    "confidence": 0.7192147674074378,
+    "date": "2026-04-24"
+  },
+  "TATASTEEL": {
+    "regime": "Bull",
+    "confidence": 0.7818710786635464,
+    "date": "2026-04-24"
+  },
+  "BAJAJ-AUTO": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "TECHM": {
+    "regime": "Bear",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "INDUSINDBK": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "APOLLOHOSP": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "CIPLA": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "DRREDDY": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "EICHERMOT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "BPCL": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "COALINDIA": {
+    "regime": "Bull",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "DIVISLAB": {
+    "regime": "Bull",
+    "confidence": 0.7250403438205724,
+    "date": "2026-04-24"
+  },
+  "BRITANNIA": {
+    "regime": "Sideways",
+    "confidence": 0.45,
+    "date": "2026-04-24"
+  },
+  "HEROMOTOCO": {
+    "regime": "Bear",
+    "confidence": 0.7115666163524236,
+    "date": "2026-04-24"
+  },
+  "HINDALCO": {
+    "regime": "Bull",
+    "confidence": 0.7591934891245788,
+    "date": "2026-04-24"
+  },
+  "GRASIM": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "TRENT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "SHRIRAMFIN": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "ADANIPORTS": {
+    "regime": "Bull",
+    "confidence": 0.7785199108637236,
+    "date": "2026-04-24"
+  },
+  "BAJAJFINSV": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "TATACONSUM": {
+    "regime": "Sideways",
+    "confidence": 0.55,
+    "date": "2026-04-24"
+  },
+  "SBILIFE": {
+    "regime": "Bear",
+    "confidence": 0.7793793159807233,
+    "date": "2026-04-24"
+  },
+  "GOLDGUINEA26MARFUT": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-03-30"
+  },
+  "GOLDM26APRFUT": {
+    "regime": "Bear",
+    "confidence": 0.5,
+    "date": "2026-04-02"
+  },
+  "SILVERM26APRFUT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "CRUDEOIL26MARFUT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-03-19"
+  },
+  "NATURALGAS26MARFUT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-03-26"
+  },
+  "COPPER26MARFUT": {
+    "regime": "Bear",
+    "confidence": 0.7810192844080855,
+    "date": "2026-03-30"
+  },
+  "ADANIGREEN": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "ADANIPOWER": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "AMBUJACEM": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "AUROPHARMA": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "BANKBARODA": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "BEL": {
+    "regime": "Bull",
+    "confidence": 0.7362388960803126,
+    "date": "2026-04-24"
+  },
+  "BERGEPAINT": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "BOSCHLTD": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "CANBK": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "CHOLAFIN": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "COLPAL": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "CONCOR": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "DABUR": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "DLF": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "GAIL": {
+    "regime": "Bull",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "GODREJCP": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "HAVELLS": {
+    "regime": "Bear",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "HAL": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "ICICIPRULI": {
+    "regime": "Bear",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "IDEA": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "IDFCFIRSTB": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "INDHOTEL": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "INDUSTOWER": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "IOC": {
+    "regime": "Sideways",
+    "confidence": 0.45,
+    "date": "2026-04-24"
+  },
+  "IRCTC": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "IRFC": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "JIOFIN": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "JINDALSTEL": {
+    "regime": "Bull",
+    "confidence": 0.842389284841011,
+    "date": "2026-04-24"
+  },
+  "JSWENERGY": {
+    "regime": "Bull",
+    "confidence": 0.8122056183364124,
+    "date": "2026-04-24"
+  },
+  "LICI": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "LODHA": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "LUPIN": {
+    "regime": "Bull",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "MARICO": {
+    "regime": "Bull",
+    "confidence": 0.702022712709991,
+    "date": "2026-04-24"
+  },
+  "MAXHEALTH": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "MOTHERSON": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "NAUKRI": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "NHPC": {
+    "regime": "Bull",
+    "confidence": 0.7198528181939549,
+    "date": "2026-04-24"
+  },
+  "OBEROIRLTY": {
+    "regime": "Bull",
+    "confidence": 0.884271943871231,
+    "date": "2026-04-24"
+  },
+  "OFSS": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "PAYTM": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "PFC": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "PIIND": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "PNB": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "POLYCAB": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "RECLTD": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "SBICARD": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "SIEMENS": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "SRF": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "TATAPOWER": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "TORNTPHARM": {
+    "regime": "Sideways",
+    "confidence": 0.45,
+    "date": "2026-04-24"
+  },
+  "TVSMOTOR": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "UNIONBANK": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "UNITDSPR": {
+    "regime": "Bull",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "VEDL": {
+    "regime": "Bull",
+    "confidence": 0.7278378298115571,
+    "date": "2026-04-24"
+  },
+  "ZYDUSLIFE": {
+    "regime": "Bull",
+    "confidence": 0.7585557132925507,
+    "date": "2026-04-24"
+  },
+  "ASTRAL": {
+    "regime": "Sideways",
+    "confidence": 0.45,
+    "date": "2026-04-24"
+  },
+  "ATUL": {
+    "regime": "Bull",
+    "confidence": 0.8859679493121511,
+    "date": "2026-04-24"
+  },
+  "BALKRISIND": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "BATAINDIA": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "CANFINHOME": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "CDSL": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "CUMMINSIND": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "DEEPAKNTR": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "DMART": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "ESCORTS": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "FEDERALBNK": {
+    "regime": "Bull",
+    "confidence": 0.7012813552791362,
+    "date": "2026-04-24"
+  },
+  "FORTIS": {
+    "regime": "Bull",
+    "confidence": 0.791050803524102,
+    "date": "2026-04-24"
+  },
+  "IPCALAB": {
+    "regime": "Bull",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "JUBLFOOD": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "LALPATHLAB": {
+    "regime": "Sideways",
+    "confidence": 0.55,
+    "date": "2026-04-24"
+  },
+  "LICHSGFIN": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "LTTS": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "MFSL": {
+    "regime": "HighVol",
+    "confidence": 0.7,
+    "date": "2026-04-24"
+  },
+  "MPHASIS": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "MUTHOOTFIN": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "PAGEIND": {
+    "regime": "Bull",
+    "confidence": 0.9063018644440505,
+    "date": "2026-04-24"
+  },
+  "PERSISTENT": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "PETRONET": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "PHOENIXLTD": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "PVRINOX": {
+    "regime": "Bull",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "RAMCOCEM": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "SAIL": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "SYNGENE": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "TATACHEM": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "TATACOMM": {
+    "regime": "Bull",
+    "confidence": 0.5,
+    "date": "2026-04-24"
+  },
+  "TATAELXSI": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "TIINDIA": {
+    "regime": "Bull",
+    "confidence": 0.95,
+    "date": "2026-04-24"
+  },
+  "TRIDENT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "VOLTAS": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  },
+  "YESBANK": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "CRUDEOIL26APRFUT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-20"
+  },
+  "NATURALGAS26APRFUT": {
+    "regime": "Bear",
+    "confidence": 0.7976617074690442,
+    "date": "2026-04-24"
+  },
+  "GOLD26APRFUT": {
+    "regime": "Bear",
+    "confidence": 0.5,
+    "date": "2026-04-02"
+  },
+  "COPPER26APRFUT": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "GOLDGUINEA26APRFUT": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "GOLDM26MAYFUT": {
+    "regime": "Recovery",
+    "confidence": 0.6,
+    "date": "2026-04-24"
+  },
+  "CRUDEOIL26MAYFUT": {
+    "regime": "HighVol",
+    "confidence": 0.9,
+    "date": "2026-04-24"
+  }
+}

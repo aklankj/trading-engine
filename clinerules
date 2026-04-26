@@ -1,0 +1,51 @@
+# Trading Engine — Cline Rules
+
+## Project Type
+Python algorithmic trading engine. Deployed on remote VPS via SSH.
+
+## Code Style
+- Python 3.12, type hints preferred
+- Use `loguru` for logging (imported as `from utils.logger import log`)
+- Use `pathlib.Path` for file paths
+- JSON for data persistence (no database)
+- All times in IST (Asia/Kolkata)
+
+## Critical Constraints
+
+### Strategy Code
+- ALL strategies MUST inherit from `strategies.base.BaseStrategy`
+- Implement: `should_enter(df, i)`, `should_exit(df, i, pos)`, `min_bars()`
+- Use `.iloc[i]` for DataFrame row access — NEVER `df['col'][i]`
+- Register in `strategies/registry.py` to make available to both backtest and live
+
+### Files to NEVER modify
+- `config/.env` — credentials
+- `data/paper_portfolio.json` — live state (modify via portfolio_tracker API only)
+- `core/strategies.py` — DEAD, do not resurrect
+- `core/meta_allocator.py` — DEAD, do not resurrect
+- `backtest/engine.py` — DEPRECATED, use backtest/unified.py
+
+### Files that are the source of truth
+- `strategies/registry.py` — what strategies are active
+- `strategies/base.py` — how strategies work
+- `backtest/unified.py` — how strategies are tested
+- `jobs/swing_scanner_v2.py` — how signals reach the portfolio
+- `execution/portfolio_tracker.py` — how P&L is tracked
+
+### Metrics Rules
+- Sharpe ratio requires minimum 30 trades (set `sharpe_valid=False` below)
+- Primary metrics: CAGR, Expectancy, Profit Factor, Max Drawdown
+- Transaction costs: 0.2% round-trip per trade (India: STT + brokerage + slippage)
+- SELL signals rejected for cash equities (not shortable without F&O in India)
+
+### Testing
+- Test on 100+ stocks minimum (NIFTY100_PLUS in backtest/unified.py)
+- Walk-forward validation required before trusting any strategy
+- Portfolio tracker must survive type mismatches (use _safe_float/_safe_int)
+
+## Remote Deployment
+- VPS: root@159.203.78.174
+- Working dir: ~/trading-engine
+- Venv: ~/trading-engine/venv
+- Start: `nohup python main.py > engine_output.log 2>&1 &`
+- PID lock prevents duplicate instances

@@ -1,0 +1,383 @@
+{
+  "strategies": [
+    {
+      "name": "Automate_Strategy_Finding_with_LLM_in_Qu",
+      "paper_title": "Automate Strategy Finding with LLM in Quant Investment",
+      "file": "/root/trading-engine/data/generated_strategies/Automate_Strategy_Finding_with_LLM_in_Qu.py",
+      "backtest": {
+        "error": "No trades generated on any stock",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-03-25T12:35:49.002608",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Increase_Alpha_Performance_and_Risk_of_a",
+      "paper_title": "Increase Alpha: Performance and Risk of an AI-Driven Trading",
+      "file": "/root/trading-engine/data/generated_strategies/Increase_Alpha_Performance_and_Risk_of_a.py",
+      "backtest": {
+        "error": "No trades generated on any stock",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-03-25T12:35:58.774668",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Confidence_Weighted_Mean_Reversion_CWMR",
+      "paper_title": "Confidence Weighted Mean Reversion (CWMR) \u2014 Online Portfolio",
+      "file": "/root/trading-engine/data/generated_strategies/Confidence_Weighted_Mean_Reversion_CWMR.py",
+      "backtest": {
+        "error": "No trades generated on any stock",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-03-25T12:36:10.249062",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "QuantEvolve_Evolutionary_MultiAgent_Stra",
+      "paper_title": "QuantEvolve: Evolutionary Multi-Agent Strategy Discovery",
+      "file": "/root/trading-engine/data/generated_strategies/QuantEvolve_Evolutionary_MultiAgent_Stra.py",
+      "backtest": {
+        "error": "No trades generated on any stock",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-03-25T12:36:19.925097",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "ML_Enhanced_MultiFactor_Quant_Trading_wi",
+      "paper_title": "ML Enhanced Multi-Factor Quant Trading with Bias Correction",
+      "file": "/root/trading-engine/data/generated_strategies/ML_Enhanced_MultiFactor_Quant_Trading_wi.py",
+      "backtest": {
+        "error": "No trades generated on any stock",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-03-25T12:36:29.646130",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Increase_Alpha_Performance_and_Risk_of_a",
+      "paper_title": "Increase Alpha: Performance and Risk of an AI-Driven Trading",
+      "file": "/root/trading-engine/data/generated_strategies/Increase_Alpha_Performance_and_Risk_of_a.py",
+      "backtest": {
+        "error": "Too few trades (0) on test stocks",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-03-25T12:51:31.426806",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Confidence_Weighted_Mean_Reversion_CWMR",
+      "paper_title": "Confidence Weighted Mean Reversion (CWMR) \u2014 Online Portfolio",
+      "file": "/root/trading-engine/data/generated_strategies/Confidence_Weighted_Mean_Reversion_CWMR.py",
+      "backtest": {
+        "error": "Too few trades (0) on test stocks",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-03-25T12:51:53.979147",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "RegimeAdaptive_RL_for_Portfolio_Optimiza",
+      "paper_title": "Regime-Adaptive RL for Portfolio Optimization",
+      "file": "/root/trading-engine/data/generated_strategies/RegimeAdaptive_RL_for_Portfolio_Optimiza.py",
+      "backtest": {
+        "strategy_name": "RegimeAdaptive_RL_for_Portfolio_Optimiza",
+        "total_trades": 148,
+        "win_rate": 40.5,
+        "avg_return": -0.6,
+        "sharpe": -0.09,
+        "profit_factor": 0.94,
+        "avg_win": 7.6,
+        "avg_loss": -5.5,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "REJECTED",
+        "action": "Does not meet minimum thresholds"
+      },
+      "status": "REJECTED",
+      "created_at": "2026-03-25T12:52:34.078021",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "ARIMAHMM_Adaptive_Trading_with_Smoothed",
+      "paper_title": "ARIMA-HMM Adaptive Trading with Smoothed Probabilities",
+      "file": "/root/trading-engine/data/generated_strategies/ARIMAHMM_Adaptive_Trading_with_Smoothed.py",
+      "backtest": {
+        "error": "Too few trades (0) on test stocks",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-03-25T12:52:57.898812",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Generating_Alpha_Hybrid_AI_Trading_with",
+      "paper_title": "Generating Alpha: Hybrid AI Trading with FinBERT Sentiment",
+      "file": "/root/trading-engine/data/generated_strategies/Generating_Alpha_Hybrid_AI_Trading_with.py",
+      "backtest": {
+        "strategy_name": "Generating_Alpha_Hybrid_AI_Trading_with",
+        "total_trades": 76,
+        "win_rate": 52.6,
+        "avg_return": 2.5,
+        "sharpe": 0.87,
+        "profit_factor": 1.71,
+        "avg_win": 7.6,
+        "avg_loss": -4.9,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "WATCHLIST",
+        "action": "Monitor, re-test with more data"
+      },
+      "status": "WATCHLIST",
+      "created_at": "2026-03-25T12:53:12.966223",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Increase_Alpha_Performance_and_Risk_of_a",
+      "paper_title": "Increase Alpha: Performance and Risk of an AI-Driven Trading",
+      "file": "/root/trading-engine/data/generated_strategies/Increase_Alpha_Performance_and_Risk_of_a.py",
+      "backtest": {
+        "strategy_name": "Increase_Alpha_Performance_and_Risk_of_a",
+        "total_trades": 382,
+        "win_rate": 50.5,
+        "avg_return": 8.1,
+        "sharpe": 0.62,
+        "profit_factor": 1.51,
+        "avg_win": 6.0,
+        "avg_loss": -4.1,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "WATCHLIST",
+        "action": "Monitor, re-test with more data"
+      },
+      "status": "WATCHLIST",
+      "created_at": "2026-04-12T20:30:28.583555",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Confidence_Weighted_Mean_Reversion_CWMR",
+      "paper_title": "Confidence Weighted Mean Reversion (CWMR) \u2014 Online Portfolio",
+      "file": "/root/trading-engine/data/generated_strategies/Confidence_Weighted_Mean_Reversion_CWMR.py",
+      "backtest": {
+        "strategy_name": "Confidence_Weighted_Mean_Reversion_CWMR",
+        "total_trades": 255,
+        "win_rate": 75.7,
+        "avg_return": 1.8,
+        "sharpe": 2.87,
+        "profit_factor": 7.37,
+        "avg_win": 4.4,
+        "avg_loss": -1.9,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "PROMOTED",
+        "action": "Add to paper trading"
+      },
+      "status": "PROMOTED",
+      "created_at": "2026-04-12T20:30:54.975879",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "SPXVIX_Risk_Computations_Via_Perturbed_O",
+      "paper_title": "SPX-VIX Risk Computations Via Perturbed Optimal Transport",
+      "file": "/root/trading-engine/data/generated_strategies/SPXVIX_Risk_Computations_Via_Perturbed_O.py",
+      "backtest": {
+        "strategy_name": "SPXVIX_Risk_Computations_Via_Perturbed_O",
+        "total_trades": 353,
+        "win_rate": 53.3,
+        "avg_return": 400.6,
+        "sharpe": 1.16,
+        "profit_factor": 2.29,
+        "avg_win": 8.3,
+        "avg_loss": -4.1,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "PROMOTED",
+        "action": "Add to paper trading"
+      },
+      "status": "PROMOTED",
+      "created_at": "2026-04-12T20:31:15.866559",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Hybrid_Hidden_Markov_Model_for_Modeling",
+      "paper_title": "Hybrid Hidden Markov Model for Modeling Equity Excess Growth",
+      "file": "/root/trading-engine/data/generated_strategies/Hybrid_Hidden_Markov_Model_for_Modeling.py",
+      "backtest": {
+        "strategy_name": "Hybrid_Hidden_Markov_Model_for_Modeling",
+        "total_trades": 211,
+        "win_rate": 38.4,
+        "avg_return": -12.5,
+        "sharpe": -0.13,
+        "profit_factor": 0.92,
+        "avg_win": 7.6,
+        "avg_loss": -5.2,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "REJECTED",
+        "action": "Does not meet minimum thresholds"
+      },
+      "status": "REJECTED",
+      "created_at": "2026-04-12T20:31:40.320934",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Competition_between_DEXs_through_Dynamic",
+      "paper_title": "Competition between DEXs through Dynamic Fees",
+      "file": "/root/trading-engine/data/generated_strategies/Competition_between_DEXs_through_Dynamic.py",
+      "backtest": {
+        "strategy_name": "Competition_between_DEXs_through_Dynamic",
+        "total_trades": 364,
+        "win_rate": 42.6,
+        "avg_return": -6.8,
+        "sharpe": -0.09,
+        "profit_factor": 0.95,
+        "avg_win": 4.1,
+        "avg_loss": -3.2,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "REJECTED",
+        "action": "Does not meet minimum thresholds"
+      },
+      "status": "REJECTED",
+      "created_at": "2026-04-12T20:31:51.323347",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Increase_Alpha_Performance_and_Risk_of_a",
+      "paper_title": "Increase Alpha: Performance and Risk of an AI-Driven Trading",
+      "file": "/root/trading-engine/data/generated_strategies/Increase_Alpha_Performance_and_Risk_of_a.py",
+      "backtest": {
+        "strategy_name": "Increase_Alpha_Performance_and_Risk_of_a",
+        "total_trades": 156,
+        "win_rate": 52.6,
+        "avg_return": 6.0,
+        "sharpe": 0.91,
+        "profit_factor": 1.83,
+        "avg_win": 7.9,
+        "avg_loss": -4.8,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "WATCHLIST",
+        "action": "Monitor, re-test with more data"
+      },
+      "status": "WATCHLIST",
+      "created_at": "2026-04-19T20:30:33.772403",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Confidence_Weighted_Mean_Reversion_CWMR",
+      "paper_title": "Confidence Weighted Mean Reversion (CWMR) \u2014 Online Portfolio",
+      "file": "/root/trading-engine/data/generated_strategies/Confidence_Weighted_Mean_Reversion_CWMR.py",
+      "backtest": {
+        "error": "Too few trades (0) on test stocks",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-04-19T20:31:00.306985",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Hybrid_Hidden_Markov_Model_for_Modeling",
+      "paper_title": "Hybrid Hidden Markov Model for Modeling Equity Excess Growth",
+      "file": "/root/trading-engine/data/generated_strategies/Hybrid_Hidden_Markov_Model_for_Modeling.py",
+      "backtest": {
+        "error": "Too few trades (0) on test stocks",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-04-19T20:31:16.665655",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "AlgoXpert_Alpha_Research_Framework_A_Rig",
+      "paper_title": "AlgoXpert Alpha Research Framework. A Rigorous IS WFA OOS Pr",
+      "file": "/root/trading-engine/data/generated_strategies/AlgoXpert_Alpha_Research_Framework_A_Rig.py",
+      "backtest": {
+        "error": "Too few trades (0) on test stocks",
+        "verdict": "ERROR"
+      },
+      "status": "ERROR",
+      "created_at": "2026-04-19T20:31:40.115288",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    },
+    {
+      "name": "Differential_Machine_Learning_for_0DTE_O",
+      "paper_title": "Differential Machine Learning for 0DTE Options with Stochast",
+      "file": "/root/trading-engine/data/generated_strategies/Differential_Machine_Learning_for_0DTE_O.py",
+      "backtest": {
+        "strategy_name": "Differential_Machine_Learning_for_0DTE_O",
+        "total_trades": 252,
+        "win_rate": 52.8,
+        "avg_return": 9.0,
+        "sharpe": 0.22,
+        "profit_factor": 1.15,
+        "avg_win": 3.0,
+        "avg_loss": -2.9,
+        "errors": 0,
+        "tested_on": 5,
+        "years": 10,
+        "verdict": "REJECTED",
+        "action": "Does not meet minimum thresholds"
+      },
+      "status": "REJECTED",
+      "created_at": "2026-04-19T20:32:05.008911",
+      "paper_trade_start": null,
+      "paper_trade_pnl": null,
+      "promoted_to_live": false
+    }
+  ]
+}

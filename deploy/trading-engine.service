@@ -1,0 +1,27 @@
+[Unit]
+Description=Regime-Adaptive Trading Engine
+After=network.target
+Wants=network-online.target
+
+[Service]
+Type=simple
+User=rex
+Group=rex
+WorkingDirectory=/home/rex/trading-engine
+ExecStart=/home/rex/trading-engine/venv/bin/python main.py
+Restart=always
+RestartSec=30
+StandardOutput=journal
+StandardError=journal
+
+# Environment
+EnvironmentFile=/home/rex/trading-engine/config/.env
+
+# Security hardening
+NoNewPrivileges=true
+ProtectSystem=strict
+ReadWritePaths=/home/rex/trading-engine/data /home/rex/trading-engine/logs
+ProtectHome=read-only
+
+[Install]
+WantedBy=multi-user.target
