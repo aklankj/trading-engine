@@ -9,6 +9,7 @@ All functions are pure — they take data, print to stdout, and return None.
 
 from __future__ import annotations
 
+import math
 from typing import Any
 
 
@@ -136,6 +137,71 @@ def print_benchmarks(
         f"  For a meaningfully different third benchmark, "
         f"consider a trend-filtered variant."
     )
+
+
+# ──────────────────────────────────────────
+# Real NIFTY benchmark (^NSEI) printing
+# ──────────────────────────────────────────
+
+
+def print_benchmark_nifty(
+    nifty_cagr: float,
+    nifty_maxdd: float,
+    summary: dict | None = None,
+    header_width: int = 105,
+) -> None:
+    """Print real NIFTY 50 benchmark with per-strategy alpha.
+
+    Parameters
+    ----------
+    nifty_cagr : float
+        CAGR of the real NIFTY 50 index (^NSEI). May be NaN if unavailable.
+    nifty_maxdd : float
+        Max drawdown of NIFTY 50. May be NaN if unavailable.
+    summary : dict | None
+        Per-strategy backtest results keyed by strategy name.
+        Each value must have ``.cagr`` and ``.total_trades`` attributes.
+    header_width : int
+        Width of the separator lines for visual alignment.
+    """
+    if summary is None:
+        summary = {}
+
+    print(f"\n{'=' * header_width}")
+    print(f"  BENCHMARK")
+    print(f"{'=' * header_width}")
+    print(f"{'─' * header_width}")
+
+    if nifty_cagr is None or (isinstance(nifty_cagr, float) and math.isnan(nifty_cagr)):
+        print(f"  NIFTY50: data unavailable")
+    else:
+        print(f"  NIFTY50: CAGR={nifty_cagr:.1f}% | MaxDD={nifty_maxdd:.1f}%")
+
+    print(f"{'─' * header_width}")
+    print(f"  ALPHA (vs NIFTY):")
+
+    if not summary:
+        print(f"    No strategies to evaluate.")
+    elif nifty_cagr is None or (isinstance(nifty_cagr, float) and math.isnan(nifty_cagr)):
+        print(f"    No benchmark available for alpha computation.")
+    else:
+        # Sort by strategy CAGR descending
+        sorted_strats = sorted(
+            summary.items(),
+            key=lambda kv: getattr(kv[1], "cagr", 0),
+            reverse=True,
+        )
+        for name, r in sorted_strats:
+            if getattr(r, "total_trades", 0) == 0:
+                continue
+            scagr = getattr(r, "cagr", 0)
+            alpha = scagr - nifty_cagr
+            sign = "+" if alpha >= 0 else ""
+            print(f"    {name:22s} {sign}{alpha:.1f}%")
+
+    print(f"  NOTE: Benchmark assumes full capital deployment.")
+    print(f"  Strategy returns include cash drag and execution constraints.")
+    print(f"{'=' * header_width}")
 
 
 # ──────────────────────────────────────────

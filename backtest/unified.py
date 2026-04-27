@@ -14,11 +14,12 @@ Usage:
 
 import sys
 import time
+from collections import defaultdict
 import numpy as np
 import pandas as pd
 import yfinance as yf
 from pathlib import Path
-from datetime import datetime, timedelta
+from datetime import date, datetime, timedelta
 
 sys.path.insert(0, str(Path(__file__).parent.parent))
 
@@ -73,6 +74,7 @@ from backtest.reporting import (
     print_backtest_footer,
     print_compact_summary,
     print_benchmarks,
+    print_benchmark_nifty,
     print_walkforward_header,
     print_walkforward_table,
     print_walkforward_summary,
@@ -223,6 +225,7 @@ def run_backtest(
     # ── Benchmarks ──
     if data:
         from analytics.benchmark import run_nifty_proxy, run_equal_weight, run_buy_and_hold
+        from analytics.benchmark_nifty import compute_nifty_benchmark
 
         all_dates_set: set[pd.Timestamp] = set()
         for sym in symbols:
@@ -238,6 +241,14 @@ def run_backtest(
             b_bnh = run_buy_and_hold(data, symbols, start_date=start_date, end_date=end_date)
 
             print_benchmarks(b_nifty, b_eqw, b_bnh)
+
+            # Real NIFTY benchmark (^NSEI)
+            nifty_bench = compute_nifty_benchmark(start_date, end_date)
+            print_benchmark_nifty(
+                nifty_cagr=nifty_bench.cagr,
+                nifty_maxdd=nifty_bench.max_drawdown,
+                summary=summary,
+            )
 
     # Save results
     output = {
@@ -404,6 +415,51 @@ def _run_walkforward_backtest(
     return wf_summary
 
 
+def _aggregate_cagr(valid: list[BacktestResult]) -> float:
+    """Compute portfolio-level CAGR by forward-filling and summing equity curves.
+
+    Uses date-aligned equity curve aggregation with forward-fill so that
+    missing dates per strategy do not artificially drop portfolio value.
+    Falls back to mean of individual CAGRs if equity curves are unavailable.
+    """
+    from portfolio.metrics import compute_cagr
+
+    # Collect all dates and per-strategy equity dicts
+    all_dates: set[date] = set()
+    curve_dicts: list[dict[date, float]] = []
+    for r in valid:
+        if not r.equity_curve:
+            continue
+        dmap: dict[date, float] = {}
+        has_data = False
+        for d, val in r.equity_curve:
+            if val is not None and val > 0:
+                dmap[d] = float(val)
+                has_data = True
+        if has_data:
+            all_dates.update(dmap.keys())
+            curve_dicts.append(dmap)
+
+    if len(all_dates) >= 2 and curve_dicts:
+        sorted_dates = sorted(all_dates)
+        date_agg: dict[date, float] = defaultdict(float)
+        for dmap in curve_dicts:
+            last_val: float | None = None
+            for d in sorted_dates:
+                if d in dmap:
+                    last_val = dmap[d]
+                if last_val is not None:
+                    date_agg[d] += last_val
+        combined = [date_agg[d] for d in sorted_dates]
+        years = (sorted_dates[-1] - sorted_dates[0]).days / 365.25
+        if years > 0.01:
+            cagr_val = compute_cagr(combined[0], combined[-1], years)
+            return round(cagr_val, 2)
+
+    # Fallback: mean of per-stock CAGRs (approximation)
+    return round(np.mean([r.cagr for r in valid]), 2)
+
+
 def _aggregate_results(
     agg: dict[str, list[BacktestResult]],
 ) -> dict[str, BacktestResult]:
@@ -452,7 +508,8 @@ def _aggregate_results(
             losers=total_trades - total_wins,
             win_rate=round(total_wins / total_trades * 100, 1) if total_trades > 0 else 0,
             equity_final=round(np.mean([r.equity_final for r in valid]), 0),
-            cagr=round(np.mean([r.cagr for r in valid]), 2),
+            # CAGR via date-aligned forward-filled equity curve aggregation
+            cagr=_aggregate_cagr(valid),
             expectancy=expectancy,
             total_return_pct=round(np.mean([r.total_return_pct for r in valid]), 2),
             years_tested=round(avg_years, 1),

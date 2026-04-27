@@ -47,6 +47,10 @@ class _Config:
     ACTIVE_ALLOC: float = float(os.getenv("ACTIVE_ALLOCATION_PCT", "0.30"))
     CASH_RESERVE: float = float(os.getenv("CASH_RESERVE_PCT", "0.10"))
 
+    # ── Execution ─────────────────────────────────────────────
+    EXECUTION_DELAY_DAYS: int = int(os.getenv("EXECUTION_DELAY_DAYS", "1"))
+    EXECUTION_PRICE: str = os.getenv("EXECUTION_PRICE", "open")
+
     # ── Strategy Weights ──────────────────────────────────────
     STRATEGY_WEIGHTS: dict[str, float] = {
         "AnnualMomentum": os.getenv("WEIGHT_ANNUAL_MOMENTUM", "0.30"),

@@ -7,6 +7,10 @@ Runs all strategies together on a shared capital pool, enforcing
 max positions, no negative cash, one position per symbol,
 and transaction costs.
 
+Supports execution delay (T+1) via config:
+  EXECUTION_DELAY_DAYS: number of trading days to delay entry (0 = same-day)
+  EXECUTION_PRICE:      price column to use for delayed entry ("open")
+
 Re-exports all public symbols from portfolio sub-modules for backward
 compatibility.  Importing from portfolio.simulator still works.
 """
@@ -107,6 +111,13 @@ class SimResult:
     turnover: float = 0.0
     turnover_annual: float = 0.0
     total_slippage_cost: float = 0.0
+    # ── execution pipeline counters ────────
+    signals_raw: int = 0
+    signals_filtered: int = 0
+    signals_executed: int = 0
+    signals_skipped_execution: int = 0
+    filter_rate: float = 0.0
+    execution_rate: float = 0.0
 
 
 # ──────────────────────────────────────────
@@ -132,6 +143,37 @@ def _default_sl_tgt(
         sl = price + 2.5 * atr
         tgt = price - 4.0 * atr
     return sl, tgt
+
+
+def _precompute_next_date_map(
+    dates: list[pd.Timestamp],
+    delay_days: int,
+) -> dict[pd.Timestamp, pd.Timestamp | None]:
+    """
+    Pre-compute next available trading date for each date, given a delay
+    in trading days (not calendar days).
+
+    Parameters
+    ----------
+    dates : list[pd.Timestamp]
+        Sorted list of all trading dates (unified across symbols).
+    delay_days : int
+        Number of trading days to skip forward.  0 means same-day.
+
+    Returns
+    -------
+    dict[pd.Timestamp, pd.Timestamp | None]
+        For each date, the trading date *delay_days* steps forward,
+        or None if insufficient future dates exist.
+    """
+    result: dict[pd.Timestamp, pd.Timestamp | None] = {}
+    for i, d in enumerate(dates):
+        future_dates = dates[i + 1:]
+        if len(future_dates) >= delay_days:
+            result[d] = future_dates[delay_days - 1]
+        else:
+            result[d] = None
+    return result
 
 
 # ──────────────────────────────────────────
@@ -225,6 +267,24 @@ def simulate(
     if not dates:
         return SimResult(equity_curve=[], trade_log=[])
 
+    # ── execution delay setup ───────────────
+    exec_delay = _cfg.EXECUTION_DELAY_DAYS
+    exec_price_col = _cfg.EXECUTION_PRICE
+
+    # Pre-compute next trading date for each signal date
+    next_date_map: dict[pd.Timestamp, pd.Timestamp | None] = {}
+    if exec_delay > 0:
+        next_date_map = _precompute_next_date_map(dates, exec_delay)
+
+    # Pending entries: map target date -> list of entry dicts
+    pending_entries: dict[pd.Timestamp, list[dict]] = {}
+
+    # Execution statistics
+    executed_delayed: int = 0
+    skipped_no_next_date: int = 0
+    skipped_no_data: int = 0
+    skipped_no_price: int = 0
+
     # ── state ───────────────────────────────
     cash = float(initial_capital)
     open_positions: dict[str, SimPosition] = {}
@@ -233,9 +293,217 @@ def simulate(
     daily_deployed: list[float] = []
     total_slippage_acc = 0.0  # FIX: accumulates everywhere
 
+    # ── execution pipeline counters ────────
+    signals_raw: int = 0
+    signals_filtered: int = 0
+    signals_executed: int = 0
+    signals_skipped_execution: int = 0
+
+    # Pending exits: map target date -> list of pending exit requests
+    pending_exits: dict[pd.Timestamp, list[dict]] = {}
+    pending_exit_symbols: set[str] = set()
+
     # ── daily loop ──────────────────────────
     for current_date in dates:
-        # 1. Process exits
+        # ══════════════════════════════════════
+        # Step 0:  Process pending entries (delayed entry execution)
+        # ══════════════════════════════════════
+        if exec_delay > 0 and current_date in pending_entries:
+            for entry in pending_entries.pop(current_date):
+                sym = entry["symbol"]
+
+                # Validate: symbol has data on execution date
+                if current_date not in data[sym].index:
+                    skipped_no_data += 1
+                    signals_skipped_execution += 1
+                    log.debug(
+                        f"Skipped delayed entry for {sym} on {current_date}: "
+                        f"date not in symbol data"
+                    )
+                    continue
+
+                # Validate: price column exists
+                if exec_price_col not in data[sym].columns:
+                    skipped_no_price += 1
+                    signals_skipped_execution += 1
+                    log.debug(
+                        f"Skipped delayed entry for {sym} on {current_date}: "
+                        f"column '{exec_price_col}' missing"
+                    )
+                    continue
+
+                # Validate: price is valid (not NaN, not zero/negative)
+                price_val = data[sym].loc[current_date, exec_price_col]
+                if pd.isna(price_val) or price_val <= 0:
+                    skipped_no_price += 1
+                    signals_skipped_execution += 1
+                    log.debug(
+                        f"Skipped delayed entry for {sym} on {current_date}: "
+                        f"price={price_val} (NaN/zero)"
+                    )
+                    continue
+
+                entry_price = float(price_val)
+                strat_name = entry["strategy"]
+                direction = entry["direction"]
+                sl = entry["sl"]
+                tgt = entry["tgt"]
+                atr = entry["atr"]
+
+                # Re-check position limits (may have changed since signal)
+                if len(open_positions) >= max_positions:
+                    signals_skipped_execution += 1
+                    log.debug(
+                        f"Skipped delayed entry for {sym} on {current_date}: "
+                        f"max_positions ({max_positions}) reached"
+                    )
+                    continue
+                if not allow_multiple_per_symbol and sym in open_positions:
+                    signals_skipped_execution += 1
+                    log.debug(
+                        f"Skipped delayed entry for {sym} on {current_date}: "
+                        f"position already open"
+                    )
+                    continue
+
+                # Position sizing at execution time
+                deployed_val = sum(
+                    float(data[p.symbol].loc[current_date, "close"]) * p.quantity
+                    for p in open_positions.values()
+                    if current_date in data[p.symbol].index
+                )
+                current_equity = cash + deployed_val
+                notional = current_equity * position_size_pct
+                quantity = int(notional / entry_price)
+                if quantity <= 0:
+                    signals_skipped_execution += 1
+                    log.debug(f"Skipping {sym} — zero or negative quantity: {quantity}")
+                    continue
+
+                # Apply slippage on entry
+                exec_price, entry_txn, entry_slip_cost = fill_entry(
+                    entry_price, quantity, slippage_pct, direction
+                )
+                if not check_cash_constraint(cash, quantity, exec_price, entry_txn):
+                    signals_skipped_execution += 1
+                    log.debug(
+                        f"Skipped delayed entry for {sym}: cash constraint"
+                    )
+                    continue
+
+                total_slippage_acc += entry_slip_cost
+
+                # Open position
+                cash -= quantity * exec_price + entry_txn
+                df_full = indicators[(strat_name, sym)]
+                mask = df_full.index <= current_date
+                df_slice = df_full[mask]
+                entry_idx = len(df_slice) - 1
+
+                open_positions[sym] = SimPosition(
+                    symbol=sym,
+                    strategy=strat_name,
+                    direction=direction,
+                    quantity=quantity,
+                    entry_price=exec_price,
+                    entry_date=current_date,
+                    entry_idx=entry_idx,
+                    stop_loss=sl,
+                    target=tgt,
+                    entry_atr=atr,
+                    highest_since_entry=entry_price,
+                    lowest_since_entry=entry_price,
+                )
+                executed_delayed += 1
+                signals_executed += 1
+
+        # ══════════════════════════════════════
+        # Step 0.5:  Process pending exits (delayed exit execution)
+        # ══════════════════════════════════════
+        if exec_delay > 0 and current_date in pending_exits:
+            for exit_req in pending_exits.pop(current_date):
+                sym = exit_req["symbol"]
+                try:
+                    pos = open_positions.get(sym)
+                    if not pos:
+                        # Position already closed — nothing to do
+                        continue
+
+                    # Mutation guard: verify position hasn't changed
+                    if pos.entry_date != exit_req["entry_date"]:
+                        log.debug(
+                            f"Skipped pending exit for {sym} on {current_date}: "
+                            f"position has changed since queue"
+                        )
+                        continue
+
+                    # Validate: symbol has data on execution date
+                    if current_date not in data[sym].index:
+                        skipped_no_data += 1
+                        log.debug(
+                            f"Skipped pending exit for {sym} on {current_date}: "
+                            f"date not in symbol data"
+                        )
+                        continue
+
+                    # Validate: price column exists
+                    if exec_price_col not in data[sym].columns:
+                        skipped_no_price += 1
+                        log.debug(
+                            f"Skipped pending exit for {sym} on {current_date}: "
+                            f"column '{exec_price_col}' missing"
+                        )
+                        continue
+
+                    # Validate: price is valid (not NaN, not zero/negative)
+                    price_val = data[sym].loc[current_date, exec_price_col]
+                    if pd.isna(price_val) or price_val <= 0:
+                        skipped_no_price += 1
+                        log.debug(
+                            f"Skipped pending exit for {sym} on {current_date}: "
+                            f"price={price_val} (NaN/zero)"
+                        )
+                        continue
+
+                    exit_price = float(price_val)
+                    exit_reason = exit_req["reason"]
+
+                    # Execute exit at open price
+                    exit_slip, exit_txn, exit_slip_cost = fill_exit(
+                        exit_price, pos.quantity, slippage_pct, pos.direction
+                    )
+                    cash += pos.quantity * exit_slip - exit_txn
+                    total_slippage_acc += exit_slip_cost
+
+                    pnl, pnl_pct = compute_trade_pnl(
+                        exit_slip, pos.entry_price, pos.quantity,
+                        pos.direction, exit_txn
+                    )
+
+                    trade_log.append(
+                        SimTrade(
+                            symbol=pos.symbol,
+                            strategy=pos.strategy,
+                            direction=pos.direction,
+                            entry_date=pos.entry_date.date(),
+                            exit_date=current_date.date(),
+                            entry_price=pos.entry_price,
+                            exit_price=exit_price,
+                            quantity=pos.quantity,
+                            pnl=pnl,
+                            pnl_pct=pnl_pct,
+                            exit_reason=exit_reason,
+                            hold_days=(current_date - pos.entry_date).days,
+                        )
+                    )
+                    del open_positions[sym]
+                finally:
+                    # Always remove from pending set, regardless of skip/execute path
+                    pending_exit_symbols.discard(sym)
+
+        # ══════════════════════════════════════
+        # Step 1:  Evaluate exits — queue for next day or execute same-day
+        # ══════════════════════════════════════
         for sym, pos in list(open_positions.items()):
             if current_date not in data[sym].index:
                 continue
@@ -268,36 +536,60 @@ def simulate(
             should_exit_flag, exit_reason = strategy.should_exit(df_slice, i, base_pos)
 
             if should_exit_flag:
-                exit_slip, exit_txn, exit_slip_cost = fill_exit(
-                    close_price, pos.quantity, slippage_pct, pos.direction
-                )
-                cash += pos.quantity * exit_slip - exit_txn
-                total_slippage_acc += exit_slip_cost
+                if exec_delay > 0:
+                    # ── Delayed exit: queue for T+1 open ──────────
+                    if sym in pending_exit_symbols:
+                        # Already queued — skip to avoid double exit
+                        continue
 
-                pnl, pnl_pct = compute_trade_pnl(
-                    exit_slip, pos.entry_price, pos.quantity,
-                    pos.direction, exit_txn
-                )
+                    target_date = next_date_map.get(current_date)
+                    if target_date is None:
+                        log.debug(
+                            f"Skipped exit signal for {sym} on {current_date}: "
+                            f"no next trading date available"
+                        )
+                        continue
 
-                trade_log.append(
-                    SimTrade(
-                        symbol=pos.symbol,
-                        strategy=pos.strategy,
-                        direction=pos.direction,
-                        entry_date=pos.entry_date.date(),
-                        exit_date=current_date.date(),
-                        entry_price=pos.entry_price,
-                        exit_price=close_price,
-                        quantity=pos.quantity,
-                        pnl=pnl,
-                        pnl_pct=pnl_pct,
-                        exit_reason=exit_reason,
-                        hold_days=(current_date - pos.entry_date).days,
+                    pending_exits.setdefault(target_date, []).append({
+                        "symbol": sym,
+                        "reason": exit_reason,
+                        "entry_date": pos.entry_date,
+                    })
+                    pending_exit_symbols.add(sym)
+                else:
+                    # ── Same-day exit (backward compat: exec_delay=0) ──
+                    exit_slip, exit_txn, exit_slip_cost = fill_exit(
+                        close_price, pos.quantity, slippage_pct, pos.direction
                     )
-                )
-                del open_positions[sym]
+                    cash += pos.quantity * exit_slip - exit_txn
+                    total_slippage_acc += exit_slip_cost
 
-        # 2. Gather candidate signals
+                    pnl, pnl_pct = compute_trade_pnl(
+                        exit_slip, pos.entry_price, pos.quantity,
+                        pos.direction, exit_txn
+                    )
+
+                    trade_log.append(
+                        SimTrade(
+                            symbol=pos.symbol,
+                            strategy=pos.strategy,
+                            direction=pos.direction,
+                            entry_date=pos.entry_date.date(),
+                            exit_date=current_date.date(),
+                            entry_price=pos.entry_price,
+                            exit_price=close_price,
+                            quantity=pos.quantity,
+                            pnl=pnl,
+                            pnl_pct=pnl_pct,
+                            exit_reason=exit_reason,
+                            hold_days=(current_date - pos.entry_date).days,
+                        )
+                    )
+                    del open_positions[sym]
+
+        # ══════════════════════════════════════
+        # Step 2:  Gather candidate signals
+        # ══════════════════════════════════════
         candidates: list = []
         for strat_name, strategy in strategies.items():
             weight = strategy_weights.get(strat_name, 0.05)
@@ -316,10 +608,13 @@ def simulate(
                 i = len(df_slice) - 1
                 direction, confidence, reason, sl, tgt = strategy.should_enter(df_slice, i)
 
+                # Only count as raw signal if it's a real actionable intent
                 if not direction or confidence <= 0.3:
                     continue
                 if direction != "BUY":
                     continue
+
+                signals_raw += 1
 
                 close_price = float(df_slice["close"].iloc[i])
                 atr = (
@@ -337,7 +632,9 @@ def simulate(
                      confidence, reason, sl, tgt, close_price, atr)
                 )
 
-        # 3. Rank and open positions
+        # ══════════════════════════════════════
+        # Step 3:  Rank candidates, filter, open / queue
+        # ══════════════════════════════════════
         candidates.sort(key=lambda x: x[0], reverse=True)
 
         # 3b. Sector cap filter
@@ -360,56 +657,103 @@ def simulate(
             _score, sym, strat_name, direction, _conf, _reason,
             sl, tgt, entry_price, atr,
         ) in candidates:
+            # Check position limits early
             if len(open_positions) >= max_positions:
                 break
             if not allow_multiple_per_symbol and sym in open_positions:
                 continue
 
-            # Position size
-            deployed_val = sum(
-                float(data[p.symbol].loc[current_date, "close"]) * p.quantity
-                for p in open_positions.values()
-                if current_date in data[p.symbol].index
-            )
-            current_equity = cash + deployed_val
-            notional = current_equity * position_size_pct
-            quantity = int(notional / entry_price)
-            if quantity <= 0:
-                log.debug(f"Skipping {sym} — zero or negative quantity: {quantity}")
-                continue
+            if exec_delay > 0:
+                # ── Delayed execution: queue for later ──────────
+                target_date = next_date_map.get(current_date)
+                if target_date is None:
+                    skipped_no_next_date += 1
+                    log.debug(
+                        f"Skipped signal for {sym} on {current_date}: "
+                        f"no next trading date available (delay={exec_delay})"
+                    )
+                    continue
 
-            # Apply slippage on entry
-            exec_price, entry_txn, entry_slip_cost = fill_entry(
-                entry_price, quantity, slippage_pct, direction
-            )
-            if not check_cash_constraint(cash, quantity, exec_price, entry_txn):
-                continue
+                # This signal survived all filters — count as filtered
+                signals_filtered += 1
 
-            total_slippage_acc += entry_slip_cost
+                # Position size at entry time (use current equity as estimate)
+                deployed_val = sum(
+                    float(data[p.symbol].loc[current_date, "close"]) * p.quantity
+                    for p in open_positions.values()
+                    if current_date in data[p.symbol].index
+                )
+                current_equity = cash + deployed_val
+                notional = current_equity * position_size_pct
+                quantity = int(notional / entry_price)
+                if quantity <= 0:
+                    log.debug(f"Skipping {sym} — zero or negative quantity: {quantity}")
+                    continue
 
-            # Open
-            cash -= quantity * exec_price + entry_txn
-            df_full = indicators[(strat_name, sym)]
-            mask = df_full.index <= current_date
-            df_slice = df_full[mask]
-            entry_idx = len(df_slice) - 1
+                # Store full signal context for later execution
+                pending_entries.setdefault(target_date, []).append({
+                    "symbol": sym,
+                    "strategy": strat_name,
+                    "direction": direction,
+                    "confidence": _conf,
+                    "reason": _reason,
+                    "sl": sl,
+                    "tgt": tgt,
+                    "atr": atr,
+                    "entry_date": current_date,
+                })
+            else:
+                # ── Same-day execution (backward compat) ──────
+                # This signal survived all filters — count as filtered
+                signals_filtered += 1
 
-            open_positions[sym] = SimPosition(
-                symbol=sym,
-                strategy=strat_name,
-                direction=direction,
-                quantity=quantity,
-                entry_price=exec_price,
-                entry_date=current_date,
-                entry_idx=entry_idx,
-                stop_loss=sl,
-                target=tgt,
-                entry_atr=atr,
-                highest_since_entry=entry_price,
-                lowest_since_entry=entry_price,
-            )
+                deployed_val = sum(
+                    float(data[p.symbol].loc[current_date, "close"]) * p.quantity
+                    for p in open_positions.values()
+                    if current_date in data[p.symbol].index
+                )
+                current_equity = cash + deployed_val
+                notional = current_equity * position_size_pct
+                quantity = int(notional / entry_price)
+                if quantity <= 0:
+                    log.debug(f"Skipping {sym} — zero or negative quantity: {quantity}")
+                    continue
 
-        # 4. Mark to market
+                # Apply slippage on entry
+                exec_price, entry_txn, entry_slip_cost = fill_entry(
+                    entry_price, quantity, slippage_pct, direction
+                )
+                if not check_cash_constraint(cash, quantity, exec_price, entry_txn):
+                    continue
+
+                total_slippage_acc += entry_slip_cost
+
+                # Open
+                cash -= quantity * exec_price + entry_txn
+                df_full = indicators[(strat_name, sym)]
+                mask = df_full.index <= current_date
+                df_slice = df_full[mask]
+                entry_idx = len(df_slice) - 1
+
+                open_positions[sym] = SimPosition(
+                    symbol=sym,
+                    strategy=strat_name,
+                    direction=direction,
+                    quantity=quantity,
+                    entry_price=exec_price,
+                    entry_date=current_date,
+                    entry_idx=entry_idx,
+                    stop_loss=sl,
+                    target=tgt,
+                    entry_atr=atr,
+                    highest_since_entry=entry_price,
+                    lowest_since_entry=entry_price,
+                )
+                signals_executed += 1
+
+        # ══════════════════════════════════════
+        # Step 4:  Mark to market
+        # ══════════════════════════════════════
         deployed_val = sum(
             float(data[p.symbol].loc[current_date, "close"]) * p.quantity
             for p in open_positions.values()
@@ -494,10 +838,34 @@ def simulate(
 
     total_return_pct = round((final_equity / initial_capital - 1) * 100, 2)
 
+    # ── compute pipeline rates ─────────────
+    filter_rate = round(signals_filtered / signals_raw * 100, 1) if signals_raw > 0 else 0.0
+    execution_rate = round(signals_executed / signals_filtered * 100, 1) if signals_filtered > 0 else 0.0
+
     # Summary print
     print_portfolio_summary(
         cagr, max_dd, sharpe, sharpe_valid, tm["profit_factor"],
         ui, turnover_annual, total_tm, wm,
+    )
+
+    # Print execution stats if delay was active
+    if exec_delay > 0:
+        print(
+            f"  Execution: Executed={executed_delayed} | "
+            f"Skipped: "
+            f"NoData={skipped_no_data} "
+            f"NoPrice={skipped_no_price} "
+            f"NoNextDate={skipped_no_next_date}"
+        )
+
+    # Print signal pipeline stats
+    print(
+        f"  Signal Pipeline: "
+        f"Raw={signals_raw} | "
+        f"Filtered={signals_filtered} ({filter_rate}%) | "
+        f"Executed={signals_executed} | "
+        f"SkippedEx={signals_skipped_execution} | "
+        f"Rate={execution_rate}%"
     )
 
     return SimResult(
@@ -521,4 +889,10 @@ def simulate(
         turnover=total_turnover,
         turnover_annual=turnover_annual,
         total_slippage_cost=round(total_slippage_acc, 2),
+        signals_raw=signals_raw,
+        signals_filtered=signals_filtered,
+        signals_executed=signals_executed,
+        signals_skipped_execution=signals_skipped_execution,
+        filter_rate=filter_rate,
+        execution_rate=execution_rate,
     )
