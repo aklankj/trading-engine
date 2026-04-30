@@ -112,8 +112,13 @@ def fetch_universe_prices(symbols, years=12, end_date=None):
     import yfinance as yf
     end = end_date or datetime.now()
     start = end - timedelta(days=years * 365)
-    yf_symbols = [f"{s}.NS" for s in symbols]
-    yf_to_local = {f"{s}.NS": s for s in symbols}
+    # Some NSE symbols have different tickers on yfinance
+    YF_MAP = {
+        "TATAMOTORS": "TATAMTRDVR",
+        "GMRINFRA": "GMRAIRPORT",
+    }
+    yf_symbols = [f"{YF_MAP.get(s, s)}.NS" for s in symbols]
+    yf_to_local = {f"{YF_MAP.get(s, s)}.NS": s for s in symbols}
 
     print(f"  Downloading {len(yf_symbols)} stocks...")
     try:
