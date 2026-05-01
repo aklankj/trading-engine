@@ -1,0 +1,83 @@
+{
+  "date": "2026-05-01T15:05:29.389010",
+  "preset": "full_factor",
+  "universe": "nifty200",
+  "train_years": 5,
+  "test_years": 1,
+  "step_years": 1,
+  "top_n": 20,
+  "windows": [
+    {
+      "window": 1,
+      "test_start": "2019-05-06T00:00:00",
+      "test_end": "2020-05-04T00:00:00",
+      "cagr": -1.47,
+      "alpha": 13.86,
+      "max_dd": 31.79,
+      "sharpe": 0.07,
+      "benchmark_cagr": -15.32
+    },
+    {
+      "window": 2,
+      "test_start": "2020-05-04T00:00:00",
+      "test_end": "2021-05-04T00:00:00",
+      "cagr": 61.09,
+      "alpha": -30.98,
+      "max_dd": 7.92,
+      "sharpe": 2.81,
+      "benchmark_cagr": 92.07
+    },
+    {
+      "window": 3,
+      "test_start": "2021-05-04T00:00:00",
+      "test_end": "2022-05-04T00:00:00",
+      "cagr": 20.54,
+      "alpha": -3.91,
+      "max_dd": 21.22,
+      "sharpe": 1.03,
+      "benchmark_cagr": 24.45
+    },
+    {
+      "window": 4,
+      "test_start": "2022-05-04T00:00:00",
+      "test_end": "2023-05-04T00:00:00",
+      "cagr": 17.13,
+      "alpha": 7.83,
+      "max_dd": 16.14,
+      "sharpe": 0.99,
+      "benchmark_cagr": 9.3
+    },
+    {
+      "window": 5,
+      "test_start": "2023-05-05T00:00:00",
+      "test_end": "2024-05-03T00:00:00",
+      "cagr": 84.71,
+      "alpha": 25.09,
+      "max_dd": 8.06,
+      "sharpe": 3.87,
+      "benchmark_cagr": 59.63
+    },
+    {
+      "window": 6,
+      "test_start": "2024-05-06T00:00:00",
+      "test_end": "2025-05-02T00:00:00",
+      "cagr": -16.72,
+      "alpha": -19.58,
+      "max_dd": 29.87,
+      "sharpe": -0.65,
+      "benchmark_cagr": 2.86
+    }
+  ],
+  "summary": {
+    "avg_oos_cagr": 27.55,
+    "avg_oos_maxdd": 19.17,
+    "avg_oos_trades": 12.0,
+    "pct_positive_windows": 66.7,
+    "wfe": 1.44,
+    "avg_oos_alpha": -1.3,
+    "pct_positive_alpha": 50.0,
+    "avg_oos_sharpe": 1.35,
+    "min_oos_alpha": -31.0,
+    "max_oos_alpha": 25.1
+  }
+}
