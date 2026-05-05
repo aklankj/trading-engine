@@ -36,6 +36,60 @@ class MomentumFactor(BaseFactor):
         return scores
 
 
+class AdaptiveMomentumFactor(BaseFactor):
+    """
+    Regime-switching momentum: 12-1 month normally, 6-1 month when the
+    equal-weight universe median 3-month return drops below -15%.
+    The shorter lookback catches recovery leaders faster after crashes.
+    """
+    name = "AdaptiveMomentum"
+    description = "12-1 momentum; switches to 6-1 after market crash (median 3m ret < -15%)"
+    lookback_days = 300
+    higher_is_better = True
+
+    CRASH_THRESHOLD = -0.15   # median 3m return triggering short lookback
+    NORMAL_DAYS = 252          # 12-month formation
+    CRASH_DAYS = 126           # 6-month formation
+    SKIP_DAYS = 21             # skip most-recent month in both regimes
+    REGIME_WINDOW = 63         # 3-month window for regime detection
+
+    def _detect_regime(self, price_data, as_of_date):
+        returns_3m = []
+        for df in price_data.values():
+            if df.empty or "close" not in df.columns:
+                continue
+            d = df.loc[df.index <= as_of_date] if as_of_date is not None else df
+            needed = self.REGIME_WINDOW + 5
+            if len(d) < needed:
+                continue
+            p_now = d["close"].iloc[-1]
+            p_past = d["close"].iloc[-(self.REGIME_WINDOW + 1)]
+            if p_past > 0:
+                returns_3m.append(p_now / p_past - 1.0)
+        if not returns_3m:
+            return self.NORMAL_DAYS
+        median_ret = float(np.median(returns_3m))
+        return self.CRASH_DAYS if median_ret < self.CRASH_THRESHOLD else self.NORMAL_DAYS
+
+    def compute_raw(self, price_data, fundamental_data=None, as_of_date=None):
+        formation_days = self._detect_regime(price_data, as_of_date)
+        scores = {}
+        for sym, df in price_data.items():
+            if df.empty or "close" not in df.columns:
+                continue
+            if as_of_date is not None:
+                df = df.loc[df.index <= as_of_date]
+            needed = formation_days + self.SKIP_DAYS + 10
+            if len(df) < needed:
+                continue
+            price_recent = df["close"].iloc[-(self.SKIP_DAYS + 1)]
+            price_start = df["close"].iloc[-(formation_days + self.SKIP_DAYS)]
+            if price_start <= 0:
+                continue
+            scores[sym] = (price_recent / price_start) - 1.0
+        return scores
+
+
 class VolatilityAdjustedMomentumFactor(BaseFactor):
     """Momentum / trailing volatility. Better risk-adjusted signal."""
     name = "VolAdjMomentum"

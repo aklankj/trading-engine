@@ -114,7 +114,7 @@ def fetch_universe_prices(symbols, years=12, end_date=None):
     start = end - timedelta(days=years * 365)
     # Some NSE symbols have different tickers on yfinance
     YF_MAP = {
-        "TATAMOTORS": "TATAMTRDVR",
+        # TATAMOTORS DVR was delisted 2021 (merged into regular shares) — use standard ticker
         "GMRINFRA": "GMRAIRPORT",
     }
     yf_symbols = [f"{YF_MAP.get(s, s)}.NS" for s in symbols]

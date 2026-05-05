@@ -26,7 +26,8 @@ def main():
     parser = argparse.ArgumentParser(description="Factor Engine Quick Backtest")
     parser.add_argument(
         "--preset",
-        choices=["momentum_quality", "pure_momentum", "quality_first", "vol_adjusted"],
+        choices=["momentum_quality", "pure_momentum", "quality_first", "vol_adjusted",
+                 "adaptive_momentum_quality", "full_factor", "full_factor_lowvol"],
         default="momentum_quality",
         help="Factor combination preset",
     )

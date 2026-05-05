@@ -9,9 +9,11 @@ import pandas as pd
 from dataclasses import dataclass
 
 from factors.base import BaseFactor, FactorScore, CompositeScore, PortfolioHolding
-from factors.momentum import MomentumFactor, VolatilityAdjustedMomentumFactor
+from factors.momentum import MomentumFactor, VolatilityAdjustedMomentumFactor, AdaptiveMomentumFactor
 from factors.quality import QualityFactor
 from factors.value import ValueFactor
+from factors.earnings import EarningsMomentumFactor
+from factors.volatility import LowVolatilityFactor
 
 
 @dataclass
@@ -49,11 +51,42 @@ def vol_adjusted_preset():
         FactorConfig(factor=ValueFactor(), weight=0.15),
     ]
 
+def adaptive_momentum_quality_preset():
+    """Regime-switching momentum (50%) + Quality (35%) + Value (15%).
+    Switches from 12-1 to 6-1 momentum when universe median 3m return < -15%."""
+    return [
+        FactorConfig(factor=AdaptiveMomentumFactor(), weight=0.50),
+        FactorConfig(factor=QualityFactor(), weight=0.35),
+        FactorConfig(factor=ValueFactor(), weight=0.15),
+    ]
+
+def full_factor_preset():
+    """Adaptive momentum (40%) + Quality (25%) + EarningsMomentum (20%) + Value (15%)."""
+    return [
+        FactorConfig(factor=AdaptiveMomentumFactor(), weight=0.40),
+        FactorConfig(factor=QualityFactor(), weight=0.25),
+        FactorConfig(factor=EarningsMomentumFactor(), weight=0.20),
+        FactorConfig(factor=ValueFactor(), weight=0.15),
+    ]
+
+def full_factor_lowvol_preset():
+    """Adaptive momentum (35%) + Quality (20%) + EarningsMomentum (15%) + LowVol (15%) + Value (15%)."""
+    return [
+        FactorConfig(factor=AdaptiveMomentumFactor(), weight=0.35),
+        FactorConfig(factor=QualityFactor(), weight=0.20),
+        FactorConfig(factor=EarningsMomentumFactor(), weight=0.15),
+        FactorConfig(factor=LowVolatilityFactor(), weight=0.15),
+        FactorConfig(factor=ValueFactor(), weight=0.15),
+    ]
+
 PRESETS = {
     "momentum_quality": momentum_quality_preset,
     "pure_momentum": pure_momentum_preset,
     "quality_first": quality_momentum_preset,
     "vol_adjusted": vol_adjusted_preset,
+    "adaptive_momentum_quality": adaptive_momentum_quality_preset,
+    "full_factor": full_factor_preset,
+    "full_factor_lowvol": full_factor_lowvol_preset,
 }
 
 
